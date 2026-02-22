@@ -115,6 +115,7 @@ Pocket = 1
 Price = 3000
 BPPrice = 5
 FieldUse = OnPokemon
+BattleUse = OnPokemon
 Flags = EvolutionStone,Fling_30
 Description = Curiosa piedra que permite evolucionar a determinadas especies de Pokémon. Es azul, como el agua.
 #-------------------------------
@@ -519,7 +520,7 @@ Name = Maxipepita
 NamePlural = Maxipepitas
 Pocket = 1
 Price = 40000
-Flags = Fling_30
+Flags = Fling_130
 Description = Pepita grande de oro puro que desprende un brillo espectacular. Muy valorada por los coleccionistas.
 #-------------------------------
 [HEARTSCALE]
@@ -1135,6 +1136,7 @@ Price = 300
 BPPrice = 10
 Flags = Fling_30
 Description = Si lo lleva un Pokémon, sube la Velocidad al ser intimidado. Es de un solo uso.
+BattleUse = Direct
 #-------------------------------
 [ROOMSERVICE]
 Name = Servicio Raro
@@ -2958,7 +2960,7 @@ Description = Una de las misteriosas Megapiedras. Permite megaevolucionar a Exca
 #-------------------------------
 [SCOLIPITE]
 Name = Scolipedita
-amePlural = Scolipeditas
+NamePlural = Scolipeditas
 Pocket = 1
 Price = 0
 BPPrice = 50
@@ -4059,6 +4061,7 @@ Pocket = 2
 Price = 10000
 BPPrice = 20
 FieldUse = OnPokemon
+BattleUse = OnPokemon
 Flags = Fling_30
 Description = Caramelo energético que sube a un Pokémon de nivel.
 #-------------------------------
@@ -6830,6 +6833,7 @@ NamePlural = Cordones Unión
 Pocket = 1
 Price = 2100
 FieldUse = OnPokemon
+BattleUse = OnPokemon
 Flags = Fling_30,EvolutionStone
 Description = Extraño cordón que recuerda a un cable. Permite evolucionar a ciertos Pokémon.
 #-------------------------------

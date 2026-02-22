@@ -108,7 +108,7 @@ def fmtReplaceEscapes(text)
 end
 
 def toUnformattedText(text)
-  text2 = text.clone
+  text2 = text.dup  # dup en lugar de clone para evitar frozen strings
   pbReplaceMessageText(text2, nil)
   text2 = text2.gsub(FORMATREGEXP, "")
   fmtReplaceEscapes(text2)

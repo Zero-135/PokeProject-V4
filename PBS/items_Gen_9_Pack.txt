@@ -1,0 +1,620 @@
+﻿# See the documentation on the wiki to learn how to edit this file.
+#-------------------------------
+[HOPOBERRY]
+Name = Hopo Berry
+NamePlural = Hopo Berries
+Pocket = 5
+Price = 20
+Flags = Berry,Fling_10,NaturalGift_FIGHTING_80
+Description = A Berry that can be fed to a Pokémon to restore its PP.
+#-------------------------------
+[HISUIANPOKEBALL]
+Name = Poké Ball
+NamePlural = Poké Balls
+Pocket = 3
+Price = 500
+BattleUse = OnFoe
+Flags = PokeBall
+Description = A mysterious ball that can be thrown at wild Pokémon in order to catch them.
+#-------------------------------
+[HISUIANGREATBALL]
+Name = Great Ball
+NamePlural = Great Balls
+Pocket = 3
+Price = 900
+BattleUse = OnFoe
+Flags = PokeBall
+Description = A mysterious ball that provides a higher success catch rate than a standard Poké Ball.
+#-------------------------------
+[HISUIANULTRABALL]
+Name = Ultra Ball
+NamePlural = Ultra Balls
+Pocket = 3
+Price = 1500
+BattleUse = OnFoe
+Flags = PokeBall
+Description = A mysterious ball that provides an even higher success catch rate than a Great Ball does.
+#-------------------------------
+[FEATHERBALL]
+Name = Feather Ball
+NamePlural = Feather Balls
+Pocket = 3
+Price = 700
+BattleUse = OnFoe
+Flags = PokeBall
+Description = A ball that flies fast and true ideal for catching nimble Pokémon or Pokémon that fly high in the air.
+#-------------------------------
+[WINGBALL]
+Name = Wing Ball
+NamePlural = Wing Balls
+Pocket = 3
+Price = 1000
+BattleUse = OnFoe
+Flags = PokeBall
+Description = An improvement on the original Feather Ball design. It has a higher success rate than the Feather Ball.
+#-------------------------------
+[JETBALL]
+Name = Jet Ball
+NamePlural = Jet Balls
+Pocket = 3
+Price = 1500
+BattleUse = OnFoe
+Flags = PokeBall
+Description = The ultimate iteration of the Feather Ball. It has an even higher success rate than the Wing Ball does.
+#-------------------------------
+[HISUIANHEAVYBALL]
+Name = Heavy Ball
+NamePlural = Heavy Balls
+Pocket = 3
+Price = 700
+BattleUse = OnFoe
+Flags = PokeBall
+Description = A ball that is too heavy to throw, but it is highly effective to an unsuspecting Pokémon.
+#-------------------------------
+[LEADENBALL]
+Name = Leaden Ball
+NamePlural = Leaden Balls
+Pocket = 3
+Price = 1000
+BattleUse = OnFoe
+Flags = PokeBall
+Description = An improvement on the original Heavy Ball design. It has a higher success rate than the Heavy Ball.
+#-------------------------------
+[GIGATONBALL]
+Name = Gigaton Ball
+NamePlural = Gigaton Balls
+Pocket = 3
+Price = 1500
+BattleUse = OnFoe
+Flags = PokeBall
+Description = The ultimate iteration of the Heavy Ball. It has an even higher success rate than the Leaden Ball does.
+#-------------------------------
+[ORIGINBALL]
+Name = Origin Ball
+NamePlural = Origin Balls
+Pocket = 3
+Price = 0
+BattleUse = OnFoe
+Flags = PokeBall
+Description = An irreplicable Poké Ball that was once used to catch the frenzied Pokémon at the Temple of Sinnoh.
+#-------------------------------
+[STRANGEBALL]
+Name = Strange Ball
+NamePlural = Strange Balls
+Pocket = 3
+Price = 0
+BattleUse = OnFoe
+Flags = PokeBall
+Description = A strange looking Poke Ball that arrived from the past Sinnoh.
+#-------------------------------
+[ROTOMPHONE]
+Name = Rotom Phone
+NamePlural = Rotom Phones
+Pocket = 8
+Price = 0
+Flags = KeyItem
+Description = The latest model of smartphone. A Rotom lives within it, and it can be used to run all sorts of handy apps.
+#-------------------------------
+[SYNCHROMACHINE]
+Name = Synchro Machine
+NamePlural = Synchro Machines
+Pocket = 8
+Price = 0
+Flags = KeyItem
+Description = A device that synchronizes your mind and feelings with your Pokémon's as one. It's still a prototype—hence.
+#-------------------------------
+[BRIARSBOOK]
+Name = Briar's Book
+NamePlural = Briar's Books
+Pocket = 8
+Price = 0
+Flags = KeyItem
+Description = A proof copy of the exploration notes, along with Briar's thoughts covering the Area Zero Underdepths.
+#-------------------------------
+# Pokemon Legends Z-A
+#-------------------------------
+[MEGASHARD]
+Name = Mega Shard
+NamePlural = Mega Shards
+Pocket = 1
+Price = 0
+Description = A mysterious shard found by smashing Mega Crystals. It seems that some people collect these shards.
+#-------------------------------
+[REDCANARIPLUSHLV1]
+Name = Red Canari Plush
+NamePlural = Red Canari Plushies
+Pocket = 8
+Price = 0
+Flags = KeyItem
+Description = A Canari plush holding a red charm. It slightly boosts the Exp. Points that Pokémon can get.
+#-------------------------------
+[REDCANARIPLUSHLV2]
+Name = Red Canari Plush
+NamePlural = Red Canari Plushies
+Pocket = 8
+Price = 0
+Flags = KeyItem
+Description = A Canari plush holding a red charm. It boosts the Exp. Points that Pokémon can get.
+#-------------------------------
+[REDCANARIPLUSHLV3]
+Name = Red Canari Plush
+NamePlural = Red Canari Plushies
+Pocket = 8
+Price = 0
+Flags = KeyItem
+Description = A Canari plush holding a red charm. It greatly boosts the Exp. Points that Pokémon can get.
+#-------------------------------
+[GOLDCANARIPLUSHLV1]
+Name = Gold Canari Plush
+NamePlural = Gold Canari Plushies
+Pocket = 8
+Price = 0
+Flags = KeyItem
+Description = A Canari plush holding a gold charm. It slightly increases the battle's prize money you get.
+#-------------------------------
+[GOLDCANARIPLUSHLV2]
+Name = Gold Canari Plush
+NamePlural = Gold Canari Plushies
+Pocket = 8
+Price = 0
+Flags = KeyItem
+Description = A Canari plush holding a gold charm. It increases the battle's prize money you get.
+#-------------------------------
+[GOLDCANARIPLUSHLV3]
+Name = Gold Canari Plush
+NamePlural = Gold Canari Plushies
+Pocket = 8
+Price = 0
+Flags = KeyItem
+Description = A Canari plush holding a gold charm. It greatly increases the battle's prize money you get.
+#-------------------------------
+[PINKCANARIPLUSHLV1]
+Name = Pink Canari Plush
+NamePlural = Pink Canari Plushies
+Pocket = 8
+Price = 0
+Flags = KeyItem
+Description = A Canari plush holding a pink charm. It slightly increases the number of Mega Shards you get.
+#-------------------------------
+[PINKCANARIPLUSHLV2]
+Name = Pink Canari Plush
+NamePlural = Pink Canari Plushies
+Pocket = 8
+Price = 0
+Flags = KeyItem
+Description = A Canari plush holding a pink charm. It increases the number of Mega Shards you get.
+#-------------------------------
+[PINKCANARIPLUSHLV3]
+Name = Pink Canari Plush
+NamePlural = Pink Canari Plushies
+Pocket = 8
+Price = 0
+Flags = KeyItem
+Description = A Canari plush holding a pink charm. It greatly increases the number of Mega Shards you get.
+#-------------------------------
+[GREENCANARIPLUSHLV1]
+Name = Green Canari Plush
+NamePlural = Green Canari Plushies
+Pocket = 8
+Price = 0
+Flags = KeyItem
+Description = A Canari plush holding a green charm. It makes you a little less likely to black out from taking damage.
+#-------------------------------
+[GREENCANARIPLUSHLV2]
+Name = Green Canari Plush
+NamePlural = Green Canari Plushies
+Pocket = 8
+Price = 0
+Flags = KeyItem
+Description = A Canari plush holding a green charm. It makes you a less likely to black out from taking damage.
+#-------------------------------
+[GREENCANARIPLUSHLV3]
+Name = Green Canari Plush
+NamePlural = Green Canari Plushies
+Pocket = 8
+Price = 0
+Flags = KeyItem
+Description = A Canari plush holding a green charm. It makes you a lot less likely to black out from taking damage.
+#-------------------------------
+[BLUECANARIPLUSHLV1]
+Name = Blue Canari Plush
+NamePlural = Blue Canari Plushies
+Pocket = 8
+Price = 0
+Flags = KeyItem
+Description = A Canari plush holding a blue charm. It slightly boosts your chance of catching Pokémon.
+#-------------------------------
+[BLUECANARIPLUSHLV2]
+Name = Blue Canari Plush
+NamePlural = Blue Canari Plushies
+Pocket = 8
+Price = 0
+Flags = KeyItem
+Description = A Canari plush holding a blue charm. It boosts your chance of catching Pokémon.
+#-------------------------------
+[BLUECANARIPLUSHLV3]
+Name = Blue Canari Plush
+NamePlural = Blue Canari Plushies
+Pocket = 8
+Price = 0
+Flags = KeyItem
+Description = A Canari plush holding a blue charm. It greatly boosts your chance of catching Pokémon.
+#-------------------------------
+[HYPERCHERIBERRY]
+Name = Hyper Cheri Berry
+NamePlural = Hyper Cheri Berries
+Pocket = 5
+Price = 0
+Flags = Berry
+Description = A mysterious Berry found in Hyperspace Lumiose. Its spicy kick is great when added to curries.
+#-------------------------------
+[HYPERCHESTOBERRY]
+Name = Hyper Chesto Berry
+NamePlural = Hyper Chesto Berries
+Pocket = 5
+Price = 0
+Flags = Berry
+Description = A mysterious Berry found in Hyperspace Lumiose. Its dry flavor offers a good balance in sweet cream.
+#-------------------------------
+[HYPERPECHABERRY]
+Name = Hyper Pecha Berry
+NamePlural = Hyper Pecha Berries
+Pocket = 5
+Price = 0
+Flags = Berry
+Description = A mysterious Berry found in Hyperspace Lumiose. Its sweet flavor makes it a great ingredient for meringue.
+#-------------------------------
+[HYPERRAWSTBERRY]
+Name = Hyper Rawst Berry
+NamePlural = Hyper Rawst Berries
+Pocket = 5
+Price = 0
+Flags = Berry
+Description = A mysterious Berry found in Hyperspace Lumiose. Its bitter bite works beautifully in chocolate.
+#-------------------------------
+[HYPERASPEARBERRY]
+Name = Hyper Aspear Berry
+NamePlural = Hyper Aspear Berries
+Pocket = 5
+Price = 0
+Flags = Berry
+Description = A mysterious Berry found in Hyperspace Lumiose. Its sour bite makes it perfect for stewing into a confiture.
+#-------------------------------
+[HYPERORANBERRY]
+Name = Hyper Oran Berry
+NamePlural = Hyper Oran Berries
+Pocket = 5
+Price = 0
+Flags = Berry
+Description = A mysterious Berry found in Hyperspace Lumiose. It goes well in curries, meringue, chocolate, and confitures.
+#-------------------------------
+[HYPERPERSIMBERRY]
+Name = Hyper Persim Berry
+NamePlural = Hyper Persim Berries
+Pocket = 5
+Price = 0
+Flags = Berry
+Description = A mysterious Berry found in Hyperspace Lumiose. It goes well in curries, cream, chocolate, and confitures.
+#-------------------------------
+[HYPERLUMBERRY]
+Name = Hyper Lum Berry
+NamePlural = Hyper Lum Berries
+Pocket = 5
+Price = 0
+Flags = Berry
+Description = A mysterious Berry found in Hyperspace Lumiose. It goes well in curries, cream, meringue, and confitures.
+#-------------------------------
+[HYPERSITRUSBERRY]
+Name = Hyper Sitrus Berry
+NamePlural = Hyper Sitrus Berries
+Pocket = 5
+Price = 0
+Flags = Berry
+Description = A mysterious Berry found in Hyperspace Lumiose. It goes well in curries, cream, meringue, and chocolate.
+#-------------------------------
+[HYPERPOMEGBERRY]
+Name = Hyper Pomeg Berry
+NamePlural = Hyper Pomeg Berries
+Pocket = 5
+Price = 0
+Flags = Berry
+Description = A mysterious Berry found in Hyperspace Lumiose. It goes well in curries and meringue.
+#-------------------------------
+[HYPERKELPSYBERRY]
+Name = Hyper Kelpsy Berry
+NamePlural = Hyper Kelpsy Berries
+Pocket = 5
+Price = 0
+Flags = Berry
+Description = A mysterious Berry found in Hyperspace Lumiose. It goes well in cream and chocolate.
+#-------------------------------
+[HYPERQUALOTBERRY]
+Name = Hyper Qualot Berry
+NamePlural = Hyper Qualot Berries
+Pocket = 5
+Price = 0
+Flags = Berry
+Description = A mysterious Berry found in Hyperspace Lumiose. It goes well in meringue and confitures.
+#-------------------------------
+[HYPERHONDEWBERRY]
+Name = Hyper Hondew Berry
+NamePlural = Hyper Hondew Berries
+Pocket = 5
+Price = 0
+Flags = Berry
+Description = A mysterious Berry found in Hyperspace Lumiose. It goes well in cream and confitures.
+#-------------------------------
+[HYPERGREPABERRY]
+Name = Hyper Grepa Berry
+NamePlural = Hyper Grepa Berries
+Pocket = 5
+Price = 0
+Flags = Berry
+Description = A mysterious Berry found in Hyperspace Lumiose. It goes well in curries.
+#-------------------------------
+[HYPERTAMATOBERRY]
+Name = Hyper Tamato Berry
+NamePlural = Hyper Tamato Berries
+Pocket = 5
+Price = 0
+Flags = Berry
+Description = A mysterious Berry found in Hyperspace Lumiose. It goes well in cream.
+#-------------------------------
+[HYPEROCCABERRY]
+Name = Hyper Occa Berry
+NamePlural = Hyper Occa Berries
+Pocket = 5
+Price = 0
+Flags = Berry
+Description = A mysterious Berry found in Hyperspace Lumiose. It goes well in meringue.
+#-------------------------------
+[HYPERPASSHOBERRY]
+Name = Hyper Passho Berry
+NamePlural = Hyper Passho Berries
+Pocket = 5
+Price = 0
+Flags = Berry
+Description = A mysterious Berry found in Hyperspace Lumiose. It goes well in chocolate.
+#-------------------------------
+[HYPERWACANBERRY]
+Name = Hyper Wacan Berry
+NamePlural = Hyper Wacan Berries
+Pocket = 5
+Price = 0
+Flags = Berry
+Description = A mysterious Berry found in Hyperspace Lumiose. It goes well in confitures.
+#-------------------------------
+[HYPERRINDOBERRY]
+Name = Hyper Rindo Berry
+NamePlural = Hyper Rindo Berries
+Pocket = 5
+Price = 0
+Flags = Berry
+Description = A mysterious Berry found in Hyperspace Lumiose. It goes well in curries.
+#-------------------------------
+[HYPERYACHEBERRY]
+Name = Hyper Yache Berry
+NamePlural = Hyper Yache Berries
+Pocket = 5
+Price = 0
+Flags = Berry
+Description = A mysterious Berry found in Hyperspace Lumiose. It goes well in cream.
+#-------------------------------
+[HYPERCHOPLEBERRY]
+Name = Hyper Chople Berry
+NamePlural = Hyper Chople Berries
+Pocket = 5
+Price = 0
+Flags = Berry
+Description = A mysterious Berry found in Hyperspace Lumiose. It goes well in meringue.
+#-------------------------------
+[HYPERKEBIABERRY]
+Name = Hyper Kebia Berry
+NamePlural = Hyper Kebia Berries
+Pocket = 5
+Price = 0
+Flags = Berry
+Description = A mysterious Berry found in Hyperspace Lumiose. It goes well in chocolate.
+#-------------------------------
+[HYPERSHUCABERRY]
+Name = Hyper Shuca Berry
+NamePlural = Hyper Shuca Berries
+Pocket = 5
+Price = 0
+Flags = Berry
+Description = A mysterious Berry found in Hyperspace Lumiose. It goes well in confitures.
+#-------------------------------
+[HYPERCOBABERRY]
+Name = Hyper Coba Berry
+NamePlural = Hyper Coba Berries
+Pocket = 5
+Price = 0
+Flags = Berry
+Description = A mysterious Berry found in Hyperspace Lumiose. It goes well in curries.
+#-------------------------------
+[HYPERPAYAPABERRY]
+Name = Hyper Payapa Berry
+NamePlural = Hyper Payapa Berries
+Pocket = 5
+Price = 0
+Flags = Berry
+Description = A mysterious Berry found in Hyperspace Lumiose. It goes well in cream.
+#-------------------------------
+[HYPERTANGABERRY]
+Name = Hyper Tanga Berry
+NamePlural = Hyper Tanga Berries
+Pocket = 5
+Price = 0
+Flags = Berry
+Description = A mysterious Berry found in Hyperspace Lumiose. It goes well in meringue.
+#-------------------------------
+[HYPERCHARTIBERRY]
+Name = Hyper Charti Berry
+NamePlural = Hyper Charti Berries
+Pocket = 5
+Price = 0
+Flags = Berry
+Description = A mysterious Berry found in Hyperspace Lumiose. It goes well in chocolate.
+#-------------------------------
+[HYPERKASIBBERRY]
+Name = Hyper Kasib Berry
+NamePlural = Hyper Kasib Berries
+Pocket = 5
+Price = 0
+Flags = Berry
+Description = A mysterious Berry found in Hyperspace Lumiose. It goes well in confitures.
+#-------------------------------
+[HYPERHABANBERRY]
+Name = Hyper Haban Berry
+NamePlural = Hyper Haban Berries
+Pocket = 5
+Price = 0
+Flags = Berry
+Description = A mysterious Berry found in Hyperspace Lumiose. It goes well in cream and meringue.
+#-------------------------------
+[HYPERCOLBURBERRY]
+Name = Hyper Colbur Berry
+NamePlural = Hyper Colbur Berries
+Pocket = 5
+Price = 0
+Flags = Berry
+Description = A mysterious Berry found in Hyperspace Lumiose. It goes well in cream and confitures.
+#-------------------------------
+[HYPERBABIRIBERRY]
+Name = Hyper Babiri Berry
+NamePlural = Hyper Babiri Berries
+Pocket = 5
+Price = 0
+Flags = Berry
+Description = A mysterious Berry found in Hyperspace Lumiose. It goes well in chocolate and confitures.
+#-------------------------------
+[HYPERCHILANBERRY]
+Name = Hyper Chilan Berry
+NamePlural = Hyper Chilan Berries
+Pocket = 5
+Price = 0
+Flags = Berry
+Description = A mysterious Berry found in Hyperspace Lumiose. It goes well in curries and chocolate.
+#-------------------------------
+[HYPERROSELIBERRY]
+Name = Hyper Roseli Berry
+NamePlural = Hyper Roseli Berries
+Pocket = 5
+Price = 0
+Flags = Berry
+Description = A mysterious Berry found in Hyperspace Lumiose. It goes well in curries and confitures.
+#-------------------------------
+[CANARIBREAD]
+Name = Canari Bread
+NamePlural = Canari Breads
+Pocket = 2
+Price = 0
+FieldUse = OnPokemon
+BattleUse = OnPokemon
+Flags = Fling_30
+Description = A bun made to look like Canari's face. It can be used to restore 100 HP to a Pokémon.
+#-------------------------------
+[LUMIOSIANBUTTER]
+Name = Lumiosian Butter
+NamePlural = Lumiosian Butters
+PortionName = pack of Lumiosian Butter
+PortionNamePlural = packs of Lumiosian Butter
+Pocket = 8
+Price = 0
+Flags = KeyItem
+Description = Some of the best butter produced in the Kalos region. Highly sought after by the cooks of Lumiose.
+#-------------------------------
+[NICEBUTTER]
+Name = Nice Butter
+NamePlural = Nice Butters
+PortionName = pack of Nice Butter
+PortionNamePlural = packs of Nice Butter
+Pocket = 8
+Price = 0
+Flags = KeyItem
+Description = A nice pack of butter found in Hyperspace Lumiose. With it, you could make higher quality donuts.
+#-------------------------------
+[GREATBUTTER]
+Name = Great Butter
+NamePlural = Great Butters
+PortionName = pack of Great Butter
+PortionNamePlural = packs of Great Butter
+Pocket = 8
+Price = 0
+Flags = KeyItem
+Description = A great pack of butter found in Hyperspace Lumiose. With it, you could make higher quality donuts.
+#-------------------------------
+[AMAZINGBUTTER]
+Name = Amazing Butter
+NamePlural = Amazing Butters
+PortionName = pack of Amazing Butter
+PortionNamePlural = packs of Amazing Butter
+Pocket = 8
+Price = 0
+Flags = KeyItem
+Description = An amazing pack of butter found in Hyperspace Lumiose. With it, you could make higher quality donuts.
+#-------------------------------
+[SUPREMEBUTTER]
+Name = Supreme Butter
+NamePlural = Supreme Butters
+PortionName = pack of Supreme Butter
+PortionNamePlural = packs of Supreme Butter
+Pocket = 8
+Price = 0
+Flags = KeyItem
+Description = A supreme pack of butter found in Hyperspace Lumiose. With it, you could make higher quality donuts.
+#-------------------------------
+[HYPERSPACEBUTTER]
+Name = Hyperspace Butter
+NamePlural = Hyperspace Butters
+PortionName = pack of Hyperspace Butter
+PortionNamePlural = packs of Hyperspace Butter
+Pocket = 8
+Price = 0
+Flags = KeyItem
+Description = The absolute ultimate butter found in Hyperspace Lumiose. With it, you could make higher quality donuts.
+#-------------------------------
+[HOENNIANSALT]
+Name = Hoennian Salt
+NamePlural = Hoennian Salts
+Pocket = 8
+Price = 0
+Flags = KeyItem
+Description = A coarse salt harvested in the Hoenn region. A tiny pinch will impart a wondrous depth of flavor.
+#-------------------------------
+[EPICENOIRE]
+Name = Épice Noire
+NamePlural = Épice Noires
+Pocket = 8
+Price = 0
+Flags = KeyItem
+Description = A mysterious, highly prized spice of the Rust Syndicate that elevates any dish to dreamlike perfection.
+#-------------------------------
+[ARBOLIVAOIL]
+Name = Arboliva Oil
+NamePlural = Arboliva Oils
+Pocket = 8
+Price = 0
+Flags = KeyItem
+Description = Oil from Paldea's Arboliva, said to taste heavenly. How Corbeau obtained it remains a mystery.
+#-------------------------------

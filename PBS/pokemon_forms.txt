@@ -191,7 +191,7 @@ Pokedex = Controla la electricidad a voluntad. Puede subirse a su propia cola y 
 Generation = 7
 #-------------------------------
 [RAICHU,2]
-FormName = Mega Raichu x
+FormName = Mega Raichu X
 MegaStone = RAICHUNITEX
 BaseStats = 60,135,95,110,90,95
 BaseExp = 300
@@ -894,6 +894,7 @@ Generation = 9
 FormName = Forma Picoreja
 Generation = 4
 Evolutions = PIKACHU,None,
+CallRateSOS = 0
 #-------------------------------
 [AMPHAROS,1]
 FormName = Mega Ampharos
@@ -1419,6 +1420,7 @@ Height = 9.8
 Weight = 430.0
 Pokedex = Experimentó una regresión a causa de la energía primigenia que albergaba el Prisma Azul. Su cuerpo parece estar compuesto de agua marina.
 Generation = 6
+Flags = Legendary,CannotDynamax
 #-------------------------------
 [GROUDON,1]
 FormName = Forma Primigenia
@@ -1430,6 +1432,7 @@ Height = 5.0
 Weight = 999.7
 Pokedex = Recuperó su forma original gracias al Prisma Rojo. Su cuerpo rebosa de energía en forma de magma incandescente.
 Generation = 6
+Flags = Legendary,CannotDynamax
 #-------------------------------
 [RAYQUAZA,1]
 FormName = Mega Rayquaza
@@ -1569,7 +1572,6 @@ Generation = 6
 #-------------------------------
 [LUCARIO,2]
 FormName = Mega Lucario Z
-Types = FIGHTING,PSYCHIC
 MegaStone = LUCARIONITEZ
 BaseStats = 70,100,70,151,164,70
 BaseExp = 219
@@ -2096,6 +2098,14 @@ HiddenAbilities = VOLTABSORB
 Height = 3.0
 Shape = BipedalTail
 #-------------------------------
+[RESHIRAM,1]
+FormName = Sobremarcha
+Pokedex = En su estado de Sobremarcha, las llamas de Reshiram se disparan sin control, convirtiendo su cuerpo en un infierno rugiente. Sus alas ardientes pueden derretir la piedra, y se dice que su poder encarna la verdad absoluta.
+#-------------------------------
+[ZEKROM,1]
+FormName = Sobremarcha
+Pokedex = En su estado de Sobremarcha, Zekrom desborda violentos relámpagos, y su cuerpo crepita con una energía implacable. Se dice que cada golpe atronador refuerza sus ideales con un poder abrumador.
+#-------------------------------
 [LANDORUS,1]
 FormName = Forma Tótem
 BaseStats = 89,145,90,91,105,80
@@ -2316,6 +2326,7 @@ Moves = 1,TACKLE,1,VINEWHIP,1,FAIRYWIND,6,FAIRYWIND,10,LUCKYCHANT,15,RAZORLEAF,2
 EggGroups = Undiscovered
 Pokedex = Hoy en día, la flor que lleva ya no se ve en la naturaleza. Se cree que alberga un temible poder.
 Evolutions = FLORGES,None,
+CallRateSOS = 0
 #-------------------------------
 [FLOETTE,6]
 FormName = Mega Floette
@@ -2376,6 +2387,19 @@ Color = White
 Pokedex = Son ligeramente más agresivas y egoístas que los machos. Castigan sin piedad con sus poderes psíquicos a quienes las enojen.
 #-------------------------------
 [MEOWSTIC,2]
+FormName = Mega Meowstic
+MegaStone = MEOWSTICITE
+BaseStats = 74,48,76,124,143,101
+BaseExp = 198
+Abilities = PSYCHICSURGE
+HiddenAbilities = PSYCHICSURGE
+UnmegaForm = -2
+Height = 0.8
+Weight = 10.1
+Pokedex = Mega Meowstic puede usar su poder psíquico para comprimir o expandir cualquier cosa. Abruma a sus enemigos distorsionando el espacio mismo.
+Generation = 9
+#-------------------------------
+[MEOWSTIC,3]
 FormName = Mega Meowstic
 MegaStone = MEOWSTICITE
 BaseStats = 74,48,76,124,143,101
@@ -2588,6 +2612,67 @@ Weight = 610.0
 UnmegaForm = -2
 Pokedex = En crisis sin precedentes, megaevoluciona en respuesta a las emociones de la gente. Domina cualquier situación con su fuerza sin igual.
 Generation = 9
+Flags = Legendary
+#-------------------------------
+[ZYGARDE,5]
+FormName = Mega Zygarde
+MegaStone = ZYGARDITE
+BaseStats = 74,65,67,92,125,128
+Abilities = POWERCONSTRUCT
+HiddenAbilities = POWERCONSTRUCT
+Height = 7.7
+Weight = 610.0
+UnmegaForm = -2
+Pokedex = En crisis sin precedentes, megaevoluciona en respuesta a las emociones de la gente. Domina cualquier situación con su fuerza sin igual.
+Generation = 9
+Flags = Legendary
+#-------------------------------
+[ZYGARDE,6]
+FormName = Zygarde Núcleo
+BaseStats = 10,10,10,10,10,10
+GenderRatio = Genderless
+GrowthRate = Slow
+BaseExp = 1
+EVs = HP,1
+CatchRate = 255
+Happiness = 0
+Abilities = POWERCONSTRUCT
+Moves = 1,THOUSANDARROWS
+TutorMoves = BIND
+EggGroups = Undiscovered
+HatchSteps = 1
+Height = 0.5
+Weight = 1.0
+Color = Green
+Shape = Serpentine
+Habitat = Rare
+Category = Núcleo
+Pokedex = Un Núcleo de Zygarde actúa como su cerebro. Comanda las Células y dirige su ensamblaje, manteniendo el equilibrio del ecosistema.
+Generation = 7
+Flags = Legendary
+#-------------------------------
+[ZYGARDE,7]
+FormName = Zygarde Célula
+BaseStats = 1,1,1,1,1,1
+GenderRatio = Genderless
+GrowthRate = Slow
+BaseExp = 1
+EVs = HP,1
+CatchRate = 255
+Happiness = 0
+Abilities = POWERCONSTRUCT
+Moves = 1,THOUSANDARROWS
+TutorMoves = BIND
+EggGroups = Undiscovered
+HatchSteps = 1
+Height = 0.2
+Weight = 0.1
+Color = Green
+Shape = Serpentine
+Habitat = Rare
+Category = Cell
+Pokedex = Una Célula de Zygarde es un diminuto componente de Zygarde que observa el ecosistema. Por sí sola no puede combatir, pero recopila la información necesaria para restaurar su verdadera forma.
+Generation = 7
 Flags = Legendary
 #-------------------------------
 [DIANCIE,1]
@@ -2865,6 +2950,16 @@ Weight = 240.5
 Pokedex = Las células de su cuerpo se regeneraron, por lo que recuperó la juventud. Es capaz de manipular la atmósfera para invocar tormentas.
 Generation = 9
 #-------------------------------
+[SOLGALEO,1]
+FormName = Fase Sol Ascendente
+Color = Yellow
+Pokedex = En su Fase Sol Ascendente, Solgaleo resplandece como una estrella recién nacida, irradiando intenso calor y luz. Según la leyenda, su rugido anuncia el nacimiento de un nuevo amanecer.
+#-------------------------------
+[LUNALA,1]
+FormName = Fase Luna Llena
+Color = Blue
+Pokedex = En su Fase Luna Llena, Lunala brilla con una tenue luz lunar, cubriendo el mundo de silencio. Bajo la luna llena, se dice que dobla las sombras y abre caminos invisibles.
+#-------------------------------
 [NECROZMA,1]
 FormName = Forma Melena Crepuscular
 Types = PSYCHIC,STEEL
@@ -2898,6 +2993,7 @@ Abilities = NEUROFORCE
 Height = 7.5
 Color = Yellow
 Pokedex = Esta forma es el resultado de haber absorbido una gran cantidad de energía luminosa. Emite rayos láser por todo el cuerpo.
+Flags = Legendary,CannotDynamax
 #-------------------------------
 [NECROZMA,4]
 PokedexForm = 3
@@ -2908,6 +3004,7 @@ EVs = ATTACK,1,SPECIAL_ATTACK,1,SPEED,1
 Abilities = NEUROFORCE
 Height = 7.5
 Color = Yellow
+Flags = Legendary,CannotDynamax
 #-------------------------------
 [MAGEARNA,1]
 FormName = Forma Color Vetusta
@@ -2940,6 +3037,11 @@ Weight = 248.1
 UnmegaForm = 1
 Pokedex = Un mecanismo para eliminar las limitaciones de Magearna ha permanecido oculto dentro de ella durante 500 años. Este mecanismo se activa mediante una Megapiedra.
 Generation = 9
+#-------------------------------
+[MARSHADOW,1]
+FormName = Forma Cénit
+Color = Green
+Pokedex = Cuando se enoja o ataca, el espíritu de lucha de Marshadow comenzará a arder, convirtiéndolo en su forma Cénit.
 #-------------------------------
 [ZERAORA,1]
 FormName = Mega Zeraora
@@ -3271,7 +3373,6 @@ Pokedex = Cuando se ve amenazado, se defiende lanzando a sus agresores una nata 
 [FALINKS,1]
 FormName = Mega Falinks
 MegaStone = FALINKSITE
-Types = FIGHTING
 BaseStats = 65,135,135,100,70,65
 Abilities = ADAPTABILITY
 HiddenAbilities = ADAPTABILITY
@@ -3308,6 +3409,14 @@ BaseExp = 360
 Weight = 355.0
 Pokedex = En esta forma, capaz de cortar cualquier cosa, es temido y respetado y se lo conoce como la Regia Espada Silvana.
 #-------------------------------
+[ZACIAN,2]
+FormName = Corte Supremo
+Types = FAIRY,STEEL
+BaseStats = 92,150,115,148,80,115
+BaseExp = 360
+Weight = 355.0
+Pokedex = Cuando Zacian desata su Corte Supremo, su melena ondulante se expande y se fusiona con su espada, aumentando considerablemente su tamaño. En esta forma, se dice que un solo golpe puede atravesar incluso las defensas más fuertes.
+#-------------------------------
 [ZAMAZENTA,1]
 FormName = Forma Escudo Supremo
 Types = FIGHTING,STEEL
@@ -3316,12 +3425,24 @@ BaseExp = 360
 Weight = 785.0
 Pokedex = Esta forma, temida y venerada por igual, le ha valido el nombre de Regio Escudo Guerrero por su capacidad de repeler cualquier ataque.
 #-------------------------------
+[ZAMAZENTA,2]
+FormName = Golpe Supremo
+Types = FIGHTING,STEEL
+BaseStats = 92,120,140,128,80,140
+BaseExp = 360
+Weight = 785.0
+Pokedex = Cuando Zamazenta usa su Golpe Supremo, su escudo se expande y endurece, amplificando la fuerza de su carga. Esta forma convierte su defensa en un ataque imparable.
+#-------------------------------
 [URSHIFU,1]
 FormName = Estilo Fluido
 Types = FIGHTING,WATER
 Moves = 0,SURGINGSTRIKES,1,AQUAJET,1,ROCKSMASH,1,LEER,1,ENDURE,1,FOCUSENERGY,12,AERIALACE,16,SCARYFACE,20,HEADBUTT,24,BRICKBREAK,28,DETECT,32,BULKUP,36,IRONHEAD,40,DYNAMICPUNCH,44,COUNTER,48,CLOSECOMBAT,52,FOCUSPUNCH
 TutorMoves = ACROBATICS,ATTRACT,AURASPHERE,BODYPRESS,BODYSLAM,BRICKBREAK,BRINE,BULKUP,CAPTIVATE,CLOSECOMBAT,COACHING,CONFIDE,DIG,DIVE,DOUBLEEDGE,DOUBLETEAM,DRAINPUNCH,ENDURE,FACADE,FALSESWIPE,FIREPUNCH,FOCUSBLAST,FOCUSENERGY,FRUSTRATION,GIGAIMPACT,HELPINGHAND,HIDDENPOWER,ICEPUNCH,IRONDEFENSE,IRONHEAD,LIQUIDATION,LOWKICK,LOWSWEEP,MEGAKICK,MEGAPUNCH,MIMIC,NATURALGIFT,POISONJAB,PROTECT,RAINDANCE,REST,RETALIATE,RETURN,REVENGE,REVERSAL,ROCKSLIDE,ROCKTOMB,ROUND,SCALD,SCARYFACE,SECRETPOWER,SLEEPTALK,SNORE,STONEEDGE,SUBSTITUTE,SUPERPOWER,SWAGGER,SWIFT,TAUNT,THUNDERPUNCH,TOXIC,UTURN,WATERFALL,WHIRLPOOL,WORKUP,ZENHEADBUTT,AERIALACE,CHILLINGWATER,FLING,FOCUSPUNCH,ICESPINNER,SWORDSDANCE,TAKEDOWN,TRAILBLAZE
 Pokedex = Su estilo de combate se inspira en el flujo del agua y consiste en castigar al oponente de forma constante e ininterrumpida.
+#-------------------------------
+[ZARUDE,1]
+FormName = Papá
+Pokedex = La fuerza especial de este Zarude proviene de su amor y cuidado por un niño humano huérfano que el Pokémon ha criado desde la infancia del niño.
 #-------------------------------
 [CALYREX,1]
 FormName = Forma Jinete Glacial
@@ -3369,7 +3490,6 @@ Generation = 9
 #-------------------------------
 [BASCULEGION,1]
 FormName = Forma Hembra
-GenderRatio = AlwaysFemale
 BaseStats = 120,92,65,78,100,75
 #-------------------------------
 [ENAMORUS,1]
@@ -3471,7 +3591,7 @@ FormName = Forma Recta
 Color = Yellow
 Pokedex = Se alimenta principalmente de Pokémon pájaro. Es consciente de que es débil, por lo que caza junto a un compañero.
 #-------------------------------
-[TATSUGIRI, 3]
+[TATSUGIRI,3]
 FormName = Mega Tatsugiri Forma Curvada
 MegaStone = TATSUGIRINITE
 BaseStats = 68,65,90,92,135,125
@@ -3484,7 +3604,7 @@ UnmegaForm = 0
 Pokedex = La megaevolución ha estimulado su cerebro y lo ha vuelto aún más astuto. En combate, crea y controla réplicas de sí mismo.
 Generation = 9
 #-------------------------------
-[TATSUGIRI, 4]
+[TATSUGIRI,4]
 FormName = Mega Tatsugiri Forma Lánguida
 Color = Red 
 MegaStone = TATSUGIRINITE
@@ -3498,7 +3618,7 @@ UnmegaForm = 1
 Pokedex = La megaevolución le permite solidificar la energía de la transformación, liberando esferas que explotan al mínimo contacto.
 Generation = 9
 #-------------------------------
-[TATSUGIRI, 5]
+[TATSUGIRI,5]
 FormName = Mega Tatsugiri Forma Recta
 Color = Yellow
 MegaStone = TATSUGIRINITE
@@ -3647,4 +3767,8 @@ Weight = 77.0
 Shape = Head
 Pokedex = Adopta esta forma cuando su energía Teracristal se ve amplificada descomunalmente. Se asemeja a la imagen del mundo que la gente tenía antaño.
 Flags = Legendary,TeraType_STELLAR
+#-------------------------------
+[PECHARUNT,1]
+FormName = Caparazón
+Pokedex = Mientras permanece encerrado en su caparazón, Pecharunt suprime su aroma tóxico y permanece latente. A pesar de su quietud, su influencia corruptora se filtra lentamente a través del caparazón.
 #-------------------------------

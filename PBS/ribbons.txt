@@ -1,401 +1,1213 @@
 ﻿# See the documentation on the wiki to learn how to edit this file.
 #-------------------------------
 [HOENNCOOL]
-Name = Cinta Carisma
+Name = Cool Ribbon
 IconPosition = 0
-Description = ¡Ganador de la categoría Normal del Concurso Carisma!
+Description = Hoenn Cool Contest Normal Rank winner!
+Flags = ContestRibbon
 #-------------------------------
 [HOENNCOOLSUPER]
-Name = Cinta Carisma Alto
+Name = Cool Ribbon Super
 IconPosition = 1
-Description = ¡Ganador de la categoría Alto del Concurso Carisma!
+Description = Hoenn Cool Contest Super Rank winner!
+PreviousRanks = HOENNCOOL
+Flags = ContestRibbon
 #-------------------------------
 [HOENNCOOLHYPER]
-Name = Cinta Carisma Avanzado
+Name = Cool Ribbon Hyper
 IconPosition = 2
-Description = ¡Ganador de la categoría Avanzado del Concurso Carisma!
+Description = Hoenn Cool Contest Hyper Rank winner!
+PreviousRanks = HOENNCOOL,HOENNCOOLSUPER
+Flags = ContestRibbon
 #-------------------------------
 [HOENNCOOLMASTER]
-Name = Cinta Carisma Experto
+Name = Cool Ribbon Master
 IconPosition = 3
-Description = ¡Ganador de la categoría Experto del Concurso Carisma!
+Description = Hoenn Cool Contest Master Rank winner!
+PreviousRanks = HOENNCOOL,HOENNCOOLSUPER,HOENNCOOLHYPER
+Flags = ContestRibbon
 #-------------------------------
 [HOENNBEAUTY]
-Name = Cinta Belleza
+Name = Beauty Ribbon
 IconPosition = 4
-Description = ¡Ganador de la categoría Normal del Concurso de Belleza!
+Description = Hoenn Beauty Contest Normal Rank winner!
+Flags = ContestRibbon
 #-------------------------------
 [HOENNBEAUTYSUPER]
-Name = Cinta Belleza Alto
+Name = Beauty Ribbon Super
 IconPosition = 5
-Description = ¡Ganador de la categoría Alto del Concurso de Belleza!
+Description = Hoenn Beauty Contest Super Rank winner!
+PreviousRanks = HOENNBEAUTY
+Flags = ContestRibbon
 #-------------------------------
 [HOENNBEAUTYHYPER]
-Name = Cinta Belleza Avanzado
+Name = Beauty Ribbon Hyper
 IconPosition = 6
-Description = ¡Ganador de la categoría Avanzado del Concurso de Belleza!
+Description = Hoenn Beauty Contest Hyper Rank winner!
+PreviousRanks = HOENNBEAUTY,HOENNBEAUTYSUPER
+Flags = ContestRibbon
 #-------------------------------
 [HOENNBEAUTYMASTER]
-Name = Cinta Belleza Experto
+Name = Beauty Ribbon Master
 IconPosition = 7
-Description = ¡Ganador de la categoría Experto del Concurso de Belleza!
+Description = Hoenn Beauty Contest Master Rank winner!
+PreviousRanks = HOENNBEAUTY,HOENNBEAUTYSUPER,HOENNBEAUTYHYPER
+Flags = ContestRibbon
 #-------------------------------
 [HOENNCUTE]
-Name = Cinta Dulzura
+Name = Cute Ribbon
 IconPosition = 8
-Description = ¡Ganador de la categoría Normal del Concurso de Dulzura!
+Description = Hoenn Cute Contest Normal Rank winner!
+Flags = ContestRibbon
 #-------------------------------
 [HOENNCUTESUPER]
-Name = Cinta Dulzura Alto
+Name = Cute Ribbon Super
 IconPosition = 9
-Description = ¡Ganador de la categoría Alto del Concurso de Dulzura!
+Description = Hoenn Cute Contest Super Rank winner!
+PreviousRanks = HOENNCUTE
+Flags = ContestRibbon
 #-------------------------------
 [HOENNCUTEHYPER]
-Name = Cinta Dulzura Avanzado
+Name = Cute Ribbon Hyper
 IconPosition = 10
-Description = ¡Ganador de la categoría Avanzado del Concurso de Dulzura!
+Description = Hoenn Cute Contest Hyper Rank winner!
+PreviousRanks = HOENNCUTE,HOENNCUTESUPER
+Flags = ContestRibbon
 #-------------------------------
 [HOENNCUTEMASTER]
-Name = Cinta Dulzura Experto
+Name = Cute Ribbon Master
 IconPosition = 11
-Description = ¡Ganador de la categoría Experto del Concurso de Dulzura!
+Description = Hoenn Cute Contest Master Rank winner!
+PreviousRanks = HOENNCUTE,HOENNCUTESUPER,HOENNCUTEHYPER
+Flags = ContestRibbon
 #-------------------------------
 [HOENNSMART]
-Name = Cinta Ingenio
+Name = Smart Ribbon
 IconPosition = 12
-Description = ¡Ganador de la categoría Normal del Concurso de Ingenio!
+Description = Hoenn Smart Contest Normal Rank winner!
+Flags = ContestRibbon
 #-------------------------------
 [HOENNSMARTSUPER]
-Name = Cinta Ingenio Alto
+Name = Smart Ribbon Super
 IconPosition = 13
-Description = ¡Ganador de la categoría Alto del Concurso de Ingenio!
+Description = Hoenn Smart Contest Super Rank winner!
+PreviousRanks = HOENNSMART
+Flags = ContestRibbon
 #-------------------------------
 [HOENNSMARTHYPER]
-Name = Cinta Ingenio Avanzado
+Name = Smart Ribbon Hyper
 IconPosition = 14
-Description = ¡Ganador de la categoría Avanzado del Concurso de Ingenio!
+Description = Hoenn Smart Contest Hyper Rank winner!
+PreviousRanks = HOENNSMART,HOENNSMARTSUPER
+Flags = ContestRibbon
 #-------------------------------
 [HOENNSMARTMASTER]
-Name = Cinta Ingenio Experto
+Name = Smart Ribbon Master
 IconPosition = 15
-Description = ¡Ganador de la categoría Experto del Concurso de Ingenio!
+Description = Hoenn Smart Contest Master Rank winner!
+PreviousRanks = HOENNSMART,HOENNSMARTSUPER,HOENNSMARTHYPER
+Flags = ContestRibbon
 #-------------------------------
 [HOENNTOUGH]
-Name = Cinta Dureza
+Name = Tough Ribbon
 IconPosition = 16
-Description = ¡Ganador de la categoría Normal del Concurso de Dureza!
+Description = Hoenn Tough Contest Normal Rank winner!
+Flags = ContestRibbon
 #-------------------------------
 [HOENNTOUGHSUPER]
-Name = Cinta Dureza Alto
+Name = Tough Ribbon Super
 IconPosition = 17
-Description = ¡Ganador de la categoría Alto del Concurso de Dureza!
+Description = Hoenn Tough Contest Super Rank winner!
+PreviousRanks = HOENNTOUGH
+Flags = ContestRibbon
 #-------------------------------
 [HOENNTOUGHHYPER]
-Name = Cinta Dureza Avanzado
+Name = Tough Ribbon Hyper
 IconPosition = 18
-Description = ¡Ganador de la categoría Avanzado del Concurso de Dureza!
+Description = Hoenn Tough Contest Hyper Rank winner!
+PreviousRanks = HOENNTOUGH,HOENNTOUGHSUPER
+Flags = ContestRibbon
 #-------------------------------
 [HOENNTOUGHMASTER]
-Name = Cinta Dureza Experto
+Name = Tough Ribbon Master
 IconPosition = 19
-Description = ¡Ganador de la categoría Experto del Concurso de Dureza!
+Description = Hoenn Tough Contest Master Rank winner!
+PreviousRanks = HOENNTOUGH,HOENNTOUGHSUPER,HOENNTOUGHHYPER
+Flags = ContestRibbon
 #-------------------------------
 [SINNOHCOOL]
-Name = Cinta Carisma
+Name = Cool Ribbon
 IconPosition = 20
-Description = ¡Ganador de la categoría Normal del Súper concurso de Categoría Carisma!
+Description = Super Contest Cool Category Normal Rank winner!
+Flags = ContestRibbon
 #-------------------------------
-[SINNOHCOOLSUPER]
-Name = Cinta Carisma Difícil
+[SINNOHCOOLGREAT]
+Name = Cool Ribbon Great
 IconPosition = 21
-Description = ¡Ganador de la categoría Difícil del Súper concurso de Categoría Carisma!
+Description = Super Contest Cool Category Great Rank winner!
+PreviousRanks = SINNOHCOOL
+Flags = ContestRibbon
 #-------------------------------
-[SINNOHCOOLHYPER]
-Name = Cinta Carisma Superior
+[SINNOHCOOLULTRA]
+Name = Cool Ribbon Ultra
 IconPosition = 22
-Description = ¡Ganador de la categoría Superior del Súper concurso de Categoría Carisma!
+Description = Super Contest Cool Category Ultra Rank winner!
+PreviousRanks = SINNOHCOOL,SINNOHCOOLGREAT
+Flags = ContestRibbon
 #-------------------------------
 [SINNOHCOOLMASTER]
-Name = Cinta Carisma Experto
+Name = Cool Ribbon Master
 IconPosition = 23
-Description = ¡Ganador de la categoría Experto del Súper concurso de Categoría Carisma!
+Description = Super Contest Cool Category Master Rank winner!
+PreviousRanks = SINNOHCOOL,SINNOHCOOLGREAT,SINNOHCOOLULTRA
+Flags = ContestRibbon
 #-------------------------------
 [SINNOHBEAUTY]
-Name = Cinta de Belleza
+Name = Beauty Ribbon
 IconPosition = 24
-Description = ¡Ganador de la categoría Normal del Súper concurso de Categoría Belleza!
+Description = Super Contest Beauty Category Normal Rank winner!
+Flags = ContestRibbon
 #-------------------------------
-[SINNOHBEAUTYSUPER]
-Name = Cinta Belleza Difícil
+[SINNOHBEAUTYGREAT]
+Name = Beauty Ribbon Great
 IconPosition = 25
-Description = ¡Ganador de la categoría Difícil del Súper concurso de Categoría Belleza!
+Description = Super Contest Beauty Category Great Rank winner!
+PreviousRanks = SINNOHBEAUTY
+Flags = ContestRibbon
 #-------------------------------
-[SINNOHBEAUTYHYPER]
-Name = Cinta Belleza Superior
+[SINNOHBEAUTYULTRA]
+Name = Beauty Ribbon Ultra
 IconPosition = 26
-Description = ¡Ganador de la categoría Superior del Súper concurso de Categoría Belleza!
+Description = Super Contest Beauty Category Ultra Rank winner!
+PreviousRanks = SINNOHBEAUTY,SINNOHBEAUTYGREAT
+Flags = ContestRibbon
 #-------------------------------
 [SINNOHBEAUTYMASTER]
-Name = Cinta Belleza Experto
+Name = Beauty Ribbon Master
 IconPosition = 27
-Description = ¡Ganador de la categoría Experto del Súper concurso de Categoría Belleza!
+Description = Super Contest Beauty Category Master Rank winner!
+PreviousRanks = SINNOHBEAUTY,SINNOHBEAUTYGREAT,SINNOHBEAUTYULTRA
+Flags = ContestRibbon
 #-------------------------------
 [SINNOHCUTE]
-Name = Cinta Dulzura
+Name = Cute Ribbon
 IconPosition = 28
-Description = ¡Ganador de la categoría Normal del Súper concurso de Categoría Dulzura!
+Description = Super Contest Cute Category Normal Rank winner!
+Flags = ContestRibbon
 #-------------------------------
-[SINNOHCUTESUPER]
-Name = Cinta Dulzura Difícil
+[SINNOHCUTEGREAT]
+Name = Cute Ribbon Great
 IconPosition = 29
-Description = ¡Ganador de la categoría Difícil del Súper concurso de Categoría Dulzura!
+Description = Super Contest Cute Category Great Rank winner!
+PreviousRanks = SINNOHCUTE
+Flags = ContestRibbon
 #-------------------------------
-[SINNOHCUTEHYPER]
-Name = Cinta Dulzura Superior
+[SINNOHCUTEULTRA]
+Name = Cute Ribbon Ultra
 IconPosition = 30
-Description = ¡Ganador de la categoría Superior del Súper concurso de Categoría Dulzura!
+Description = Super Contest Cute Category Ultra Rank winner!
+PreviousRanks = SINNOHCUTE,SINNOHCUTEGREAT
+Flags = ContestRibbon
 #-------------------------------
 [SINNOHCUTEMASTER]
-Name = Cinta Dulzura Experto
+Name = Cute Ribbon Master
 IconPosition = 31
-Description = ¡Ganador de la categoría Experto del Súper concurso de Categoría Dulzura!
+Description = Super Contest Cute Category Master Rank winner!
+PreviousRanks = SINNOHCUTE,SINNOHCUTEGREAT,SINNOHCUTEULTRA
+Flags = ContestRibbon
 #-------------------------------
 [SINNOHSMART]
-Name = Cinta Ingenio
+Name = Smart Ribbon
 IconPosition = 32
-Description = ¡Ganador de la categoría Normal del Súper concurso de Categoría Ingenio!
+Description = Super Contest Smart Category Normal Rank winner!
+Flags = ContestRibbon
 #-------------------------------
-[SINNOHSMARTSUPER]
-Name = Cinta Ingenio Difícil
+[SINNOHSMARTGREAT]
+Name = Smart Ribbon Great
 IconPosition = 33
-Description = ¡Ganador de la categoría Difícil del Súper concurso de Categoría Ingenio!
+Description = Super Contest Smart Category Great Rank winner!
+PreviousRanks = SINNOHSMART
+Flags = ContestRibbon
 #-------------------------------
-[SINNOHSMARTHYPER]
-Name = Cinta Ingenio Superior
+[SINNOHSMARTULTRA]
+Name = Smart Ribbon Ultra
 IconPosition = 34
-Description = ¡Ganador de la categoría Superior del Súper concurso de Categoría Ingenio!
+Description = Super Contest Smart Category Ultra Rank winner!
+PreviousRanks = SINNOHSMART,SINNOHSMARTGREAT
+Flags = ContestRibbon
 #-------------------------------
 [SINNOHSMARTMASTER]
-Name = Cinta Ingenio Experto
+Name = Smart Ribbon Master
 IconPosition = 35
-Description = ¡Ganador de la categoría Experto del Súper concurso de Categoría Ingenio!
+Description = Super Contest Smart Category Master Rank winner!
+PreviousRanks = SINNOHSMART,SINNOHSMARTGREAT,SINNOHSMARTULTRA
+Flags = ContestRibbon
 #-------------------------------
 [SINNOHTOUGH]
-Name = Cinta Dureza
+Name = Tough Ribbon
 IconPosition = 36
-Description = ¡Ganador de la categoría Normal del Súper concurso de Categoría Dureza!
+Description = Super Contest Tough Category Normal Rank winner!
+Flags = ContestRibbon
 #-------------------------------
-[SINNOHTOUGHSUPER]
-Name = Cinta Dureza Difícil
+[SINNOHTOUGHGREAT]
+Name = Tough Ribbon Great
 IconPosition = 37
-Description = ¡Ganador de la categoría Difícil del Súper concurso de Categoría Dureza!
+Description = Super Contest Tough Category Great Rank winner!
+PreviousRanks = SINNOHTOUGH
+Flags = ContestRibbon
 #-------------------------------
-[SINNOHTOUGHHYPER]
-Name = Cinta Dureza Superior
+[SINNOHTOUGHULTRA]
+Name = Tough Ribbon Ultra
 IconPosition = 38
-Description = ¡Ganador de la categoría Superior del Súper concurso de Categoría Dureza!
+Description = Super Contest Tough Category Ultra Rank winner!
+PreviousRanks = SINNOHTOUGH,SINNOHTOUGHGREAT
+Flags = ContestRibbon
 #-------------------------------
 [SINNOHTOUGHMASTER]
-Name = Cinta Dureza Experto
+Name = Tough Ribbon Master
 IconPosition = 39
-Description = ¡Ganador de la categoría Experto del Súper concurso de Categoría Dureza!
+Description = Super Contest Tough Category Master Rank winner!
+PreviousRanks = SINNOHTOUGH,SINNOHTOUGHGREAT,SINNOHTOUGHULTRA
+Flags = ContestRibbon
 #-------------------------------
-[WINNING]
-Name = Cinta Ganador
+[CONTESTMEMORY]
+Name = Contest Memory Ribbon
 IconPosition = 40
-Description = Cinta otorgada por superar el desafío de nivel 50 de la Torre Batalla.
+Description = A commemorative Ribbon representing all of the Ribbons you collected for contests somewhere long ago.
+PreviousRanks = HOENNCOOL,HOENNCOOLSUPER,HOENNCOOLHYPER,HOENNCOOLMASTER,HOENNBEAUTY,HOENNBEAUTYSUPER,HOENNBEAUTYHYPER,HOENNBEAUTYMASTER,HOENNCUTE,HOENNCUTESUPER,HOENNCUTEHYPER,HOENNCUTEMASTER,HOENNSMART,HOENNSMARTSUPER,HOENNSMARTHYPER,HOENNSMARTMASTER,HOENNTOUGH,HOENNTOUGHSUPER,HOENNTOUGHHYPER,HOENNTOUGHMASTER,SINNOHCOOL,SINNOHCOOLGREAT,SINNOHCOOLULTRA,SINNOHCOOLMASTER,SINNOHBEAUTY,SINNOHBEAUTYGREAT,SINNOHBEAUTYULTRA,SINNOHBEAUTYMASTER,SINNOHCUTE,SINNOHCUTEGREAT,SINNOHCUTEULTRA,SINNOHCUTEMASTER,SINNOHSMART,SINNOHSMARTGREAT,SINNOHSMARTULTRA,SINNOHSMARTMASTER,SINNOHTOUGH,SINNOHTOUGHGREAT,SINNOHTOUGHULTRA,SINNOHTOUGHMASTER
+Title = the Treasured Memory
+Flags = ContestRibbon
 #-------------------------------
-[VICTORY]
-Name = Cinta Victoria
+[CONTESTMEMORYGOLD]
+Name = Contest Memory Ribbon
 IconPosition = 41
-Description = Cinta otorgada por superar el desafío de nivel 100 de la Torre Batalla.
+Description = A commemorative Ribbon representing all of the Ribbons you collected for contests somewhere long ago.
+PreviousRanks = HOENNCOOL,HOENNCOOLSUPER,HOENNCOOLHYPER,HOENNCOOLMASTER,HOENNBEAUTY,HOENNBEAUTYSUPER,HOENNBEAUTYHYPER,HOENNBEAUTYMASTER,HOENNCUTE,HOENNCUTESUPER,HOENNCUTEHYPER,HOENNCUTEMASTER,HOENNSMART,HOENNSMARTSUPER,HOENNSMARTHYPER,HOENNSMARTMASTER,HOENNTOUGH,HOENNTOUGHSUPER,HOENNTOUGHHYPER,HOENNTOUGHMASTER,SINNOHCOOL,SINNOHCOOLGREAT,SINNOHCOOLULTRA,SINNOHCOOLMASTER,SINNOHBEAUTY,SINNOHBEAUTYGREAT,SINNOHBEAUTYULTRA,SINNOHBEAUTYMASTER,SINNOHCUTE,SINNOHCUTEGREAT,SINNOHCUTEULTRA,SINNOHCUTEMASTER,SINNOHSMART,SINNOHSMARTGREAT,SINNOHSMARTULTRA,SINNOHSMARTMASTER,SINNOHTOUGH,SINNOHTOUGHGREAT,SINNOHTOUGHULTRA,SINNOHTOUGHMASTER
+Title = the Treasured Memory
+Flags = ContestRibbon
 #-------------------------------
-[ABILITY]
-Name = Cinta Habilidad
+[COOLNESSMASTER]
+Name = Coolness Master Ribbon
 IconPosition = 42
-Description = Cinta obtenida por vencer por primera vez al Amo Torre en la Torre Batalla.
+Description = A Ribbon awarded to a Pokémon that has perfectly embodied Coolness in Pokémon Contests.
+Title = the Former Star
+Flags = ContestRibbon
 #-------------------------------
-[GREATABILITY]
-Name = Cinta Gran Habilidad
+[BEAUTYMASTER]
+Name = Beauty Master Ribbon
 IconPosition = 43
-Description = Cinta obtenida por vencer por segunda vez al Amo Torre en la Torre Batalla.
+Description = A Ribbon awarded to a Pokémon that has perfectly embodied Beauty in Pokémon Contests.
+Title = the Vintage Beauty
+Flags = ContestRibbon
 #-------------------------------
-[DOUBLEABILITY]
-Name = Cinta Doble Habilidad
+[CUTENESSMASTER]
+Name = Cuteness Master Ribbon
 IconPosition = 44
-Description = Una cinta otorgada por completar el desafío de Doble de la Torre Batalla.
+Description = A Ribbon awarded to a Pokémon that has perfectly embodied Cuteness in Pokémon Contests.
+Title = the Former Idol
+Flags = ContestRibbon
 #-------------------------------
-[MULTIABILITY]
-Name = Cinta Habilidad Múltiple
+[CLEVERNESSMASTER]
+Name = Cleverness Master Ribbon
 IconPosition = 45
-Description = Una cinta otorgada por completar el desafío Multi de la Torre Batalla.
+Description = A Ribbon awarded to a Pokémon that has perfectly embodied Cleverness in Pokémon Contests.
+Title = the Historic Genius
+Flags = ContestRibbon
 #-------------------------------
-[PAIRABILITY]
-Name = Cinta Habilidad Par
+[TOUGHNESSMASTER]
+Name = Toughness Master Ribbon
 IconPosition = 46
-Description = Una cinta otorgada por completar el desafío Multi Conexión de la Torre Batalla.
+Description = A Ribbon awarded to a Pokémon that has perfectly embodied Toughness in Pokémon Contests.
+Title = the Formerly Buff
+Flags = ContestRibbon
 #-------------------------------
-[WORLDABILITY]
-Name = Cinta Habilidad Mundial
+[CONTESTSTAR]
+Name = Contest Star Ribbon
 IconPosition = 47
-Description = Una cinta otorgada por completar el desafío de la Torre Batalla Wi-Fi.
+Description = A Ribbon awarded to a Pokémon that has performed superbly in every kind of contest.
+Title = the Shining Star
+PreviousRanks = COOLNESSMASTER,BEAUTYMASTER,CUTENESSMASTER,CLEVERNESSMASTER,TOUGHNESSMASTER
+Flags = ContestRibbon
+#-------------------------------
+[TWINKLINGSTAR]
+Name = Twinkling Star Ribbon
+IconPosition = 48
+Description = A Ribbon awarded to a Pokémon that has perfectly embodied shining brilliance in Super Contest Shows.
+Title = the Twinkling Star
+Flags = ContestRibbon
 #-------------------------------
 [CHAMPION]
-Name = Cinta Campeón
-IconPosition = 48
-Description = Cinta por superar la Liga Pokémon e ingresar al Salón de la Fama.
-#-------------------------------
-[SINNOHCHAMP]
-Name = Cinta Campeón
+Name = Champion Ribbon
 IconPosition = 49
-Description = Cinta otorgada por vencer al Campeón e ingresar al Salón de la Fama de Sinnoh.
+Description = A Ribbon awarded for clearing the Pokémon League and entering the Hall of Fame somewhere long ago.
+Title = the Champion
+Flags = LeagueRibbon
 #-------------------------------
-[RECORD]
-Name = Cinta Récord
+[HOENNCHAMPION]
+Name = Hoenn Champion Ribbon
 IconPosition = 50
-Description = Una cinta otorgada por establecer un récord increíble.
+Description = A Ribbon awarded for beating the Hoenn Champion and entering the Hoenn Hall of Fame.
+Title = the Hoenn Champion
+Flags = LeagueRibbon
 #-------------------------------
-[EVENT]
-Name = Cinta Evento
+[SINNOHCHAMPION]
+Name = Sinnoh Champion Ribbon
 IconPosition = 51
-Description = Una cinta otorgada por establecer un récord histórico.
+Description = A Ribbon awarded for beating the Sinnoh Champion and entering the Sinnoh Hall of Fame.
+Title = the Sinnoh Champion
+Flags = LeagueRibbon
 #-------------------------------
-[LEGEND]
-Name = Cinta Leyenda
+[KALOSCHAMPION]
+Name = Kalos Champion Ribbon
 IconPosition = 52
-Description = Una cinta otorgada por establecer un récord legendario.
+Description = A Ribbon awarded for beating the Kalos Champion and entering the Kalos Hall of Fame.
+Title = the Kalos Champion
+Flags = LeagueRibbon
 #-------------------------------
-[GORGEOUS]
-Name = Cinta Maravilla
+[ALOLACHAMPION]
+Name = Alola Champion Ribbon
 IconPosition = 53
-Description = Una cinta extremadamente bonita y extravagante.
+Description = A Ribbon awarded for beating the Alola Champion and entering the Alola Hall of Fame.
+Title = the Alola Champion
+Flags = LeagueRibbon
 #-------------------------------
-[ROYAL]
-Name = Cinta Realeza
+[GALARCHAMPION]
+Name = Galar Champion Ribbon
 IconPosition = 54
-Description = Una cinta increíblemente majestuosa y con un aire aristocrático.
+Description = A Ribbon awarded for beating the Galar Champion and entering the Galar Hall of Fame.
+Title = the Galar Champion
+Flags = LeagueRibbon
 #-------------------------------
-[GORGEOUSROYAL]
-Name = Cinta Realeza Maravilla
+[PALDEACHAMPION]
+Name = Paldea Champion Ribbon
 IconPosition = 55
-Description = Una cinta preciosa y majestuosa que es de lo más fabulosa y maravillosa.
+Description = A Ribbon awarded for beating the Paldea Champion and entering the Paldea Hall of Fame.
+Title = the Paldea Champion
+Flags = LeagueRibbon
 #-------------------------------
-[ALERT]
-Name = Cinta Alerta
+[WINNING]
+Name = Winning Ribbon
 IconPosition = 56
-Description = Una cinta para recordar un evento vigorizante que creó energía vital.
+Description = Ribbon awarded for clearing Hoenn's Battle Tower's Lv. 50 challenge.
+Flags = FrontierRibbon
 #-------------------------------
-[SHOCK]
-Name = Cinta Impacto
+[VICTORY]
+Name = Victory Ribbon
 IconPosition = 57
-Description = Una cinta para recordar un evento emocionante que hizo la vida más interesante.
+Description = Ribbon awarded for clearing Hoenn's Battle Tower's Lv. 100 challenge.
+PreviousRanks = WINNING
+Flags = FrontierRibbon
 #-------------------------------
-[DOWNCAST]
-Name = Cinta Abatimiento
+[ABILITY]
+Name = Ability Ribbon
 IconPosition = 58
-Description = Una cinta para recordar sentimientos tristes que añadieron interés a la vida.
+Description = A Ribbon awarded for defeating the Tower Tycoon at the Battle Tower.
+Flags = FrontierRibbon
 #-------------------------------
-[CARELESS]
-Name = Cinta Descuido
+[GREATABILITY]
+Name = Great Ability Ribbon
 IconPosition = 59
-Description = Una cinta para recordar descuidos que ayudaron a tomar decisiones vitales.
+Description = A Ribbon awarded for defeating the Tower Tycoon at the Battle Tower.
+PreviousRanks = ABILITY
+Flags = FrontierRibbon
 #-------------------------------
-[RELAX]
-Name = Cinta Relax
+[DOUBLEABILITY]
+Name = Double Ability Ribbon
 IconPosition = 60
-Description = Una cinta para recordar una anécdota refrescante que añadió chispa a la vida.
+Description = A Ribbon awarded for completing the Battle Tower Double challenge.
+Flags = FrontierRibbon
 #-------------------------------
-[SNOOZE]
-Name = Cinta Cabezada
+[MULTIABILITY]
+Name = Multi Ability Ribbon
 IconPosition = 61
-Description = Una cinta para recordar un sueño profundo que hizo que la vida fuera calmada.
+Description = A Ribbon awarded for completing the Battle Tower Multi challenge.
+PreviousRanks = DOUBLEABILITY
+Flags = FrontierRibbon
 #-------------------------------
-[SMILE]
-Name = Cinta Sonrisa
+[PAIRABILITY]
+Name = Pair Ability Ribbon
 IconPosition = 62
-Description = Una cinta para recordar que las sonrisas mejoran la calidad de vida.
+Description = A Ribbon awarded for completing the Battle Tower Link Multi challenge.
+Flags = FrontierRibbon
 #-------------------------------
-[FOOTPRINT]
-Name = Cinta Huella
+[WORLDABILITY]
+Name = World Ability Ribbon
 IconPosition = 63
-Description = Una cinta otorgada a un Pokémon que deja huellas de primera.
+Description = A Ribbon awarded for completing the Wi-Fi Battle Tower challenge.
+Flags = FrontierRibbon
+#-------------------------------
+[BATTLEMEMORY]
+Name = Battle Memory Ribbon
+IconPosition = 64
+Description = A commemorative Ribbon representing all of the Ribbons you collected for battling somewhere long ago.
+Title = the Exciting Memory
+PreviousRanks = WINNING,VICTORY,ABILITY,GREATABILITY,DOUBLEABILITY,MULTIABILITY,PAIRABILITY,WORLDABILITY
+Flags = FrontierRibbon
+#-------------------------------
+[BATTLEMEMORYGOLD]
+Name = Battle Memory Ribbon
+IconPosition = 65
+Description = A commemorative Ribbon representing all of the Ribbons you collected for battling somewhere long ago.
+Title = the Exciting Memory
+PreviousRanks = WINNING,VICTORY,ABILITY,GREATABILITY,DOUBLEABILITY,MULTIABILITY,PAIRABILITY,WORLDABILITY
+Flags = FrontierRibbon
+#-------------------------------
+[SKILLFULBATTLER]
+Name = Skillful Battler Ribbon
+IconPosition = 66
+Description = A Ribbon that can be given to a Pokémon that has achieved victory in difficult battles.
+Title = the Veteran
+Flags = FrontierRibbon
+#-------------------------------
+[EXPERTBATTLER]
+Name = Expert Battler Ribbon
+IconPosition = 67
+Description = A Ribbon that can be given to a brave Pokémon that has honed its battle skills to an art.
+Title = the Master
+PreviousRanks = SKILLFULBATTLER
+Flags = FrontierRibbon
+#-------------------------------
+[BATTLETREEGREAT]
+Name = Battle Tree Great Ribbon
+IconPosition = 68
+Description = A Ribbon awarded for winning against a Battle Legend in the Battle Tree.
+Title = the Tree Victor
+Flags = FrontierRibbon
+#-------------------------------
+[BATTLETREEMASTER]
+Name = Battle Tree Master Ribbon
+IconPosition = 69
+Description = A Ribbon awarded for winning against a Battle Legend in super battles in the Battle Tree.
+Title = the Tree Master
+PreviousRanks = BATTLETREEGREAT
+Flags = FrontierRibbon
+#-------------------------------
+[TOWERMASTER]
+Name = Tower Master Ribbon
+IconPosition = 70
+Description = A Ribbon awarded for winning against a champion in the Battle Tower.
+Title = the Tower Master
+Flags = FrontierRibbon
 #-------------------------------
 [ARTIST]
-Name = Cinta Artista
-IconPosition = 64
-Description = Cinta otorgada por ser elegido como supermodelo en Hoenn.
+Name = Artist Ribbon
+IconPosition = 71
+Description = A Ribbon awarded for being chosen as a super sketch model in the Hoenn region.
+Title = the Model for Paintings
+Flags = MemorialRibbon
 #-------------------------------
 [EFFORT]
-Name = Cinta Esfuerzo
-IconPosition = 65
-Description = Cinta otorgada por ser un excelente trabajador.
+Name = Effort Ribbon
+IconPosition = 72
+Description = Ribbon awarded for being an exceptionally hard worker.
+Title = the Once Well-Trained
+Flags = MemorialRibbon
+#-------------------------------
+[ALERT]
+Name = Alert Ribbon
+IconPosition = 73
+Description = A Ribbon for recalling an invigorating event that created life energy.
+Title = the Once Vigilant
+Flags = MemorialRibbon
+#-------------------------------
+[SHOCK]
+Name = Shock Ribbon
+IconPosition = 74
+Description = A Ribbon for recalling a thrilling event that made life more exciting.
+Title = the Once Cowardly
+Flags = MemorialRibbon
+#-------------------------------
+[DOWNCAST]
+Name = Downcast Ribbon
+IconPosition = 75
+Description = A Ribbon for recalling feelings of sadness that added spice to life.
+Title = the Once Shaken
+Flags = MemorialRibbon
+#-------------------------------
+[CARELESS]
+Name = Careless Ribbon
+IconPosition = 76
+Description = A Ribbon for recalling a careless error that helped steer life decisions.
+Title = the Once Imperfect
+Flags = MemorialRibbon
+#-------------------------------
+[RELAX]
+Name = Relax Ribbon
+IconPosition = 77
+Description = A Ribbon for recalling a refreshing event that added sparkle to life.
+Title = the Once Well-Rested
+Flags = MemorialRibbon
+#-------------------------------
+[SNOOZE]
+Name = Snooze Ribbon
+IconPosition = 78
+Description = A Ribbon for recalling a deep slumber that made life soothing.
+Title = the Once Sleepy
+Flags = MemorialRibbon
+#-------------------------------
+[SMILE]
+Name = Smile Ribbon
+IconPosition = 79
+Description = A Ribbon for recalling that smiles enrich the quality of life.
+Title = the Once Cheery
+Flags = MemorialRibbon
+#-------------------------------
+[GORGEOUS]
+Name = Gorgeous Ribbon
+IconPosition = 80
+Description = An extraordinarily gorgeous and extravagant Ribbon.
+Title = the Gorgeous
+Flags = MemorialRibbon
+#-------------------------------
+[ROYAL]
+Name = Royal Ribbon
+IconPosition = 81
+Description = An incredibly regal Ribbon with an air of nobility.
+Title = the Royal
+Flags = MemorialRibbon
+#-------------------------------
+[GORGEOUSROYAL]
+Name = Gorgeous Royal Ribbon
+IconPosition = 82
+Description = A gorgeous and regal Ribbon that is the peak of fabulous.
+Title = the Gorgeous Royal
+PreviousRanks = GORGEOUS,ROYAL
+Flags = MemorialRibbon
+#-------------------------------
+[FOOTPRINT]
+Name = Footprint Ribbon
+IconPosition = 83
+Description = A Ribbon awarded to a Pokémon deemed to have a top-quality footprint.
+Title = the Strutter
+Flags = MemorialRibbon
+#-------------------------------
+[RECORD]
+Name = Record Ribbon
+IconPosition = 84
+Description = A Ribbon awarded for setting an incredible record.
+Title = the Record Holder
+Flags = MemorialRibbon
+#-------------------------------
+[LEGEND]
+Name = Legend Ribbon
+IconPosition = 85
+Description = A Ribbon awarded for setting a legendary record.
+Title = the Living Legend
+Flags = MemorialRibbon
+#-------------------------------
+[BESTFRIENDS]
+Name = Best Friends Ribbon
+IconPosition = 86
+Description = A Ribbon that can be given to a Pokémon with which you share a close and meaningful bond.
+Title = the Great Friend
+Flags = MemorialRibbon
+#-------------------------------
+[TRAINING]
+Name = Training Ribbon
+IconPosition = 87
+Description = A Ribbon that can be given to a Pokémon that has overcome rigorous trials and training.
+Title = the Tried and True
+Flags = MemorialRibbon
+#-------------------------------
+[BATTLEROYALMASTER]
+Name = Battle Royal Master Ribbon
+IconPosition = 88
+Description = A Ribbon that can be given to a Pokémon that has achieved victory in the Battle Royal.
+Title = the Royal Master
+Flags = FrontierRibbon
+#-------------------------------
+[MASTERRANK]
+Name = Master Rank Ribbon
+IconPosition = 89
+Description = A Ribbon awarded for winning against a Trainer in the Master Ball Tier of Ranked Battles.
+Title = the Rank Master
+Flags = MemorialRibbon
+#-------------------------------
+[PIONEER]
+Name = Hisui Ribbon
+IconPosition = 90
+Description = A ribbon awarded to a Pokémon that posed for a photograph in Hisui in the distant past.
+Title = of the Distant Past
+Flags = MemorialRibbon
+#-------------------------------
+[LIFETIME]
+Name = Once-in-a-Lifetime Ribbon
+IconPosition = 91
+Description = A rare ribbon found extremely infrequently on Pokémon obtained in a Surprise Trade.
+Title = the One-in-a-Million
+Flags = MemorialRibbon
+#-------------------------------
+[EVENT]
+Name = Event Ribbon
+IconPosition = 92
+Description = A Ribbon awarded for participating in a special Pokémon event.
+Title = the Festive
+Flags = GiftRibbon
 #-------------------------------
 [BIRTHDAY]
-Name = Cinta Cumpleaños
-IconPosition = 66
-Description = Una cinta para celebrar un cumpleaños.
+Name = Birthday Ribbon
+IconPosition = 93
+Description = A Ribbon that commemorates a birthday.
+Title = the Best Buddy
+Flags = GiftRibbon
 #-------------------------------
 [SPECIAL]
-Name = Cinta Especial
-IconPosition = 67
-Description = Una cinta para conmemorar un día especial.
-#-------------------------------
-[CLASSIC]
-Name = Cinta Clásica
-IconPosition = 68
-Description = Una cinta que proclama amor por los Pokémon.
-#-------------------------------
-[PREMIER]
-Name = Cinta Principal
-IconPosition = 69
-Description = Cinta de vacaciones especiales.
+Name = Special Ribbon
+IconPosition = 94
+Description = A special Ribbon for a special day.
+Title = the Premium
+Flags = GiftRibbon
 #-------------------------------
 [SOUVENIR]
-Name = Cinta Recuerdo
-IconPosition = 70
-Description = Una cinta conmemorativa obtenida en un lugar misterioso.
-#-------------------------------
-[WISHING]
-Name = Cinta Deseo
-IconPosition = 71
-Description = Una cinta conmemorativa obtenida en un lugar misterioso.
+Name = Souvenir Ribbon
+IconPosition = 95
+Description = A Ribbon for cherishing a special memory.
+Title = the Cherished
+Flags = GiftRibbon
 #-------------------------------
 [NATIONAL]
-Name = Cinta Nacional
-IconPosition = 72
-Description = Una cinta otorgada por superar todos los desafíos difíciles.
+Name = National Ribbon
+IconPosition = 96
+Description = A Ribbon awarded for overcoming all difficult challenges.
+Title = the Triumphant
+Flags = GiftRibbon
 #-------------------------------
 [COUNTRY]
-Name = Cinta Campo
-IconPosition = 73
-Description = Cinta de Campeón.
+Name = Country Ribbon
+IconPosition = 97
+Description = A Ribbon awarded to a Pokémon League Champion.
+Title = the Victor
+Flags = GiftRibbon
 #-------------------------------
 [BATTLECHAMPION]
-Name = Cinta de Campeón de Torneo
-IconPosition = 74
-Description = Cinta de Campeón de Competición de Batalla.
+Name = Battle Champion Ribbon
+IconPosition = 98
+Description = A Ribbon awarded to a Battle Competition Champion.
+Title = the Battle Champion
+Flags = GiftRibbon
 #-------------------------------
 [REGIONALCHAMPION]
-Name = Cinta Campeón de Área
-IconPosition = 75
-Description = Cinta de Campeón Regional del Campeonato Mundial de Videojuegos Pokémon.
+Name = Regional Champion Ribbon
+IconPosition = 99
+Description = A Ribbon awarded to a Regional Champion in the Pokémon World Championships.
+Title = the Regional Champion
+PreviousRanks = BATTLECHAMPION
+Flags = GiftRibbon
 #-------------------------------
 [EARTH]
-Name = Cinta Planeta
-IconPosition = 76
-Description = Una cinta otorgada por ganar 100 combates seguidos.
+Name = Earth Ribbon
+IconPosition = 100
+Description = A Ribbon awarded for winning one hundred battles in a row.
+Title = the 100x Victorious
+Flags = GiftRibbon
 #-------------------------------
 [WORLD]
-Name = Cinta Mundo
-IconPosition = 77
-Description = Cinta de Campeón.
+Name = World Ribbon
+IconPosition = 101
+Description = A Ribbon awarded to a Pokémon League Champion.
+Title = the World Conqueror
+Flags = GiftRibbon
 #-------------------------------
 [NATIONALCHAMPION]
-Name = Cinta Campeón Nacional
-IconPosition = 78
-Description = Cinta de Campeón Nacional del Campeonato Mundial de Videojuegos Pokémon.
+Name = National Champion Ribbon
+IconPosition = 102
+Description = A Ribbon awarded to a National Champion in the Pokémon World Championships.
+Title = the National Champion
+Flags = GiftRibbon
 #-------------------------------
 [WORLDCHAMPION]
-Name = Cinta Campeón Mundial
-IconPosition = 79
-Description = Cinta de Campeón Mundial del Campeonato Mundial de Videojuegos Pokémon.
+Name = World Champion Ribbon
+IconPosition = 103
+Description = A Ribbon awarded to a World Champion in the Pokémon World Championships.
+Title = the World Champion
+PreviousRanks = NATIONALCHAMPION
+Flags = GiftRibbon
+#-------------------------------
+[CLASSIC]
+Name = Classic Ribbon
+IconPosition = 104
+Description = A Ribbon that proclaims love for Pokémon.
+Title = the Pokémon Fan
+Flags = GiftRibbon
+#-------------------------------
+[PREMIER]
+Name = Premier Ribbon
+IconPosition = 105
+Description = A Ribbon awarded for a special holiday.
+Title = the Celebratory
+Flags = GiftRibbon
+#-------------------------------
+[RED]
+Name = Red Ribbon
+IconPosition = 106
+Description = A commemorative Ribbon obtained in a Mystery Zone.
+Flags = GiftRibbon
+#-------------------------------
+[GREEN]
+Name = Green Ribbon
+IconPosition = 107
+Description = A commemorative Ribbon obtained in a Mystery Zone.
+Flags = GiftRibbon
+#-------------------------------
+[BLUE]
+Name = Blue Ribbon
+IconPosition = 108
+Description = A commemorative Ribbon obtained in a Mystery Zone.
+Flags = GiftRibbon
+#-------------------------------
+[MARINE]
+Name = Marine Ribbon
+IconPosition = 109
+Description = A commemorative Ribbon obtained in a Mystery Zone.
+Flags = GiftRibbon
+#-------------------------------
+[LAND]
+Name = Land Ribbon
+IconPosition = 110
+Description = A commemorative Ribbon obtained in a Mystery Zone.
+Flags = GiftRibbon
+#-------------------------------
+[SKY]
+Name = Sky Ribbon
+IconPosition = 111
+Description = A commemorative Ribbon obtained in a Mystery Zone.
+Flags = GiftRibbon
+#-------------------------------
+[WISHING]
+Name = Wishing Ribbon
+IconPosition = 112
+Description = A Ribbon said to make your wish come true.
+Title = the Wish Granter
+Flags = GiftRibbon
+#-------------------------------
+[LUNCHTIMEMARK]
+Name = Lunchtime Mark
+IconPosition = 113
+Description = A mark for a peckish Pokémon.
+Title = the Peckish
+IsMark = true
+Flags = TimeMark
+#-------------------------------
+[SLEEPYTIMEMARK]
+Name = Sleepy-Time Mark
+IconPosition = 114
+Description = A mark for a sleepy Pokémon.
+Title = the Sleepy
+IsMark = true
+Flags = TimeMark
+#-------------------------------
+[DUSKMARK]
+Name = Dusk Mark
+IconPosition = 115
+Description = A mark for a dozy Pokémon.
+Title = the Dozy
+IsMark = true
+Flags = TimeMark
+#-------------------------------
+[DAWNMARK]
+Name = Dawn Mark
+IconPosition = 116
+Description = A mark for an early-riser Pokémon.
+Title = the Early Riser
+IsMark = true
+Flags = TimeMark
+#-------------------------------
+[CLOUDYMARK]
+Name = Cloudy Mark
+IconPosition = 117
+Description = A mark for a cloud-watching Pokémon.
+Title = the Cloud Watcher
+IsMark = true
+Flags = WeatherMark
+#-------------------------------
+[RAINYMARK]
+Name = Rainy Mark
+IconPosition = 118
+Description = A mark for a sodden Pokémon.
+Title = the Sodden
+IsMark = true
+Flags = WeatherMark
+#-------------------------------
+[STORMYMARK]
+Name = Stormy Mark
+IconPosition = 119
+Description = A mark for a thunderstruck Pokémon.
+Title = the Thunderstruck
+IsMark = true
+Flags = WeatherMark
+#-------------------------------
+[SNOWYMARK]
+Name = Snowy Mark
+IconPosition = 120
+Description = A mark for a snow-frolicking Pokémon.
+Title = the Snow Frolicker
+IsMark = true
+Flags = WeatherMark
+#-------------------------------
+[BLIZZARDMARK]
+Name = Blizzard Mark
+IconPosition = 121
+Description = A mark for a shivering Pokémon.
+Title = the Shivering
+IsMark = true
+Flags = WeatherMark
+#-------------------------------
+[DRYMARK]
+Name = Dry Mark
+IconPosition = 122
+Description = A mark for a parched Pokémon.
+Title = the Parched
+IsMark = true
+Flags = WeatherMark
+#-------------------------------
+[SANDSTORMMARK]
+Name = Sandstorm Mark
+IconPosition = 123
+Description = A mark for a sandswept Pokémon.
+Title = the Sandswept
+IsMark = true
+Flags = WeatherMark
+#-------------------------------
+[MISTYMARK]
+Name = Misty Mark
+IconPosition = 124
+Description = A mark for a mist-drifter Pokémon.
+Title = the Mist Drifter
+IsMark = true
+Flags = WeatherMark
+#-------------------------------
+[DESTINYMARK]
+Name = Destiny Mark
+IconPosition = 125
+Description = A mark of a chosen Pokémon.
+Title = the Chosen One
+IsMark = true
+Flags = EncounterMark
+#-------------------------------
+[FISHINGMARK]
+Name = Fishing Mark
+IconPosition = 126
+Description = A mark for a catch-of-the-day Pokémon.
+Title = the Catch of the Day
+IsMark = true
+Flags = EncounterMark
+#-------------------------------
+[CURRYMARK]
+Name = Curry Mark
+IconPosition = 127
+Description = A mark for a curry-connoisseur Pokémon.
+Title = the Curry Connoisseur
+IsMark = true
+Flags = EncounterMark
+#-------------------------------
+[RAREMARK]
+Name = Rare Mark
+IconPosition = 128
+Description = A mark for a reclusive Pokémon.
+Title = the Recluse
+IsMark = true
+Flags = RarityMark
+#-------------------------------
+[UNCOMMONMARK]
+Name = Uncommon Mark
+IconPosition = 129
+Description = A mark for a sociable Pokémon.
+Title = the Sociable
+IsMark = true
+Flags = RarityMark
+#-------------------------------
+[ROWDYMARK]
+Name = Rowdy Mark
+IconPosition = 130
+Description = A mark for a rowdy Pokémon.
+Title = the Rowdy
+IsMark = true
+Flags = PersonalityMark
+#-------------------------------
+[ABSENTMINDEDMARK]
+Name = Absent-Minded Mark
+IconPosition = 131
+Description = A mark for a spacey Pokémon.
+Title = the Spacey
+IsMark = true
+Flags = PersonalityMark
+#-------------------------------
+[JITTERYMARK]
+Name = Jittery Mark
+IconPosition = 132
+Description = A mark for an anxious Pokémon.
+Title = the Anxious
+IsMark = true
+Flags = PersonalityMark
+#-------------------------------
+[EXCITEDMARK]
+Name = Excited Mark
+IconPosition = 133
+Description = A mark for a giddy Pokémon.
+Title = the Giddy
+IsMark = true
+Flags = PersonalityMark
+#-------------------------------
+[CHARISMATICMARK]
+Name = Charismatic Mark
+IconPosition = 134
+Description = A mark for a radiant Pokémon.
+Title = the Radiant
+IsMark = true
+Flags = PersonalityMark
+#-------------------------------
+[CALMNESSMARK]
+Name = Calmness Mark
+IconPosition = 135
+Description = A mark for a serene Pokémon.
+Title = the Serene
+IsMark = true
+Flags = PersonalityMark
+#-------------------------------
+[INTENSEMARK]
+Name = Intense Mark
+IconPosition = 136
+Description = A mark for a feisty Pokémon.
+Title = the Feisty
+IsMark = true
+Flags = PersonalityMark
+#-------------------------------
+[ZONEDOUTMARK]
+Name = Zoned-Out Mark
+IconPosition = 137
+Description = A mark for a daydreaming Pokémon.
+Title = the Daydreamer
+IsMark = true
+Flags = PersonalityMark
+#-------------------------------
+[JOYFULMARK]
+Name = Joyful Mark
+IconPosition = 138
+Description = A mark for a joyful Pokémon.
+Title = the Joyful
+IsMark = true
+Flags = PersonalityMark
+#-------------------------------
+[ANGRYMARK]
+Name = Angry Mark
+IconPosition = 139
+Description = A mark for a furious Pokémon.
+Title = the Furious
+IsMark = true
+Flags = PersonalityMark
+#-------------------------------
+[SMILEYMARK]
+Name = Smiley Mark
+IconPosition = 140
+Description = A mark for a beaming Pokémon.
+Title = the Beaming
+IsMark = true
+Flags = PersonalityMark
+#-------------------------------
+[TEARYMARK]
+Name = Teary Mark
+IconPosition = 141
+Description = A mark for a teary-eyed Pokémon.
+Title = the Teary-Eyed
+IsMark = true
+Flags = PersonalityMark
+#-------------------------------
+[UPBEATMARK]
+Name = Upbeat Mark
+IconPosition = 142
+Description = A mark for a chipper Pokémon.
+Title = the Chipper
+IsMark = true
+Flags = PersonalityMark
+#-------------------------------
+[PEEVEDMARK]
+Name = Peeved Mark
+IconPosition = 143
+Description = A mark for a grumpy Pokémon.
+Title = the Grumpy
+IsMark = true
+Flags = PersonalityMark
+#-------------------------------
+[INTELLECTUALMARK]
+Name = Intellectual Mark
+IconPosition = 144
+Description = A mark for a scholarly Pokémon.
+Title = the Scholar
+IsMark = true
+Flags = PersonalityMark
+#-------------------------------
+[FEROCIOUSMARK]
+Name = Ferocious Mark
+IconPosition = 145
+Description = A mark for a rampaging Pokémon.
+Title = the Rampaging
+IsMark = true
+Flags = PersonalityMark
+#-------------------------------
+[CRAFTYMARK]
+Name = Crafty Mark
+IconPosition = 146
+Description = A mark for an opportunistic Pokémon.
+Title = the Opportunist
+IsMark = true
+Flags = PersonalityMark
+#-------------------------------
+[SCOWLINGMARK]
+Name = Scowling Mark
+IconPosition = 147
+Description = A mark for a stern Pokémon.
+Title = the Stern
+IsMark = true
+Flags = PersonalityMark
+#-------------------------------
+[KINDLYMARK]
+Name = Kindly Mark
+IconPosition = 148
+Description = A mark for a kindhearted Pokémon.
+Title = the Kindhearted
+IsMark = true
+Flags = PersonalityMark
+#-------------------------------
+[FLUSTEREDMARK]
+Name = Flustered Mark
+IconPosition = 149
+Description = A mark for an easily flustered Pokémon.
+Title = the Easily Flustered
+IsMark = true
+Flags = PersonalityMark
+#-------------------------------
+[PUMPEDUPMARK]
+Name = Pumped-Up Mark
+IconPosition = 150
+Description = A mark for a driven Pokémon.
+Title = the Driven
+IsMark = true
+Flags = PersonalityMark
+#-------------------------------
+[ZEROENERGYMARK]
+Name = Zero Energy Mark
+IconPosition = 151
+Description = A mark for an apathetic Pokémon.
+Title = the Apathetic
+IsMark = true
+Flags = PersonalityMark
+#-------------------------------
+[PRIDEFULMARK]
+Name = Prideful Mark
+IconPosition = 152
+Description = A mark for an arrogant Pokémon.
+Title = the Arrogant
+IsMark = true
+Flags = PersonalityMark
+#-------------------------------
+[UNSUREMARK]
+Name = Unsure Mark
+IconPosition = 153
+Description = A mark for an unsure Pokémon.
+Title = the Reluctant
+IsMark = true
+Flags = PersonalityMark
+#-------------------------------
+[HUMBLEMARK]
+Name = Humble Mark
+IconPosition = 154
+Description = A mark for a humble Pokémon.
+Title = the Humble
+IsMark = true
+Flags = PersonalityMark
+#-------------------------------
+[THORNYMARK]
+Name = Thorny Mark
+IconPosition = 155
+Description = A mark for a pompous Pokémon.
+Title = the Pompous
+IsMark = true
+Flags = PersonalityMark
+#-------------------------------
+[VIGORMARK]
+Name = Vigor Mark
+IconPosition = 156
+Description = A mark for a lively Pokémon.
+Title = the Lively
+IsMark = true
+Flags = PersonalityMark
+#-------------------------------
+[SLUMPMARK]
+Name = Slump Mark
+IconPosition = 157
+Description = A mark for a worn-out Pokémon.
+Title = the Worn-Out
+IsMark = true
+Flags = PersonalityMark
+#-------------------------------
+[JUMBOMARK]
+Name = Jumbo Mark
+IconPosition = 158
+Description = A mark for a Pokémon that's the largest it can be.
+Title = the Great
+IsMark = true
+Flags = SizeMark
+#-------------------------------
+[MINIMARK]
+Name = Mini Mark
+IconPosition = 159
+Description = A mark for a Pokémon that's the smallest it can be.
+Title = the Teeny
+IsMark = true
+Flags = SizeMark
+#-------------------------------
+[ITEMFINDERMARK]
+Name = Itemfinder Mark
+IconPosition = 160
+Description = A mark for a Pokémon that likes to pick things up.
+Title = the Treasure Hunter
+IsMark = true
+Flags = PartyMark
+#-------------------------------
+[PARTNERMARK]
+Name = Partner Mark
+IconPosition = 161
+Description = A mark for a friendly Pokémon.
+Title = the Reliable Partner
+IsMark = true
+Flags = PartyMark
+#-------------------------------
+[GOURMANDMARK]
+Name = Gourmand Mark
+IconPosition = 162
+Description = A mark for a Pokémon gourmet.
+Title = the Gourmet
+IsMark = true
+Flags = PartyMark
+#-------------------------------
+[ALPHAMARK]
+Name = Alpha Mark
+IconPosition = 163
+Description = A mark for a Pokémon that was an alpha.
+Title = the Former Alpha
+IsMark = true
+Flags = BossMark
+#-------------------------------
+[MIGHTIESTMARK]
+Name = Mightiest Mark
+IconPosition = 164
+Description = A mark for an especially mighty Pokémon.
+Title = the Unrivaled
+IsMark = true
+Flags = BossMark
+#-------------------------------
+[TITANMARK]
+Name = Titan Mark
+IconPosition = 165
+Description = A mark for a Pokémon that was a Titan.
+Title = the Former Titan
+IsMark = true
+Flags = BossMark
+#-------------------------------
+[PARTNER]
+Name = Partner Ribbon
+IconPosition = 166
+Description = A special Ribbon awarded to a Pokémon that was once partnered with another great Trainer.
+Flags = MemorialRibbon
+PrefixTitle = /Owner/'s
+Flags = MemorialRibbon

@@ -42,7 +42,7 @@ MapPosition = 0,14,10
 MapPosition = 0,13,10
 BattleBack = indoor3
 Environment = Rock
-Flags = DisableBoxLink
+Flags = DisableBoxLink,PowerSpot
 #-------------------------------
 [011]   # Instituto Pokémon
 MapPosition = 0,14,10
@@ -145,7 +145,7 @@ MapPosition = 0,13,6
 [037]   # Liga Pokémon sala 1
 MapPosition = 0,13,6
 BattleBack = elite1
-Flags = DisableBoxLink
+Flags = DisableBoxLink,PowerSpot
 #-------------------------------
 [038]   # Hall de la Fama
 MapPosition = 0,13,6
@@ -239,7 +239,7 @@ MapPosition = 0,17,10
 [056]   # Arena Torre Batalla
 MapPosition = 0,17,10
 BattleBack = indoor1
-Flags = DisableBoxLink
+Flags = DisableBoxLink,PowerSpot
 #-------------------------------
 [057]   # Vestíbulo Copa Estadio
 MapPosition = 0,17,10
@@ -250,7 +250,7 @@ MapPosition = 0,17,10
 [059]   # Battle Palace arena
 MapPosition = 0,17,10
 BattleBack = indoor1
-Flags = DisableBoxLink
+Flags = DisableBoxLink,PowerSpot
 #-------------------------------
 [060]   # Dojo Batalla
 MapPosition = 0,17,10
@@ -258,7 +258,7 @@ MapPosition = 0,17,10
 [061]   # Arena Dojo Batalla
 MapPosition = 0,17,10
 BattleBack = indoor1
-Flags = DisableBoxLink
+Flags = DisableBoxLink,PowerSpot
 #-------------------------------
 [062]   # Fábrica Batalla
 MapPosition = 0,17,10
@@ -270,7 +270,7 @@ Flags = DisableBoxLink
 [064]   # Arena Fábrica Batalla
 MapPosition = 0,17,10
 BattleBack = indoor1
-Flags = DisableBoxLink
+Flags = DisableBoxLink,PowerSpot
 #-------------------------------
 [065]   # Pasillo Fábrica Batalla
 MapPosition = 0,17,10

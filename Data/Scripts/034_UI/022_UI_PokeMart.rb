@@ -57,10 +57,6 @@ class PokemonMartAdapter
     raise NotImplementedError, "#{self.class} debe implementar #getPrice"
   end
 
-  def getDisplayPrice(item, selling = false)
-    raise NotImplementedError, "#{self.class} debe implementar #getDisplayPrice"
-  end
-
   def canSell?(item)
     raise NotImplementedError, "#{self.class} debe implementar #canSell?"
   end

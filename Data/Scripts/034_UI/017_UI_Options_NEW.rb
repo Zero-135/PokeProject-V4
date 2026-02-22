@@ -333,7 +333,15 @@ class UI::OptionsVisualsList < Window_DrawableCommand
   end
 
   def get_values
-    @values = @options.map { |option| option[:get_proc]&.call }
+    @values = @options.map.with_index do |option, i|
+      val = option[:get_proc]&.call
+      # Convert actual value to offset for number sliders
+      if option[:type] == :number_slider || (option[:type] == :number_type && option[:parameters].is_a?(Array))
+        lowest = lowest_value(option)
+        val = val - lowest if val
+      end
+      next val
+    end
   end
 
   def lowest_value(option)
@@ -448,7 +456,15 @@ class UI::OptionsVisualsList < Window_DrawableCommand
   end
 
   def value(this_index = nil)
-    return @values[this_index || self.index]
+    idx = this_index || self.index
+    val = @values[idx]
+    # Convert offset back to actual value for number sliders
+    option = @options[idx]
+    if option[:type] == :number_slider || (option[:type] == :number_type && option[:parameters].is_a?(Array))
+      lowest = lowest_value(option)
+      val = val + lowest if val
+    end
+    return val
   end
 
   def selected_option
@@ -528,13 +544,13 @@ class UI::OptionsVisualsList < Window_DrawableCommand
       self.contents.fill_rect(x_pos, rect.y + (rect.height / 2) - (SLIDER_BAR_HEIGHT / 2), slider_length, SLIDER_BAR_HEIGHT, self.baseColor)
       # Draw slider notch
       self.contents.fill_rect(
-        x_pos + ((slider_length - SLIDER_NOTCH_WIDTH) * (@values[this_index] - lowest) / (highest - lowest)),
+        x_pos + ((slider_length - SLIDER_NOTCH_WIDTH) * @values[this_index] / (highest - lowest)),
         rect.y + (rect.height / 2) - (SLIDER_NOTCH_HEIGHT / 2),
         SLIDER_NOTCH_WIDTH, SLIDER_NOTCH_HEIGHT, self.selectedColor
       )
       # Draw text
       value = (lowest + @values[this_index]).to_s
-      pbDrawShadowText(self.contents, x_pos - rect.x, rect.y, option_width, rect.height,
+      pbDrawShadowText(self.contents, x_pos - rect.x + 2, rect.y - 2, option_width, rect.height,
                        value, self.selectedColor, self.selectedShadowColor, SLIDER_NUMBER_TEXT_PADDING)
     when :control
       x_pos = option_start_x
