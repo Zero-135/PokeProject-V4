@@ -1,0 +1,27 @@
+Bajar la ultima version
+Ejecutar ruby scripts_lectura.rb
+Ejecutar ruby scripts_extract.rb(Creara carpetas por scripts y hata la laectura mas sencilla)
+
+En archivo base, eliminamos Followers/Followers Shiny/Back/Back Shiny/Front/Front Shiny/Icon/Icon Shiny/Footprints
+De la base eliminamos
+[LBDSKY] [MUI_000] Modular UI Scenes
+[LBDSKY] [MUI_001] Enhanced Pokemon UI
+[LBDSKY] Lin's IV EV Summary Screen
+[LBDSKY] Tileset Rearranger
+[LBDSKY] [MUI_002] Pokedex Data Page
+
+Eliminamos PBS
+
+Al "[LBDSKY] [MUI_002] Pokedex Data Page" de la base hay que cambiarle el nombre a "[MUI_002] Pokedex Data Page"
+O simplemente copiar directamente de "Plugins Essentials"
+
+Copiamos los plugins
+
+
+
+
+Eliminar [LBDSKY] [MUI_002] Pokedex Data Page es una version Antigua
+Eliminar [LBDSKY] Lin's IV EV Summary Screen ya que el que se encuentra actualmente es mas compacto y util
+Eliminar [LBDSKY] [MUI_001] Enhanced Pokemon UI, el de la base esta mas ordenado
+Eliminar [LBDSKY] [MUI_000] Modular UI Scenes, el de la base esta mas ordenado
+Eliminar [LBDSKY] Tileset Rearranger, el de la base esta mas ordenado
