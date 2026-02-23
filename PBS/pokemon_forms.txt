@@ -102,78 +102,142 @@ WildItemUncommon = PECHABERRY
 #-------------------------------
 [PIKACHU,2]
 FormName = Forma Coqueta
+EggGroups = Undiscovered
+Pokedex = A este Pikachu le encanta usar atuendos especiales. Cuando se siente admirada, la electricidad en sus mejillas se vuelve más intensa y brillante.
 GenderRatio = AlwaysFemale
 Abilities = LIGHTNINGROD
+Generation = 6
+Flags = SOSForm_0,CannotDynamax,CannotTerastallize
 Evolutions = RAICHU,None,
 #-------------------------------
 [PIKACHU,3]
 FormName = Forma Aristócrata
+EggGroups = Undiscovered
+Pokedex = Vestido con un elegante vestido, este Pikachu se mueve con gracia y precisión. Sus movimientos de tipo eléctrico parecen un baile perfectamente ensayado.
 GenderRatio = AlwaysFemale
 Abilities = LIGHTNINGROD
+Generation = 6
+Flags = SOSForm_0,CannotDynamax,CannotTerastallize
 Evolutions = RAICHU,None,
 #-------------------------------
 [PIKACHU,4]
 FormName = Forma Enmascarada
+EggGroups = Undiscovered
+Pokedex = Entrenada en acrobacias espectaculares, este Pikachu salta y ataca a gran velocidad. Su máscara representa su fuerte espíritu de lucha.
 GenderRatio = AlwaysFemale
 Abilities = LIGHTNINGROD
+Generation = 6
+Flags = SOSForm_0,CannotDynamax,CannotTerastallize
 Evolutions = RAICHU,None,
 #-------------------------------
 [PIKACHU,5]
 FormName = Forma Erudita
+EggGroups = Undiscovered
+Pokedex = Este Pikachu pasa incontables horas estudiando. Analiza a sus oponentes antes de atacar, liberando electricidad con precisión científica.
 GenderRatio = AlwaysFemale
 Abilities = LIGHTNINGROD
+Generation = 6
+Flags = SOSForm_0,CannotDynamax,CannotTerastallize
 Evolutions = RAICHU,None,
 #-------------------------------
 [PIKACHU,6]
 FormName = Forma Superstar
+EggGroups = Undiscovered
+Pokedex = Canta mientras lucha, energizando tanto a aliados como a espectadores. La electricidad en sus mejillas late al ritmo de sus cantos.
 GenderRatio = AlwaysFemale
 Abilities = LIGHTNINGROD
+Generation = 6
+Flags = SOSForm_0,CannotDynamax,CannotTerastallize
 Evolutions = RAICHU,None,
 #-------------------------------
 [PIKACHU,7]
 FormName = Forma Roquera
+EggGroups = Undiscovered
+Pokedex = Cuando toca la guitarra, saltan chispas por el escenario. Su naturaleza rebelde hace que sus ataques eléctricos sean potentes y contundentes.
 GenderRatio = AlwaysFemale
 Abilities = LIGHTNINGROD
+Generation = 6
+Flags = SOSForm_0,CannotDynamax,CannotTerastallize
 Evolutions = RAICHU,None,
 #-------------------------------
 [PIKACHU,8]
 FormName = Forma Gorra Original
+EggGroups = Undiscovered
+Pokedex = La gorra que usa este Pikachu está llena de recuerdos de este Pokémon y su compañero viajando juntos por muchas regiones diferentes.
 GenderRatio = AlwaysMale
+Abilities = STATIC
+Generation = 7
+Flags = SOSForm_0,CannotDynamax,CannotTerastallize
 Evolutions = RAICHU,None,
 #-------------------------------
 [PIKACHU,9]
 FormName = Forma Gorra Hoenn
+EggGroups = Undiscovered
+Pokedex = La gorra que lleva este Pikachu está llena de recuerdos de este Pokémon y su compañero viajando juntos por la región de Hoenn.
 GenderRatio = AlwaysMale
+Abilities = STATIC
+Generation = 7
+Flags = SOSForm_0,CannotDynamax,CannotTerastallize
 Evolutions = RAICHU,None,
 #-------------------------------
 [PIKACHU,10]
 FormName = Forma Gorra Sinnoh
+EggGroups = Undiscovered
+Pokedex = La gorra que lleva este Pikachu está llena de recuerdos de este Pokémon y su compañero viajando juntos por la región de Sinnoh.
 GenderRatio = AlwaysMale
+Abilities = STATIC
+Generation = 7
+Flags = SOSForm_0,CannotDynamax,CannotTerastallize
 Evolutions = RAICHU,None,
 #-------------------------------
 [PIKACHU,11]
 FormName = Forma Gorra Teselia
+EggGroups = Undiscovered
+Pokedex = La gorra que lleva este Pikachu está llena de recuerdos de este Pokémon y su compañero viajando juntos por la región de Teselia.
 GenderRatio = AlwaysMale
+Abilities = STATIC
+Generation = 7
+Flags = SOSForm_0,CannotDynamax,CannotTerastallize
 Evolutions = RAICHU,None,
 #-------------------------------
 [PIKACHU,12]
 FormName = Forma Gorra Kalos
+EggGroups = Undiscovered
+Pokedex = La gorra que lleva este Pikachu está llena de recuerdos de este Pokémon y su compañero viajando juntos por la región de Kalos.
 GenderRatio = AlwaysMale
+Abilities = STATIC
+Generation = 7
+Flags = SOSForm_0,CannotDynamax,CannotTerastallize
 Evolutions = RAICHU,None,
 #-------------------------------
 [PIKACHU,13]
 FormName = Forma Gorra Alola
+EggGroups = Undiscovered
+Pokedex = La gorra que lleva este Pikachu está llena de recuerdos de este Pokémon y su compañero viajando juntos por la región de Alola.
 GenderRatio = AlwaysMale
+Abilities = STATIC
+Generation = 7
+Flags = SOSForm_0,CannotDynamax,CannotTerastallize
 Evolutions = RAICHU,None,
 #-------------------------------
 [PIKACHU,14]
 FormName = Forma Gorra Compañero
+EggGroups = Undiscovered
+Pokedex = La gorra que lleva este Pikachu está llena de recuerdos de este Pokémon viajando junto a su compañero, a quien conoció en un encuentro fatídico.
 GenderRatio = AlwaysMale
+Abilities = STATIC
+Generation = 8
+Flags = SOSForm_0,CannotDynamax,CannotTerastallize
 Evolutions = RAICHU,None,
 #-------------------------------
 [PIKACHU,15]
 FormName = Forma Gorra Trotamundos
+EggGroups = Undiscovered
+Pokedex = La gorra que lleva este Pikachu está llena de recuerdos de este Pokémon y su compañero viajando juntos por el mundo.
 GenderRatio = AlwaysMale
+Abilities = STATIC
+Generation = 8
+Flags = SOSForm_0,CannotDynamax,CannotTerastallize
 Evolutions = RAICHU,None,
 #-------------------------------
 [RAICHU,1]
@@ -200,6 +264,7 @@ HiddenAbilities = RECKLESS
 Height = 1.2
 Weight = 38.0
 Pokedex = Vuela manteniendo una pose en forma de X y suelta descargas eléctricas de 50 millones de voltios tanto por las orejas como por las dos colas.
+Generation = 9
 #-------------------------------
 [RAICHU,3]
 FormName = Mega Raichu Y
@@ -211,6 +276,7 @@ HiddenAbilities = ADAPTABILITY
 Height = 1.0
 Weight = 26.0
 Pokedex = Emite descargas eléctricas por los pelos de su cabeza dispuestos en zigzag tras haber confeccionado un circuito en forma de Y desde la punta de su cola.
+Generation = 9
 #-------------------------------
 [SANDSHREW,1]
 FormName = Forma Alola
@@ -659,7 +725,7 @@ Generation = 6
 [STARMIE,1]
 FormName = Mega Starmie
 MegaStone = STARMINITE
-BaseStats = 60,100,105,120,130,105
+BaseStats = 60,140,105,120,130,105
 Abilities = HUGEPOWER
 HiddenAbilities = HUGEPOWER
 Height = 2.3
@@ -921,6 +987,7 @@ Pokedex = Ante el riesgo que le supone desplazarse solo, forma filas de tres o c
 Generation = 9
 Flags = InheritFormWithEverStone
 Evolutions = CLODSIRE,Level,20
+SpeciesSOS = WOOPER,CLODSIRE
 #-------------------------------
 [SLOWKING,1]
 FormName = Forma Galar
@@ -1817,8 +1884,8 @@ MegaStone = EXCADRITE
 BaseStats = 110,165,100,103,65,65
 Abilities = MOLDBREAKER
 HiddenAbilities = MOLDBREAKER
-Height = 3.2
-Weight = 230.3
+Height = 0.9
+Weight = 60.0
 Pokedex = Al juntar las garras y la cabeza, adopta una forma aerodinámica que le permite girar a gran velocidad y destruirlo todo a su paso.
 Generation = 9
 #-------------------------------
@@ -1839,7 +1906,7 @@ Generation = 6
 [SCOLIPEDE,1]
 FormName = Mega Scolipede
 MegaStone = SCOLIPITE
-BaseStats = 69,140,149,62,75,99
+BaseStats = 60,140,149,62,75,99
 Abilities = BATTLEARMOR
 HiddenAbilities = BATTLEARMOR
 Height = 3.2
@@ -2331,12 +2398,13 @@ CallRateSOS = 0
 [FLOETTE,6]
 FormName = Mega Floette
 MegaStone = FLOETTITE
-BaseStats = 74,65,67,92,125,128
+BaseStats = 74,85,87,102,155,148
 Abilities = MEGALAUNCHER
 HiddenAbilities = MEGALAUNCHER
 Height = 0.2
 Weight = 100.8
 UnmegaForm = 5
+EggGroups = Undiscovered
 Pokedex = Su Flor Eterna ha absorbido toda la energía de la megaevolución y ahora es capaz de atacar a los enemigos por sí sola.
 Generation = 9
 #-------------------------------
@@ -2604,24 +2672,29 @@ Flags = Legendary
 [ZYGARDE,4]
 FormName = Mega Zygarde
 MegaStone = ZYGARDITE
-BaseStats = 74,65,67,92,125,128
+BaseStats = 216,70,91,100,216,85
 Abilities = POWERCONSTRUCT
 HiddenAbilities = POWERCONSTRUCT
 Height = 7.7
 Weight = 610.0
+Color = Black
+Shape = BipedalTail
 UnmegaForm = -2
 Pokedex = En crisis sin precedentes, megaevoluciona en respuesta a las emociones de la gente. Domina cualquier situación con su fuerza sin igual.
 Generation = 9
 Flags = Legendary
 #-------------------------------
 [ZYGARDE,5]
+PokedexForm = 4
 FormName = Mega Zygarde
 MegaStone = ZYGARDITE
-BaseStats = 74,65,67,92,125,128
+BaseStats = 216,70,91,100,216,85
 Abilities = POWERCONSTRUCT
 HiddenAbilities = POWERCONSTRUCT
 Height = 7.7
 Weight = 610.0
+Color = Black
+Shape = BipedalTail
 UnmegaForm = -2
 Pokedex = En crisis sin precedentes, megaevoluciona en respuesta a las emociones de la gente. Domina cualquier situación con su fuerza sin igual.
 Generation = 9
@@ -2730,18 +2803,21 @@ FormName = Estilo Animado
 Types = ELECTRIC,FLYING
 Color = Yellow
 Pokedex = Crea una carga eléctrica al frotar sus plumas. Baila hacia sus enemigos y les lanza impactantes golpes eléctricos.
+WildItemUncommon = YELLOWNECTAR
 #-------------------------------
 [ORICORIO,2]
 FormName = Estilo Plácido
 Types = PSYCHIC,FLYING
 Color = Pink
 Pokedex = Este Oricorio se relaja balanceándose suavemente. Esto aumenta su energía psíquica, que luego dispara a sus enemigos.
+WildItemUncommon = PINKNECTAR
 #-------------------------------
 [ORICORIO,3]
 FormName = Estilo Refinado
 Types = GHOST,FLYING
 Color = Purple
 Pokedex = Convoca a los muertos con su danza de ensueño. De su malicia extrae poder para maldecir a sus enemigos.
+WildItemUncommon = PURPLENECTAR
 #-------------------------------
 [ROCKRUFF,2]
 Abilities = OWNTEMPO
@@ -3081,48 +3157,61 @@ Pokedex = Tiene un sabor y un aroma sumamente singulares. Si su Entrenador se ha
 #-------------------------------
 [ALCREMIE,1]
 FormName = Forma Crema de Vainilla Confite corazón
+Color = White
 #-------------------------------
 [ALCREMIE,2]
 FormName = Forma Crema de Vainilla Confite flor
+Color = White
 #-------------------------------
 [ALCREMIE,3]
 FormName = Forma Crema de Vainilla Confite estrella
+Color = White
 #-------------------------------
 [ALCREMIE,4]
 FormName = Forma Crema de Vainilla Confite trébol
+Color = White
 #-------------------------------
 [ALCREMIE,5]
 FormName = Forma Crema de Vainilla Confite fruto
+Color = White
 #-------------------------------
 [ALCREMIE,6]
 FormName = Forma Crema de Vainilla Confite lazo
+Color = White
 #-------------------------------
 [ALCREMIE,7]
 FormName = Forma Crema Rosa Confite fresa
+Color = Pink
 Pokedex = A causa de unas sutiles vibraciones en las células de su cuerpo en el momento de la evolución, ha adquirido un sabor agridulce.
 #-------------------------------
 [ALCREMIE,8]
 FormName = Forma Crema Rosa Confite corazón
+Color = Pink
 Pokedex = A causa de unas sutiles vibraciones en las células de su cuerpo en el momento de la evolución, ha adquirido un sabor agridulce.
 #-------------------------------
 [ALCREMIE,9]
 FormName = Forma Crema Rosa Confite flor
+Color = Pink
 Pokedex = A causa de unas sutiles vibraciones en las células de su cuerpo en el momento de la evolución, ha adquirido un sabor agridulce.
 #-------------------------------
 [ALCREMIE,10]
 FormName = Forma Crema Rosa Confite estrella
+Color = Pink
 Pokedex = A causa de unas sutiles vibraciones en las células de su cuerpo en el momento de la evolución, ha adquirido un sabor agridulce.
 #-------------------------------
 [ALCREMIE,11]
 FormName = Forma Crema Rosa Confite trébol
+Color = Pink
 Pokedex = A causa de unas sutiles vibraciones en las células de su cuerpo en el momento de la evolución, ha adquirido un sabor agridulce.
 #-------------------------------
 [ALCREMIE,12]
 FormName = Forma Crema Rosa Confite fruto
+Color = Pink
 Pokedex = A causa de unas sutiles vibraciones en las células de su cuerpo en el momento de la evolución, ha adquirido un sabor agridulce.
 #-------------------------------
 [ALCREMIE,13]
 FormName = Forma Crema Rosa Confite lazo
+Color = Pink
 Pokedex = A causa de unas sutiles vibraciones en las células de su cuerpo en el momento de la evolución, ha adquirido un sabor agridulce.
 #-------------------------------
 [ALCREMIE,14]
@@ -3232,37 +3321,37 @@ Pokedex = Cuando se ve amenazado, se defiende lanzando a sus agresores una nata 
 #-------------------------------
 [ALCREMIE,35]
 FormName = Forma Crema Salada Confite fresa
-Color = Yellow
+Color = White
 Pokedex = Cuando se ve amenazado, se defiende lanzando a sus agresores una nata con un toque agrio.
 #-------------------------------
 [ALCREMIE,36]
 FormName = Forma Crema Salada Confite corazón
-Color = Yellow
+Color = White
 Pokedex = Cuando se ve amenazado, se defiende lanzando a sus agresores una nata con un toque agrio.
 #-------------------------------
 [ALCREMIE,37]
 FormName = Forma Crema Salada Confite flor
-Color = Yellow
+Color = White
 Pokedex = Cuando se ve amenazado, se defiende lanzando a sus agresores una nata con un toque agrio.
 #-------------------------------
 [ALCREMIE,38]
 FormName = Forma Crema Salada Confite estrella
-Color = Yellow
+Color = White
 Pokedex = Cuando se ve amenazado, se defiende lanzando a sus agresores una nata con un toque agrio.
 #-------------------------------
 [ALCREMIE,39]
 FormName = Forma Crema Salada Confite trébol
-Color = Yellow
+Color = White
 Pokedex = Cuando se ve amenazado, se defiende lanzando a sus agresores una nata con un toque agrio.
 #-------------------------------
 [ALCREMIE,40]
 FormName = Forma Crema Salada Confite fruto
-Color = Yellow
+Color = White
 Pokedex = Cuando se ve amenazado, se defiende lanzando a sus agresores una nata con un toque agrio.
 #-------------------------------
 [ALCREMIE,41]
 FormName = Forma Crema Salada Confite lazo
-Color = Yellow
+Color = White
 Pokedex = Cuando se ve amenazado, se defiende lanzando a sus agresores una nata con un toque agrio.
 #-------------------------------
 [ALCREMIE,42]
@@ -3404,7 +3493,7 @@ Pokedex = El hambre lo ha vuelto agresivo y ha convertido la electricidad de sus
 [ZACIAN,1]
 FormName = Forma Espada Suprema
 Types = FAIRY,STEEL
-BaseStats = 92,170,115,148,80,115
+BaseStats = 92,150,115,148,80,115
 BaseExp = 360
 Weight = 355.0
 Pokedex = En esta forma, capaz de cortar cualquier cosa, es temido y respetado y se lo conoce como la Regia Espada Silvana.
@@ -3420,7 +3509,7 @@ Pokedex = Cuando Zacian desata su Corte Supremo, su melena ondulante se expande 
 [ZAMAZENTA,1]
 FormName = Forma Escudo Supremo
 Types = FIGHTING,STEEL
-BaseStats = 92,130,145,128,80,145
+BaseStats = 92,120,140,128,80,140
 BaseExp = 360
 Weight = 785.0
 Pokedex = Esta forma, temida y venerada por igual, le ha valido el nombre de Regio Escudo Guerrero por su capacidad de repeler cualquier ataque.
@@ -3514,22 +3603,27 @@ Pokedex = Una cría apareció de la noche a la mañana. Conviven como si fuesen 
 [REVAVROOM,1]
 Types = FIRE
 Abilities = SPEEDBOOST
+CallRateSOS = 0
 #-------------------------------
 [REVAVROOM,2]
 Types = FAIRY
 Abilities = MISTYSURGE
+CallRateSOS = 0
 #-------------------------------
 [REVAVROOM,3]
 Types = FIGHTING
 Abilities = STAMINA
+CallRateSOS = 0
 #-------------------------------
 [REVAVROOM,4]
 Types = POISON
 Abilities = TOXICDEBRIS
+CallRateSOS = 0
 #-------------------------------
 [REVAVROOM,5]
 Types = DARK
 Abilities = INTIMIDATE
+CallRateSOS = 0
 #-------------------------------
 [SQUAWKABILLY,1]
 FormName = Plumaje Azul
@@ -3696,6 +3790,7 @@ Flags = Legendary,TeraType_ROCK
 #-------------------------------
 [OGERPON,4]
 PokedexForm = 0
+Flags = Legendary,TeraType_GRASS
 #-------------------------------
 [OGERPON,5]
 FormName = Máscara Fuente
@@ -3724,27 +3819,28 @@ Flags = Legendary,TeraType_ROCK
 [OGERPON,8]
 FormName = Máscara Turquesa teracristalizado
 Abilities = EMBODYASPECT
+Flags = Legendary,TeraType_GRASS,CannotDynamax
 #-------------------------------
 [OGERPON,9]
 FormName = Máscara Fuente teracristalizado
 Types = GRASS,WATER
 Abilities = EMBODYASPECT_1
 Color = Blue
-Flags = Legendary,TeraType_WATER
+Flags = Legendary,TeraType_WATER,CannotDynamax
 #-------------------------------
 [OGERPON,10]
 FormName = Máscara Horno teracristalizado
 Types = GRASS,FIRE
 Abilities = EMBODYASPECT_2
 Color = Red
-Flags = Legendary,TeraType_FIRE
+Flags = Legendary,TeraType_FIRE,CannotDynamax
 #-------------------------------
 [OGERPON,11]
 FormName = Máscara Cimiento teracristalizado
 Types = GRASS,ROCK
 Abilities = EMBODYASPECT_3
 Color = Gray
-Flags = Legendary,TeraType_ROCK
+Flags = Legendary,TeraType_ROCK,CannotDynamax
 #-------------------------------
 [TERAPAGOS,1]
 FormName = Forma Teracristal
@@ -3766,7 +3862,7 @@ Height = 1.7
 Weight = 77.0
 Shape = Head
 Pokedex = Adopta esta forma cuando su energía Teracristal se ve amplificada descomunalmente. Se asemeja a la imagen del mundo que la gente tenía antaño.
-Flags = Legendary,TeraType_STELLAR
+Flags = Legendary,TeraType_STELLAR,CannotDynamax
 #-------------------------------
 [PECHARUNT,1]
 FormName = Caparazón

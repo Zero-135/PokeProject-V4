@@ -16729,6 +16729,7 @@ Shape = Bipedal
 Category = Filo
 Pokedex = Su séquito son los Pawniard. Acorralan a su presa con todo el grupo y Bisharp propina el golpe de gracia.
 Generation = 5
+WildItemUncommon = LEADERSCREST
 Evolutions = KINGAMBIT,LevelDefeatItsKindWithItem,LEADERSCREST
 SpeciesSOS = PAWNIARD,TINKATUFF
 CallRateSOS = 15
@@ -19709,7 +19710,7 @@ Category = Danza
 Pokedex = Forma que toma Oricorio al libar néctar rojo. Hace arder el corazón de sus adversarios con su cálida danza.
 Generation = 7
 Flags = InheritFormFromMother
-WildItemUncommon = HONEY
+WildItemUncommon = REDNECTAR
 CallRateSOS = 6
 #-------------------------------
 [CUTIEFLY]
@@ -23480,7 +23481,7 @@ Generation = 8
 Name = Zacian
 FormName = Forma Guerrero Avezado
 Types = FAIRY
-BaseStats = 92,130,115,138,80,115
+BaseStats = 92,120,115,138,80,115
 GenderRatio = Genderless
 GrowthRate = Slow
 BaseExp = 335
@@ -23508,7 +23509,7 @@ WildItemRare = RUSTEDSWORD
 Name = Zamazenta
 FormName = Forma Guerrero Avezado
 Types = FIGHTING
-BaseStats = 92,130,115,138,80,115
+BaseStats = 92,120,115,138,80,115
 GenderRatio = Genderless
 GrowthRate = Slow
 BaseExp = 335
@@ -24192,6 +24193,7 @@ Category = Gorrino
 Pokedex = Posee un olfato muy desarrollado que emplea únicamente para buscar comida, actividad a la que dedica el día entero.
 Generation = 9
 Evolutions = OINKOLOGNE,Level,18
+CallRateSOS = 9
 #-------------------------------
 [OINKOLOGNE]
 Name = Oinkologne
@@ -24218,6 +24220,7 @@ Habitat = Grassland
 Category = Gorrino
 Pokedex = Su piel suave y lustrosa es su mayor orgullo. Desprende una fragancia concentrada por la punta de la cola.
 Generation = 9
+CallRateSOS = 6
 #-------------------------------
 [TAROUNTULA]
 Name = Tarountula
@@ -24245,6 +24248,8 @@ Category = Ovillo
 Pokedex = La bola de hilo que le rodea el cuerpo es lo bastante elástica como para repeler las guadañas de los Scyther, su enemigo natural.
 Generation = 9
 Evolutions = SPIDOPS,Level,15
+SpeciesSOS = TAROUNTULA,SPIDOPS
+CallRateSOS = 15
 #-------------------------------
 [SPIDOPS]
 Name = Spidops
@@ -24270,6 +24275,7 @@ Habitat = Forest
 Category = Trampa
 Pokedex = Se adhiere con su hilo a ramas y techos, por los que se desplaza en silencio. Acaba con su presa antes de que esta se percate de su presencia.
 Generation = 9
+CallRateSOS = 9
 #-------------------------------
 [NYMBLE]
 Name = Nymble
@@ -24297,6 +24303,7 @@ Category = Saltamontes
 Pokedex = Mantiene plegado su tercer par de patas, cuya fuerza le permite saltar a más de 10 m de altura para huir en caso de apuro.
 Generation = 9
 Evolutions = LOKIX,Level,24
+CallRateSOS = 15
 #-------------------------------
 [LOKIX]
 Name = Lokix
@@ -24322,6 +24329,7 @@ Habitat = Grassland
 Category = Saltamontes
 Pokedex = Cuando decide luchar sin cuartel, se alza con su tercer par de patas y entra en modo asalto. Acaba con el rival en un abrir y cerrar de ojos.
 Generation = 9
+CallRateSOS = 9
 #-------------------------------
 [PAWMI]
 Name = Pawmi
@@ -24349,6 +24357,7 @@ Category = Ratón
 Pokedex = Como las bolsas de sus mejillas están poco desarrolladas, genera electricidad frotándolas con las almohadillas de sus patas delanteras.
 Generation = 9
 Evolutions = PAWMO,Level,18
+CallRateSOS = 9
 #-------------------------------
 [PAWMO]
 Name = Pawmo
@@ -24375,6 +24384,7 @@ Category = Ratón
 Pokedex = Cuando su manada se ve amenazada, atacan a la vanguardia usando un arte marcial caracterizado por el empleo de descargas eléctricas.
 Generation = 9
 Evolutions = PAWMOT,LevelWalk,1000
+CallRateSOS = 6
 #-------------------------------
 [PAWMOT]
 Name = Pawmot
@@ -24427,6 +24437,7 @@ Category = Pareja
 Pokedex = Cuando encuentran un material que les parece útil para su nido, lo recortan con sus incisivos y lo acarrean, todo en perfecta compenetración.
 Generation = 9
 Evolutions = MAUSHOLD,LevelRandForm,25
+CallRateSOS = 9
 #-------------------------------
 [MAUSHOLD]
 Name = Maushold
@@ -24453,6 +24464,7 @@ Habitat = Urban
 Category = Familia
 Pokedex = Construyen grandes nidos que dividen en varias cámaras destinadas a distintas funciones, como dormir o comer.
 Generation = 9
+CallRateSOS = 6
 #-------------------------------
 [FIDOUGH]
 Name = Fidough
@@ -24480,6 +24492,7 @@ Category = Perrito
 Pokedex = Resulta húmedo y suave al tacto. Hace fermentar las cosas a su alrededor con la levadura de su aliento.
 Generation = 9
 Evolutions = DACHSBUN,Level,26
+CallRateSOS = 9
 #-------------------------------
 [DACHSBUN]
 Name = Dachsbun
@@ -24505,6 +24518,7 @@ Habitat = Urban
 Category = Perro
 Pokedex = El fragante aroma que despide su cuerpo favorece el crecimiento del trigo, por lo que lo aprecian mucho en las comunidades agrícolas.
 Generation = 9
+CallRateSOS = 6
 #-------------------------------
 [SMOLIV]
 Name = Smoliv
@@ -24532,6 +24546,7 @@ Category = Aceituna
 Pokedex = Se defiende de sus rivales segregando por el fruto de su cabeza un aceite tan amargo y agrio que cualquiera daría un respingo al probarlo.
 Generation = 9
 Evolutions = DOLLIV,Level,25
+CallRateSOS = 15
 #-------------------------------
 [DOLLIV]
 Name = Dolliv
@@ -24558,6 +24573,7 @@ Category = Aceituna
 Pokedex = No duda en compartir su delicioso aceite de fresco aroma. Convive con los seres humanos desde hace mucho tiempo.
 Generation = 9
 Evolutions = ARBOLIVA,Level,35
+CallRateSOS = 9
 #-------------------------------
 [ARBOLIVA]
 Name = Arboliva
@@ -24610,6 +24626,7 @@ Habitat = Urban
 Category = Loro
 Pokedex = Los Squawkabilly de plumas verdes son los predominantes. Arman mucho ruido al buscar comida por las mañanas y las noches.
 Generation = 9
+CallRateSOS = 9
 #-------------------------------
 [NACLI]
 Name = Nacli
@@ -24637,6 +24654,7 @@ Category = Halita
 Pokedex = Surgen de estratos salinos subterráneos. Antaño se los tenía en alta estima, pues compartían su sal, un mineral por entonces muy preciado.
 Generation = 9
 Evolutions = NACLSTACK,Level,24
+CallRateSOS = 9
 #-------------------------------
 [NACLSTACK]
 Name = Naclstack
@@ -24663,6 +24681,7 @@ Category = Halita
 Pokedex = Escupe sal para recubrir con ella a sus presas y someterlas a un proceso de salazón que extrae la humedad de sus cuerpos.
 Generation = 9
 Evolutions = GARGANACL,Level,38
+CallRateSOS = 6
 #-------------------------------
 [GARGANACL]
 Name = Garganacl
@@ -24715,6 +24734,7 @@ Category = Piroescudo
 Pokedex = Nació de unos restos de carbón consumidos por las llamas. Reta a rivales poderosos para saciar su ardiente espíritu combativo.
 Generation = 9
 Evolutions = ARMAROUGE,Item,AUSPICIOUSARMOR,CERULEDGE,Item,MALICIOUSARMOR
+CallRateSOS = 9
 #-------------------------------
 [ARMAROUGE]
 Name = Armarouge
@@ -24792,6 +24812,7 @@ Category = Electrocuajo
 Pokedex = Produce electricidad agitando la cola. Si siente peligro, hace parpadear su cabeza para alertar a sus compañeros.
 Generation = 9
 Evolutions = BELLIBOLT,Item,THUNDERSTONE
+CallRateSOS = 9
 #-------------------------------
 [BELLIBOLT]
 Name = Bellibolt
@@ -24817,6 +24838,7 @@ Habitat = WatersEdge
 Category = Electrorrana
 Pokedex = Puede generar grandes cantidades de energía expandiendo y contrayendo su elástico cuerpo gracias a la dinamo de su ombligo.
 Generation = 9
+CallRateSOS = 6
 #-------------------------------
 [WATTREL]
 Name = Wattrel
@@ -24844,6 +24866,7 @@ Category = Paíño
 Pokedex = Los huesos de sus alas producen electricidad con las corrientes de aire. Para cazar, se zambulle en el mar y electrocuta a su presa.
 Generation = 9
 Evolutions = KILOWATTREL,Level,25
+CallRateSOS = 9
 #-------------------------------
 [KILOWATTREL]
 Name = Kilowattrel
@@ -24869,6 +24892,7 @@ Habitat = WatersEdge
 Category = Fregata
 Pokedex = Aumenta la intensidad de su electricidad al inflar su saco gular. Es capaz de recorrer 700km en un día impulsado por las corrientes de aire.
 Generation = 9
+CallRateSOS = 6
 #-------------------------------
 [MASCHIFF]
 Name = Maschiff
@@ -24896,6 +24920,7 @@ Category = Rascal
 Pokedex = Mantiene el ceño fruncido para que sus rivales lo tomen en serio, pero hasta el niño más llorón estallaría en carcajadas al ver su mueca.
 Generation = 9
 Evolutions = MABOSSTIFF,Level,30
+CallRateSOS = 9
 #-------------------------------
 [MABOSSTIFF]
 Name = Mabosstiff
@@ -24921,6 +24946,7 @@ Habitat = Urban
 Category = Jefazo
 Pokedex = Almacena energía en la papada y la libera toda de golpe para arrasar con sus rivales.
 Generation = 9
+CallRateSOS = 6
 #-------------------------------
 [SHROODLE]
 Name = Shroodle
@@ -24948,6 +24974,7 @@ Category = Ratón Veneno
 Pokedex = Es manso, pero muerde y paraliza a quien lo enfada con sus afilados incisivos impregnados de toxinas.
 Generation = 9
 Evolutions = GRAFAIAI,Level,28
+CallRateSOS = 9
 #-------------------------------
 [GRAFAIAI]
 Name = Grafaiai
@@ -24973,6 +25000,7 @@ Habitat = Forest
 Category = Mono Veneno
 Pokedex = El color de su saliva venenosa varía según su alimentación. Se embadurna los dedos con ella para pintar motivos en los árboles del bosque.
 Generation = 9
+CallRateSOS = 6
 #-------------------------------
 [BRAMBLIN]
 Name = Bramblin
@@ -25000,6 +25028,7 @@ Category = Estepicursor
 Pokedex = Se dice que este Pokémon nace cuando las almas en pena terminan enredadas en la hierba seca tras ser arrastradas por el viento.
 Generation = 9
 Evolutions = BRAMBLEGHAST,LevelWalk,1000
+CallRateSOS = 9
 #-------------------------------
 [BRAMBLEGHAST]
 Name = Brambleghast
@@ -25025,6 +25054,7 @@ Habitat = RoughTerrain
 Category = Estepicursor
 Pokedex = Despliega las ramas para engullir a sus presas. Cuando ha terminado de absorber su energía vital, las escupe.
 Generation = 9
+CallRateSOS = 6
 #-------------------------------
 [TOEDSCOOL]
 Name = Toedscool
@@ -25052,6 +25082,7 @@ Pokedex = Los pliegues ondulados que se desprenden de su cuerpo cuentan con una 
 Generation = 9
 WildItemUncommon = TINYMUSHROOM
 Evolutions = TOEDSCRUEL,Level,30
+CallRateSOS = 9
 #-------------------------------
 [TOEDSCRUEL]
 Name = Toedscruel
@@ -25077,6 +25108,7 @@ Category = Auricularia
 Pokedex = Forma colonias de varios ejemplares en lo más profundo de los bosques. No soporta las visitas indeseadas de extraños.
 Generation = 9
 WildItemCommon = TINYMUSHROOM
+CallRateSOS = 6
 #-------------------------------
 [KLAWF]
 Name = Klawf
@@ -25103,6 +25135,7 @@ Habitat = RoughTerrain
 Category = Emboscada
 Pokedex = Acecha a sus presas colgado cabeza abajo de los acantilados, pero no puede aguantar así mucho tiempo porque se le sube la sangre a la cabeza.
 Generation = 9
+CallRateSOS = 3
 #-------------------------------
 [CAPSAKID]
 Name = Capsakid
@@ -25130,6 +25163,7 @@ Category = Habanero
 Pokedex = Cuanto más se expone al sol, más aumenta la cantidad de capsaicinoides de su cuerpo y, por lo tanto, la pungencia de sus movimientos.
 Generation = 9
 Evolutions = SCOVILLAIN,Item,FIRESTONE
+CallRateSOS = 9
 #-------------------------------
 [SCOVILLAIN]
 Name = Scovillain
@@ -25182,6 +25216,7 @@ Category = Pelotero
 Pokedex = Mezcla tierra, arena y energía psíquica para crear una bola de barro que atesora por encima de su propia vida.
 Generation = 9
 Evolutions = RABSCA,LevelWalk,1000
+CallRateSOS = 9
 #-------------------------------
 [RABSCA]
 Name = Rabsca
@@ -25207,6 +25242,7 @@ Habitat = RoughTerrain
 Category = Pelotero
 Pokedex = El cuerpo que sostiene la bola apenas se mueve, por lo que se cree que el cuerpo en el interior de esta es quien controla sus acciones.
 Generation = 9
+CallRateSOS = 6
 #-------------------------------
 [FLITTLE]
 Name = Flittle
@@ -25234,6 +25270,7 @@ Category = Volantes
 Pokedex = La punta de sus extremidades levita a 1 cm del suelo a causa del poder psíquico que emiten los volantes de su abdomen.
 Generation = 9
 Evolutions = ESPATHRA,Level,35
+CallRateSOS = 9
 #-------------------------------
 [ESPATHRA]
 Name = Espathra
@@ -25259,6 +25296,7 @@ Habitat = Grassland
 Category = Avestruz
 Pokedex = Baña al rival con el poder psíquico que emana de sus grandes ojos y lo inmoviliza. A pesar de su aspecto, posee un temperamento feroz.
 Generation = 9
+CallRateSOS = 6
 #-------------------------------
 [TINKATINK]
 Name = Tinkatink
@@ -25286,6 +25324,7 @@ Category = Forja
 Pokedex = Agita su martillo forjado a mano para ahuyentar a posibles amenazas, pero los Pokémon que se alimentan a base de metal suelen robárselo.
 Generation = 9
 Evolutions = TINKATUFF,Level,24
+CallRateSOS = 9
 #-------------------------------
 [TINKATUFF]
 Name = Tinkatuff
@@ -25312,6 +25351,8 @@ Category = Martillo
 Pokedex = Asalta el séquito entero de un Bisharp para reunir metal con el que forjar su enorme y robusto martillo.
 Generation = 9
 Evolutions = TINKATON,Level,38
+RivalSpecies = PAWNIARD,BISHARP
+CallRateSOS = 6
 #-------------------------------
 [TINKATON]
 Name = Tinkaton
@@ -25337,6 +25378,7 @@ Habitat = RoughTerrain
 Category = Martillo
 Pokedex = Posee una notable inteligencia y una exacerbada personalidad. Si ve Corviknight volando, golpea y lanza rocas con su martillo para derribarlos.
 Generation = 9
+RivalSpecies = CORVIKNIGHT
 #-------------------------------
 [WIGLETT]
 Name = Wiglett
@@ -25364,6 +25406,7 @@ Category = Cóngrigo
 Pokedex = Puede percibir el olor de los Veluza a 20m de distancia, lo que le permite ocultarse bajo la arena a tiempo.
 Generation = 9
 Evolutions = WUGTRIO,Level,26
+CallRateSOS = 9
 #-------------------------------
 [WUGTRIO]
 Name = Wugtrio
@@ -25389,6 +25432,7 @@ Habitat = Sea
 Category = Cóngrigo
 Pokedex = Es de temperamento agresivo, aunque no lo parezca. Envuelve a sus presas con sus largos cuerpos y las arrastra a su nido.
 Generation = 9
+CallRateSOS = 6
 #-------------------------------
 [BOMBIRDIER]
 Name = Bombirdier
@@ -25415,6 +25459,7 @@ Habitat = Mountain
 Category = Arrojador
 Pokedex = Mete cosas en su bolsa, fabricada con el plumón de su pecho y con plumas mudadas, para luego dejarlas caer desde las alturas por diversión.
 Generation = 9
+CallRateSOS = 3
 #-------------------------------
 [FINIZEN]
 Name = Finizen
@@ -25441,6 +25486,7 @@ Category = Delfín
 Pokedex = Le gusta jugar con sus congéneres con el anillo de agua de su aleta caudal. Utiliza ultrasonidos para percibir las emociones de otros seres.
 Generation = 9
 Evolutions = PALAFIN,Level,38
+CallRateSOS = 9
 #-------------------------------
 [PALAFIN]
 Name = Palafin
@@ -25493,6 +25539,7 @@ Category = Monocilindro
 Pokedex = Se dice que surgió cuando un misterioso Pokémon venenoso tomó posesión de un motor abandonado en un desguace.
 Generation = 9
 Evolutions = REVAVROOM,Level,40
+CallRateSOS = 9
 #-------------------------------
 [REVAVROOM]
 Name = Revavroom
@@ -25518,6 +25565,8 @@ Habitat = RoughTerrain
 Category = Policilindro
 Pokedex = Posee ocho cilindros, con los que genera energía haciendo estallar el gas que produce al mezclar los minerales de las rocas con su veneno.
 Generation = 9
+Flags = SOSForm_0
+CallRateSOS = 6
 #-------------------------------
 [CYCLIZAR]
 Name = Cyclizar
@@ -25544,6 +25593,7 @@ Habitat = Grassland
 Category = Montura
 Pokedex = Según parece, ha permitido que los humanos monten en él desde tiempos remotos. Aparece en pinturas rupestres de hace diez mil años.
 Generation = 9
+CallRateSOS = 3
 #-------------------------------
 [ORTHWORM]
 Name = Orthworm
@@ -25570,6 +25620,7 @@ Habitat = RoughTerrain
 Category = Lombriz
 Pokedex = Cuando lo atacan, usa los pelos de su cuerpo a modo de puños y hace llover un aluvión de puñetazos sobre sus enemigos.
 Generation = 9
+CallRateSOS = 3
 #-------------------------------
 [GLIMMET]
 Name = Glimmet
@@ -25597,6 +25648,7 @@ Category = Mineral
 Pokedex = Absorbe nutrientes de las paredes de las cuevas. Cubre su cuerpo con pétalos hechos de energía venenosa cristalizada.
 Generation = 9
 Evolutions = GLIMMORA,Level,35
+CallRateSOS = 9
 #-------------------------------
 [GLIMMORA]
 Name = Glimmora
@@ -25622,6 +25674,7 @@ Habitat = Cave
 Category = Mineral
 Pokedex = En cuanto percibe peligro, abre sus pétalos de cristal y despide rayos por su cuerpo en forma de cono.
 Generation = 9
+CallRateSOS = 6
 #-------------------------------
 [GREAVARD]
 Name = Greavard
@@ -25649,6 +25702,7 @@ Category = Can Fantasma
 Pokedex = Se cree que es la reencarnación de un Pokémon perro vagabundo que murió sin haber tenido contacto con humanos.
 Generation = 9
 Evolutions = HOUNDSTONE,LevelNight,30
+CallRateSOS = 9
 #-------------------------------
 [HOUNDSTONE]
 Name = Houndstone
@@ -25674,6 +25728,7 @@ Habitat = Mountain
 Category = Can Fantasma
 Pokedex = Pasa la mayor parte del tiempo durmiendo en cementerios. De todos los Pokémon perro, es el que profesa una mayor lealtad por su Entrenador.
 Generation = 9
+CallRateSOS = 6
 #-------------------------------
 [FLAMIGO]
 Name = Flamigo
@@ -25700,6 +25755,7 @@ Habitat = WatersEdge
 Category = Sincronizado
 Pokedex = Al parecer, se anudan la base del cuello para impedir que la energía que tienen almacenada en el estómago escape por el pico.
 Generation = 9
+CallRateSOS = 3
 #-------------------------------
 [CETODDLE]
 Name = Cetoddle
@@ -25727,6 +25783,7 @@ Category = Geoballena
 Pokedex = Los miembros de esta especie, emparentada al parecer con los Wailmer, abandonaron hace ya mucho tiempo el mar para vivir en tierra firme.
 Generation = 9
 Evolutions = CETITAN,Item,ICESTONE
+CallRateSOS = 9
 #-------------------------------
 [CETITAN]
 Name = Cetitan
@@ -25778,6 +25835,7 @@ Habitat = Sea
 Category = Sueltalastre
 Pokedex = Al desechar la carne que no necesita, agudiza la mente y sus poderes psíquicos se incrementan. Dicha carne tiene un sabor suave pero exquisito.
 Generation = 9
+CallRateSOS = 9
 #-------------------------------
 [DONDOZO]
 Name = Dondozo
@@ -25804,6 +25862,7 @@ Habitat = Sea
 Category = Gran Siluro
 Pokedex = Le gusta mucho comer, pero no se le da bien cazar, por lo que aúna fuerzas con Tatsugiri con el fin de capturar presas.
 Generation = 9
+CallRateSOS = 3
 #-------------------------------
 [TATSUGIRI]
 Name = Tatsugiri
@@ -25831,6 +25890,9 @@ Habitat = Sea
 Category = Mimetismo
 Pokedex = Es un Pokémon de gran astucia. Atrae a sus presas fingiendo estar débil para otorgarle a su compañero la oportunidad de atacar.
 Generation = 9
+SpeciesSOS = TATSUGIRI
+ConditionalSOS = DONDOZO,Water,,DONDOZO,GoodRod,,DONDOZO,SuperRod,
+CallRateSOS = 6
 #-------------------------------
 [ANNIHILAPE]
 Name = Annihilape
@@ -26297,6 +26359,7 @@ Category = Aleta Hielo
 Pokedex = Absorbe el calor a través de la placa dorsal y lo convierte en energía gélida. Cuanto más alta es la temperatura, más energía acumula.
 Generation = 9
 Evolutions = ARCTIBAX,Level,35
+CallRateSOS = 9
 #-------------------------------
 [ARCTIBAX]
 Name = Arctibax
@@ -26323,6 +26386,7 @@ Category = Aleta Hielo
 Pokedex = Congela el aire a su alrededor para cubrirse el rostro con una máscara de hielo protectora y dotar su placa dorsal de cuchillas glaciales.
 Generation = 9
 Evolutions = BAXCALIBUR,Level,54
+CallRateSOS = 6
 #-------------------------------
 [BAXCALIBUR]
 Name = Baxcalibur
@@ -26676,6 +26740,7 @@ Category = Manzamelo
 Pokedex = Exterappli, el que saca la cabeza, e Interappli, el que saca la cola, viven juntos dentro de la manzana y se ayudan el uno al otro.
 Generation = 9
 Evolutions = HYDRAPPLE,HasMove,DRAGONCHEER
+CallRateSOS = 6
 #-------------------------------
 [POLTCHAGEIST]
 Name = Poltchageist
@@ -26703,6 +26768,7 @@ Category = Matcha
 Pokedex = Según se dice, el resquemor de un practicante de la ceremonia del té que murió sin perfeccionar el arte poseyó el matcha y dio lugar a un Pokémon.
 Generation = 9
 Evolutions = SINISTCHA,Item,UNREMARKABLETEACUP
+CallRateSOS = 9
 #-------------------------------
 [SINISTCHA]
 Name = Sinistcha
@@ -26729,6 +26795,7 @@ Habitat = Urban
 Category = Matcha
 Pokedex = Prefiere los lugares fríos y oscuros, como el fondo de las estanterías o bajo el suelo de las casas. Vaga en pos de presas tras el ocaso.
 Generation = 9
+CallRateSOS = 6
 #-------------------------------
 [OKIDOGI]
 Name = Okidogi
