@@ -140,7 +140,8 @@ class Battle::Scene
       a[2].dispose
     end
     sendOuts.each do |b|
-      next if !@battle.showAnims || !@battle.battlers[b[0]].shiny?
+      # next if !@battle.showAnims || !@battle.battlers[b[0]].shiny?
+      next if @battle.rules[:no_battle_animations] || !@battle.battlers[b[0]].shiny?
       if Settings::SUPER_SHINY && @battle.battlers[b[0]].super_shiny?
         pbCommonAnimation("SuperShiny", @battle.battlers[b[0]])
       else

@@ -109,7 +109,7 @@ module Battle::CatchAndStoreMixin
       @caughtPokemon.each_with_index do |pkmn, i|
         next if !pkmn
         idxParty = @caughtPartyIndicies[i]
-        initialItem = @initialItems[1][idxParty]
+        initialItem = @initialItems[1][idxParty][0]
         pkmn.item = initialItem
         @stolenItems[0].length.times do |i|
           data = @stolenItems[0][i]
@@ -124,7 +124,7 @@ module Battle::CatchAndStoreMixin
       # Checks each party member for any stolen items and sends them to the bag, if any.
       pbParty(0).each_with_index do |pkmn, i|
         next if !pkmn
-        pkmn.item = @initialItems[0][i]
+        pkmn.item = @initialItems[0][i][0]
         stolenData = @stolenItems[0][i]
         next if !stolenData || stolenData.empty?
         $bag.add(stolenData[0]) if stolenData[1] == 1

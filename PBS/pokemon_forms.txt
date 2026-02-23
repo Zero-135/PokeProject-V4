@@ -251,6 +251,7 @@ TutorMoves = AGILITY,ALLYSWITCH,ATTRACT,BODYSLAM,BRICKBREAK,CALMMIND,CAPTIVATE,C
 Height = 0.7
 Weight = 21.0
 Color = Brown
+Habitat = WatersEdge
 Pokedex = Controla la electricidad a voluntad. Puede subirse a su propia cola y desplazarse flotando con sus poderes telequinéticos.
 Generation = 7
 #-------------------------------
@@ -2113,6 +2114,7 @@ TutorMoves = ATTRACT,BOUNCE,BULLDOZE,CAPTIVATE,CONFIDE,CRUNCH,DIG,DOUBLEEDGE,DOU
 EggMoves = ASTONISH,BIND,COUNTER,CURSE,PAINSPLIT,REFLECTTYPE,SPITE,YAWN
 Weight = 20.5
 Color = Green
+Habitat = Cave
 Pokedex = Atrae a su presa con los labios, que destacan al ocultar su cuerpo en el lodo, y la aferra con sus aletas serradas y duras como el acero.
 Generation = 8
 Flags = InheritFormWithEverStone
