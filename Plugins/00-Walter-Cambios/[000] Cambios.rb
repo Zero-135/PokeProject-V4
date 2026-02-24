@@ -1510,3 +1510,11 @@ ItemHandlers::BattleUseOnPokemon.add(:RARECANDY, proc { |item, pokemon, battler,
 })
 
 #MultipleForms.copy(:ESPURR, :BASCULIN)
+
+def execScript
+    $game_map.events.each do |id, ev|
+    data = ev.instance_variable_get(:@event)
+    next if !data
+    puts "ID: #{id} - Nombre: #{data.name} - X: #{ev.x} Y: #{ev.y}"
+    end
+end
