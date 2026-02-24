@@ -927,6 +927,7 @@ Generation = 9
 #-------------------------------
 [CYNDAQUIL,1]
 Generation = 8
+Evolutions = QUILAVA,Level,17
 #-------------------------------
 [QUILAVA,1]
 Generation = 8
@@ -1107,7 +1108,7 @@ EggMoves = ACIDSPRAY,AQUAJET,AQUATAIL,ASTONISH,BUBBLEBEAM,FLAIL,HAZE,SELFDESTRUC
 Pokedex = Segrega veneno a través de las agujas, razón por la que los pescadores lo odian. Los ejemplares de otras regiones presentan una forma diferente.
 Generation = 8
 Flags = InheritFormWithEverStone
-Evolutions = OVERQWIL,HasMove,BARBBARRAGE
+Evolutions = OVERQWIL,HasMove,BARBBARRAGE,OVERQWIL,LevelUseMoveCount,BARBBARRAGE
 #-------------------------------
 [SCIZOR,1]
 FormName = Mega Scizor
@@ -1944,6 +1945,7 @@ Generation = 5
 WildItemUncommon = DEEPSEATOOTH
 Flags = InheritFormFromMother
 Evolutions = BASCULEGION,None,
+CallRateSOS = 9
 #-------------------------------
 [BASCULIN,3]
 FormName = Forma Raya Azul
@@ -1957,6 +1959,7 @@ Generation = 5
 WildItemUncommon = DEEPSEASCALE
 Flags = InheritFormFromMother
 Evolutions = BASCULEGION,None,
+CallRateSOS = 9
 #-------------------------------
 [DARUMAKA,2]
 FormName = Forma Galar
@@ -2776,6 +2779,7 @@ Generation = 8
 #-------------------------------
 [DARTRIX,1]
 Generation = 8
+Evolutions = DECIDUEYE,Level,36
 #-------------------------------
 [DECIDUEYE,1]
 FormName = Forma Hisui
@@ -3756,6 +3760,7 @@ Color = Blue
 Shape = Bipedal
 Category = Cazatesoros
 Pokedex = Vaga con una moneda cargada a la espalda. Para sobrevivir, absorbe la fuerza vital de aquellos que se agachan a recogerla.
+Evolutions = GHOLDENGO,None,
 #-------------------------------
 [POLTCHAGEIST,1]
 FormName = Forma Opulenta

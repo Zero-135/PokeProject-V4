@@ -18,9 +18,6 @@ module GameData
 
         #Imagenes
         def self.check_graphic_file(path, species, form = 0, gender = 0, shiny = false, shadow = false, subfolder = "")
-            # if species == :BASCULEGION
-            #     form = gender
-            # end
             try_subfolder = sprintf("%s/", subfolder)
             try_species = species
             try_form    = (form > 0) ? sprintf("_%d", form) : ""
@@ -1512,4 +1509,4 @@ ItemHandlers::BattleUseOnPokemon.add(:RARECANDY, proc { |item, pokemon, battler,
     next true
 })
 
-MultipleForms.copy(:ESPURR, :BASCULIN)
+#MultipleForms.copy(:ESPURR, :BASCULIN)
