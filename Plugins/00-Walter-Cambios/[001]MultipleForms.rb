@@ -26,9 +26,7 @@ MultipleForms.register(:ZEKROM, {
 
 MultipleForms.register(:KYUREM, {
     "getFormOnBattle" => proc { |pkmn|
-        if pkmn.form == 1 || pkmn.form == 2
-            next pkmn.form + 2
-        end
+        next pkmn.form + 2 if pkmn.form == 1 || pkmn.form == 2
     },
     "getFormOnLeavingBattle" => proc { |pkmn, battle, usedInBattle, endBattle|
         next pkmn.form - 2 if pkmn.form >= 3   # Fused forms stop glowing
@@ -145,15 +143,7 @@ MultipleForms.register(:XERNEAS, {
 })
 
 #Pikachu Cosplay
-MultipleForms.register(:PIKACHU, {
-    "getForm" => proc { |pkmn|
-        next if pkmn.form_simple >= 2
-        if $game_map
-            map_pos = $game_map.metadata&.town_map_position
-            next 1 if map_pos && map_pos[0] == 1   # Tiall region
-        end
-        next 0
-    },
+form_data = {
     "onSetForm" => proc { |pkmn, form, oldForm|
         form_moves = [
         :ICICLECRASH,     # Pikachu Belle
@@ -162,42 +152,48 @@ MultipleForms.register(:PIKACHU, {
         :DRAININGKISS,    # Pikachu Pop Star
         :METEORMASH       # Pikachu Rock Star
         ]
-        # Find a known move that should be forgotten
-        old_move_index = -1
-        pkmn.moves.each_with_index do |move, i|
-        next if !form_moves.include?(move.id)
-            old_move_index = i
-            break
-        end
-        # Determine which new move to learn (if any)
-        new_move_id = (form > 2) && (form < 8) ? form_moves[form - 3] : nil
-        new_move_id = nil if !GameData::Move.exists?(new_move_id)
+
+        # Buscar movimiento anterior de forma
+        old_move_index = pkmn.moves.index { |m| form_moves.include?(m.id) } || -1
+
+        # Determinar nuevo movimiento
+        new_move_id = (form > 2 && form < 8) ? form_moves[form - 3] : nil
+        new_move_id = nil unless GameData::Move.exists?(new_move_id)
         if new_move_id.nil? && old_move_index >= 0 && pkmn.numMoves == 1
             new_move_id = :THUNDERSHOCK
-            new_move_id = nil if !GameData::Move.exists?(new_move_id)
-            raise _INTL("Pikachu está intentando olvidar su último movimiento, pero no tiene más movimientos con el que reemplazarlo.") if new_move_id.nil?
+            raise _INTL("Pikachu está intentando olvidar su último movimiento, pero no tiene más movimientos con el que reemplazarlo.") unless GameData::Move.exists?(new_move_id)
         end
         new_move_id = nil if pkmn.hasMove?(new_move_id)
-        # Forget a known move (if relevant) and learn a new move (if relevant)
         if old_move_index >= 0
             old_move_name = pkmn.moves[old_move_index].name
-        if new_move_id.nil?
-            # Just forget the old move
-            pkmn.forget_move_at_index(old_move_index)
-            pbMessage(_INTL("{1} olvidó {2}...", pkmn.name, old_move_name))
-        else
-            # Replace the old move with the new move (keeps the same index)
-            pkmn.moves[old_move_index].id = new_move_id
-            new_move_name = pkmn.moves[old_move_index].name
-            pbMessage(_INTL("{1} olvidó {2}...", pkmn.name, old_move_name) + "\1")
-            pbMessage("\\se[]" + _INTL("¡{1} aprendió {2}!", pkmn.name, new_move_name) + "\\se[Pkmn move learnt]")
-        end
-        elsif !new_move_id.nil?
-            # Just learn the new move
+            if new_move_id.nil?
+                pkmn.forget_move_at_index(old_move_index)
+                pbMessage(_INTL("{1} olvidó {2}...", pkmn.name, old_move_name))
+            else
+                pkmn.moves[old_move_index].id = new_move_id
+                new_move_name = pkmn.moves[old_move_index].name
+                pbMessage(_INTL("{1} olvidó {2}...", pkmn.name, old_move_name) + "\1")
+                pbMessage("\\se[]" + _INTL("¡{1} aprendió {2}!", pkmn.name, new_move_name) + "\\se[Pkmn move learnt]")
+            end
+        elsif new_move_id
             pbLearnMove(pkmn, new_move_id, true)
         end
     }
-})
+}
+
+# Agregar getForm solo si está activado
+if Settings::REGIONAL_FORMS_DEPEND_ON_MAP_REGION
+    form_data["getForm"] = proc { |pkmn|
+        next if pkmn.form_simple >= 2
+        if $game_map
+            map_pos = $game_map.metadata&.town_map_position
+            next 1 if map_pos && map_pos[0] == 1
+        end
+        next 0
+    }
+end
+
+MultipleForms.register(:PIKACHU, form_data)
 
 #Correccion Zygarde onleaving
 MultipleForms.register(:ZYGARDE, {
@@ -212,7 +208,7 @@ MultipleForms.register(:ZYGARDE, {
                     battler.moves[i] = battler_move
                     if battle.choices[battler.index][1] == i
                         battle.choices[battler.index][2] = battler_move 
-                        battle.pbDisplay(_INTL("{1}'s {2} transform into {3}!", battler.pbThis,
+                        battle.pbDisplay(_INTL("{2} de {1} se transformó en {3}!", battler.pbThis,
                                         GameData::Move.get(:COREENFORCER).name, 
                                         GameData::Move.get(:NIHILLIGHT).name
                                         ))
@@ -226,7 +222,7 @@ MultipleForms.register(:ZYGARDE, {
         next { :COREENFORCER => :NIHILLIGHT }
     },
     "changePokemonOnLeavingBattle" => proc { |pkmn, battle, usedInBattle, endBattle|
-        if GameData::Move.exists?(:COREENFORCER) && endBattle
+        if pkmn.fainted? || endBattle
             pkmn.moves.each { |move| move.id = :COREENFORCER if move.id == :NIHILLIGHT }
         end
     },
@@ -251,16 +247,18 @@ MultipleForms.register(:TOXEL, {
 
 MultipleForms.copy(:TOXEL, :TOXTRICITY)
 
-MultipleForms.register(:SCATTERBUG, {
-    "getFormOnCreation" => proc { |pkmn|
-        next $player.secret_ID % 18
-    },
-    "getForm" => proc { |pkmn|
-        next $player.secret_ID % 18
-    }
-})
+if Settings::LINEA_DE_SPEWPA_POR_ID
+    MultipleForms.register(:SCATTERBUG, {
+        "getFormOnCreation" => proc { |pkmn|
+            next $player.secret_ID % 18
+        },
+        "getForm" => proc { |pkmn|
+            next $player.secret_ID % 18
+        }
+    })
 
-MultipleForms.copy(:SCATTERBUG, :SPEWPA, :VIVILLON)
+    MultipleForms.copy(:SCATTERBUG, :SPEWPA, :VIVILLON)
+end
 
 MultipleForms.register(:TANDEMAUS, {
     "getFormOnCreation" => proc { |pkmn|

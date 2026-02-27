@@ -104,11 +104,12 @@ if Settings::USE_NEW_EXP_SHARE
 		$player.party.each { |pokemon| pokemon.expshare = $PokemonGlobal.expshare_enabled }
 	end
 	
+	#Queremos que viaje la forma al momento de la creacion del poke
 	class Pokemon
 		attr_accessor(:expshare)    # Repartir experiencia
 		alias initialize_old initialize
 		def initialize(species, level, player = $player, withMoves = true, recheck_form = true)
-			initialize_old(species, level, player, withMoves)
+			initialize_old(species, level, player, withMoves, recheck_form)
 			$PokemonSystem.expshareon ||= 0
 			@expshare = expshare_enabled? && $PokemonSystem.expshareon == 0
 		end 

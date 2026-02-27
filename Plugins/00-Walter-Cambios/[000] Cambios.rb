@@ -24,7 +24,11 @@ module GameData
             try_gender  = (gender == 1) ? "Female/" : ""
             try_shadow  = (shadow) ? "_shadow" : ""
             factors = []
-            factors.push([4, sprintf("%s shiny/", subfolder), try_subfolder]) if shiny
+            if shiny == 2
+                factors.push([4, sprintf("%s super shiny/", subfolder), try_subfolder])
+            elsif shiny
+                factors.push([4, sprintf("%s shiny/", subfolder), try_subfolder])
+            end
             factors.push([3, try_shadow, ""]) if shadow
             factors.push([2, try_gender, ""]) if gender == 1
             factors.push([1, try_form, ""]) if form > 0
@@ -75,32 +79,9 @@ module GameData
                 when :CALYREX_1   then moves = [:GLACIALLANCE]
                 when :CALYREX_2   then moves = [:ASTRALBARRAGE]
             end
-            return @tutor_moves if !moves
-            return moves.concat(@tutor_moves.clone)
+            return self.tutor_moves.sort unless moves
+            return (self.tutor_moves + moves).sort
         end
-    end
-end
-
-#Modificaciones en tamaño de Pokédex Vistos y Obtenidos
-class PokemonPokedexMenu_Scene
-    def pbStartScene(commands, commands2)
-        @commands = commands
-        @viewport = Viewport.new(0, 0, Graphics.width, Graphics.height)
-        @viewport.z = 99999
-        @sprites = {}
-        @sprites["background"] = IconSprite.new(0, 0, @viewport)
-        @sprites["background"].setBitmap(_INTL("Graphics/UI/Pokedex/bg_menu"))
-        text_tag = shadowc3tag(SEEN_OBTAINED_TEXT_BASE, SEEN_OBTAINED_TEXT_SHADOW)
-        @sprites["headings"] = Window_AdvancedTextPokemon.newWithSize(
-            text_tag + _INTL("VISTOS") + "  " + _INTL("OBTENIDOS") + "</c3>", 270, 136, 240, 64, @viewport
-        )
-        @sprites["headings"].windowskin = nil
-        @sprites["commands"] = Window_DexesList.new(commands, commands2, Graphics.width - 84)
-        @sprites["commands"].x      = 40
-        @sprites["commands"].y      = 192
-        @sprites["commands"].height = 192
-        @sprites["commands"].viewport = @viewport
-        pbFadeInAndShow(@sprites) { pbUpdate }
     end
 end
 
@@ -332,6 +313,7 @@ class PokemonPokedexInfo_Scene
         @sprites["formicon"].visible      = true
 
         #Antiguo
+        coords = PAGE_FORMS_COORDS
         @sprites["background"].setBitmap(_INTL("Graphics/UI/Pokedex/bg_forms"))
         overlay = @sprites["overlay"].bitmap
         base   = Color.new(88, 88, 80)
@@ -354,8 +336,8 @@ class PokemonPokedexInfo_Scene
             end
         end
         textpos = [
-        [GameData::Species.get(@species).name, Graphics.width / 2, Graphics.height - 82, :center, base, shadow],
-        [formname, Graphics.width / 2, Graphics.height - 50, :center, base, shadow]
+            [GameData::Species.get(@species).name, Graphics.width / 2, Graphics.height + coords[:species_name_y_offset], :center, base, shadow],
+            [formname, Graphics.width / 2, Graphics.height + coords[:form_name_y_offset], :center, base, shadow]
         ]
         # Draw all text
         pbDrawTextPositions(overlay, textpos)
@@ -568,113 +550,6 @@ def pbNicknameAndStore(pkmn)
     pbMessage(_INTL("Se envió {1} a la caja \"{2}\"!", pkmn.name, box_name))
 end
 
-#Queremos que viaje la forma al momento de la creacion del poke
-class Pokemon
-    def initialize(species, level, owner = $player, withMoves = true, recheck_form = true)
-        species_data = GameData::Species.get(species)
-        @species          = species_data.species
-        @form             = species_data.base_form
-        @forced_form      = nil
-        @time_form_set    = nil
-        self.level        = level
-        @steps_to_hatch   = 0
-        heal_status
-        @gender           = nil
-        @shiny            = nil
-        @ability_index    = nil
-        @ability          = nil
-        @nature           = nil
-        @nature_for_stats = nil
-        @item             = nil
-        @mail             = nil
-        @moves            = []
-        reset_moves if withMoves
-        @first_moves      = []
-        @ribbons          = []
-        @cool             = 0
-        @beauty           = 0
-        @cute             = 0
-        @smart            = 0
-        @tough            = 0
-        @sheen            = 0
-        @pokerus          = 0
-        @name             = nil
-        @happiness        = species_data.happiness
-        @poke_ball        = :POKEBALL
-        @markings         = []
-        @iv               = {}
-        @ivMaxed          = {}
-        @ev               = {}
-        @evo_move_count   = {}
-        @evo_crest_count  = {}
-        @evo_recoil_count = 0
-        @evo_step_count   = 0
-        GameData::Stat.each_main do |s|
-            @iv[s.id]       = rand(IV_STAT_LIMIT + 1)
-            @ev[s.id]       = 0
-        end
-        case owner
-        when Owner
-            @owner = owner
-        when Player, NPCTrainer
-            @owner = Owner.new_from_trainer(owner)
-        else
-            @owner = Owner.new(0, "", 2, 2)
-        end
-        @obtain_method    = 0   # Met
-        @obtain_method    = 4 if $game_switches && $game_switches[Settings::FATEFUL_ENCOUNTER_SWITCH]
-        @obtain_map       = ($game_map) ? $game_map.map_id : 0
-        @obtain_text      = nil
-        @obtain_level     = level
-        @hatched_map      = 0
-        @timeReceived     = Time.now.to_i
-        @timeEggHatched   = nil
-        @fused            = nil
-        @personalID       = rand(2**16) | (rand(2**16) << 16)
-        @hp               = 1
-        @totalhp          = 1
-        calc_stats
-        if @form == 0 && recheck_form
-            f = MultipleForms.call("getFormOnCreation", self)
-            if f
-                self.form = f
-                reset_moves if withMoves
-            end
-        end
-    end
-end
-
-if Settings::USE_NEW_EXP_SHARE
-    class Pokemon
-        attr_accessor(:expshare)    # Repartir experiencia
-        alias initialize_old initialize
-        def initialize(species,level,player=$player,withMoves=true, recheck_form = true)
-            initialize_old(species, level, player, withMoves, recheck_form)
-            $PokemonSystem.expshareon ||= 0
-            @expshare = ($PokemonGlobal&.expshare_enabled && $PokemonSystem.expshareon == 0) || 
-                       $player&.has_exp_all
-        end
-    end
-end
-
-class Pokemon
-    alias paldea_initialize initialize
-    def initialize(species, level, owner = $player, withMoves = true, recheck_form = true)
-        paldea_initialize(species, level, owner, withMoves, recheck_form)
-        @evo_move_count   = {}
-        @evo_crest_count  = {}
-        @evo_recoil_count = 0
-        @evo_step_count   = 0
-        if @species == :BASCULEGION && recheck_form
-            f = MultipleForms.call("getFormOnCreation", self)
-            if f
-                self.form = f
-                reset_moves if withMoves
-            end
-        end
-    end
-end
-
 #Movimiento Combate
 class Battle
     def pbRegisterMove(idxBattler, idxMove, showMessages = true)
@@ -698,7 +573,7 @@ class Battle
     end
 end
 
-#Adicion de la descripcion de habilidades #Doble
+#Correccion del BackSprite
 class PokemonSummary_Scene
     def pbScene
         @pokemon.play_cry
@@ -712,8 +587,8 @@ class PokemonSummary_Scene
                 @pokemon.play_cry
                 @show_back = !@show_back
                 if PluginManager.installed?("[DBK] Animated Pokémon System")
+                    @sprites["pokemon"].display_values = [UI_POKEMON_SPRITE_X, UI_POKEMON_SPRITE_Y, UI_SPRITE_CONSTRICT_W, UI_SPRITE_CONSTRICT_H]
                     @sprites["pokemon"].setSummaryBitmap(@pokemon, @show_back)
-                    @sprites["pokemon"].constrict([208, 164])
                 else
                     @sprites["pokemon"].setPokemonBitmap(@pokemon, @show_back)
                 end
@@ -727,13 +602,17 @@ class PokemonSummary_Scene
             elsif Input.trigger?(Input::SPECIAL) && @page_id == :page_skills
                 pbPlayDecisionSE
                 showAbilityDescription(@pokemon)
+            elsif Input.trigger?(Input::SPECIAL) && @page_id == :page_info && @pokemon.shadowPokemon?
+                pbPlayDecisionSE
+                showShadowDescription(@pokemon)
             elsif Input.trigger?(Input::USE)
                 dorefresh = pbPageCustomUse(@page_id)
                 if !dorefresh
                     case @page_id
                     when :page_moves
                         pbPlayDecisionSE
-                        dorefresh = pbOptions
+                        pbMoveSelection
+                        dorefresh = true
                     when :page_ribbons
                         pbPlayDecisionSE
                         pbRibbonSelection
@@ -823,20 +702,20 @@ class Battle::Battler
     #Cambia Formas en Ataques
     def pbProcessTurn(choice, tryFlee = true)
         return false if fainted?
-        if tryFlee && wild? &&
-            @battle.rules["alwaysflee"] && @battle.pbCanRun?(@index)
+        # Wild roaming Pokémon always flee if possible
+        if tryFlee && wild? && @battle.rules[:roamer_flees] && @battle.pbCanRun?(@index)
             pbBeginTurn(choice)
-            wild_flee(_INTL("{1} fled from battle!", pbThis))
-            pbEndTurn(choice)
+            wild_flee(_INTL("¡{1} ha huido del combate!", pbThis))
             return true
         end
+        # Shift with the battler next to this one
         if choice[0] == :Shift
             idxOther = -1
             case @battle.pbSideSize(@index)
             when 2
                 idxOther = (@index + 2) % 4
             when 3
-                if @index != 2 && @index != 3
+                if @index != 2 && @index != 3   # If not in middle spot already
                     idxOther = (@index.even?) ? 2 : 3
                 end
             end
@@ -844,29 +723,35 @@ class Battle::Battler
                 @battle.pbSwapBattlers(@index, idxOther)
                 case @battle.pbSideSize(@index)
                 when 2
-                @battle.pbDisplay(_INTL("{1} moved across!", pbThis))
+                    @battle.pbDisplay(_INTL("¡{1} se ha desplazado!", pbThis))
                 when 3
-                @battle.pbDisplay(_INTL("{1} moved to the center!", pbThis))
+                    @battle.pbDisplay(_INTL("¡{1} se movió al centro!", pbThis))
                 end
             end
             pbBeginTurn(choice)
-            pbCancelMoves
-            @lastRoundMoved = @battle.turnCount
+            pbCancelMoves(false)
+            @lastRoundMoved = @battle.turnCount   # Done something this round
             return true
         end
+        # If this battler's action for this round wasn't "use a move"
         if choice[0] != :UseMove
+            # Clean up effects that end at battler's turn
             pbBeginTurn(choice)
             pbEndTurn(choice)
             return false
         end
         
         f = MultipleForms.call("getFormOnAttack", @pokemon, choice[2].id)
-        pbChangeForm(f, _INTL("")) if f        
-        PBDebug.log("[Use move] #{pbThis} (#{@index}) used #{choice[2].name}")
+        pbChangeForm(f, _INTL("")) if f
+        # Use the move
+        PBDebug.log("[Use move] #{pbThis} (#{@index}) usó #{choice[2].name}")
+        @battle.clearStagesChangeRecords
         PBDebug.logonerr { pbUseMove(choice, choice[2] == @battle.struggle) }
         pbChangeForm(f - 1, _INTL("")) if f
 
+        @battle.checkStatChangeResponses
         @battle.pbJudge
+        # Update priority order
         @battle.pbCalculatePriority if Settings::RECALCULATE_TURN_ORDER_AFTER_SPEED_CHANGES
         return true
     end
@@ -929,6 +814,11 @@ class Battle::Battler
         targets = move.pbDesignateTargetsForHit(targets, hitNum)   # For Dragon Darts
         targets.each { |b| b.damageState.resetPerHit }
         #---------------------------------------------------------------------------
+        # Trigger abilities before the hit (they can alter b.damageState.typeMod)
+        targets.each do |b|
+            next if !b.abilityActive?
+            Battle::AbilityEffects.triggerOnTargetedForHit(b.ability, user, b, move, hitNum, @battle)
+        end
         # Calculate damage to deal
         if move.pbDamagingMove?
             targets.each do |b|
@@ -942,6 +832,7 @@ class Battle::Battler
                 move.pbCalcDamage(user, b, targets.length)   # Stored in damageState.calcDamage
                 # Lessen damage dealt because of False Swipe/Endure/etc.
                 move.pbReduceDamage(user, b)   # Stored in damageState.hpLost
+                @battle.hitsTakenCounts[b.idxOwnSide][b.pokemonIndex] += 1 if !b.damageState.substitute
             end
         end
         # Show move animation (for this hit)
@@ -1016,7 +907,13 @@ class Battle::Battler
             move.pbEffectAgainstTarget(user, b)
         end
         move.pbEffectGeneral(user)
-        targets.each { |b| b.pbFaint if b&.fainted? }
+        targets.each do |b|
+            next if !b&.fainted?
+            b.pbFaint
+            if user.pokemon.isSpecies?(:BISHARP) && b.isSpecies?(:BISHARP) && b.item == :LEADERSCREST
+                user.pokemon.evolution_counter += 1
+            end
+        end
         user.pbFaint if user.fainted?
         # Additional effect
         if !user.hasActiveAbility?(:SHEERFORCE)
@@ -1045,6 +942,7 @@ class Battle::Battler
         targets.each do |b|
             next if b.damageState.unaffected
             next if !b.damageState.berryWeakened
+            b.damageState.berryWeakened = false   # Weakening only applies for one hit
             @battle.pbDisplay(_INTL("¡{1} redujo el daño de {2}!", b.itemName, b.pbThis(true)))
             b.pbConsumeItem
         end
@@ -1135,7 +1033,7 @@ MenuHandlers.add(:pokemon_debug_menu, :species_and_form, {
                     f = formcmds[0][cmd2]
                     if f != pkmn.form
                         if MultipleForms.hasFunction?(pkmn, "getForm")
-                            next if !screen.pbConfirm(_INTL("Esta especie decide su propia forma. ¿Sobreescribir?"))
+                            next if !screen.pbConfirm(_INTL("Esta especie decide su propia forma. ¿Sobrescribir?"))
                             pkmn.forced_form = f
                         end
                         pkmn.gendernil if pkmn.species == :PIKACHU
@@ -1316,28 +1214,6 @@ def pbStartTradeMySelf(pokemonIndex)
     $player.party[pokemonIndex] = yourPokemon
 end
 
-#Correccion Evolucion Intercambio
-GameData::Evolution.register({
-    :id            => :TradeSpecies,
-    :parameter     => :Species,
-    :on_trade_proc => proc { |pkmn, parameter, other_pkmn|
-        next other_pkmn.species == parameter && !other_pkmn.hasItem?(:EVERSTONE)
-    }
-})
-
-GameData::Evolution.register({
-    :id            => :ITEMLINKING,
-    :parameter     => :Item,
-    :use_item_proc => proc { |pkmn, parameter, item|
-        next item == :LINKINGCORD && pkmn.item == parameter
-    },
-    :after_evolution_proc => proc { |pkmn, new_species, parameter, evo_species|
-        next false if evo_species != new_species || !pkmn.hasItem?(parameter)
-        pkmn.item = nil   # Item is now consumed
-        next true
-    }
-})
-
 GameData::Evolution.register({
     :id            => :SPECIESLINKING,
     :parameter     => :Species,
@@ -1421,6 +1297,7 @@ ItemHandlers::BattleUseOnPokemon.addIf(:evolution_stones,
     next false
 })
 
+#Correccion "APTO" en Bolsa al momento de usar una Piedra Evolutiva
 alias _oldpbBattleAnimation pbBattleAnimation
 def pbBattleAnimation(*args, &block)
     _oldpbBattleAnimation(*args, &block)
@@ -1513,8 +1390,28 @@ ItemHandlers::BattleUseOnPokemon.add(:RARECANDY, proc { |item, pokemon, battler,
 
 def execScript
     $game_map.events.each do |id, ev|
-    data = ev.instance_variable_get(:@event)
-    next if !data
-    puts "ID: #{id} - Nombre: #{data.name} - X: #{ev.x} Y: #{ev.y}"
+        data = ev.instance_variable_get(:@event)
+        next if !data
+        puts "ID: #{id} - Nombre: #{data.name} - X: #{ev.x} Y: #{ev.y}"
+    end
+end
+
+#Modificacion para leer "Rules" en Batallas
+module BattleCreationHelperMethods
+    module_function
+    BattleCreationHelperMethods.singleton_class.alias_method :old_prepare_battle, :prepare_battle
+    def prepare_battle(battle)
+        BattleCreationHelperMethods.old_prepare_battle(battle)
+        battle.rules = $game_temp.battle_rules.clone
+        #battle.rules = battleRules.clone
+    end
+end
+
+class Battle
+    alias following_pbEndOfBattle pbEndOfBattle
+    def pbEndOfBattle
+        ret = following_pbEndOfBattle
+        FollowingPkmn.refresh(false) if defined?(FollowingPkmn)
+        return ret
     end
 end
