@@ -17,7 +17,7 @@ module Settings
   # status is doubled if a move is capable of inflicting Frostbite. Pokemon with
   # the Drowsy status are also twice as likely to be unable to act each turn.
   #-----------------------------------------------------------------------------
-  HAIL_WEATHER_TYPE = 1
+  # HAIL_WEATHER_TYPE = 1
   
   
   #=============================================================================
@@ -28,7 +28,7 @@ module Settings
   # treated as separate status conditions.
   #-----------------------------------------------------------------------------
   SLEEP_EFFECTS_CAUSE_DROWSY     = false
-  FREEZE_EFFECTS_CAUSE_FROSTBITE = false
+  # FREEZE_EFFECTS_CAUSE_FROSTBITE = false
   #-----------------------------------------------------------------------------
   # When true, Sleep can be cured by getting hit from electrocute moves.
   # (Spark, Volt Tackle, and Wild Charge)
@@ -62,5 +62,5 @@ module Settings
   # -Transistor ability grants a 30% power boost, down from 50%.
   # -Incense is no longer required to hatch baby species of certain Pokemon.
   #-----------------------------------------------------------------------------
-  MECHANICS_GENERATION = 9
+  # MECHANICS_GENERATION = 9
 end

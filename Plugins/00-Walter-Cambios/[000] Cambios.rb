@@ -1,7 +1,56 @@
+#Correcciones Personalizadas Walter
 #Victini
 Settings::DEXES_WITH_OFFSETS  = [4]
 #Formas en la Pokedex
 Settings::DEX_SHOWS_ALL_FORMS = false
+
+
+#Copiar los atributos de Quilava a Cyndaquil
+if Settings::REGIONAL_FORMS_DEPEND_ON_MAP_REGION
+    MultipleForms.copy(:QUILAVA, :CYNDAQUIL)
+end
+
+#Correccion de Fecha y hora de cambio de forma
+MultipleForms.register(:FURFROU, {
+    "getForm" => proc { |pkmn|
+        if !pkmn.time_form_set ||
+            pbGetTimeNow.to_i > pkmn.time_form_set.to_i + (60 * 60 * 24 * 5)   # 5 days
+            next 0
+        end
+    },
+    "onSetForm" => proc { |pkmn, form, oldForm|
+        pkmn.time_form_set = pbGetTimeNow.to_i
+    }
+})
+
+#Correcciones Formas OnCreation
+if Settings::LINEA_DE_SPEWPA_POR_ID
+    MultipleForms.register(:SCATTERBUG, {
+        "getFormOnCreation" => proc { |pkmn|
+            next $player.secret_ID % 18
+        },
+        "getForm" => proc { |pkmn|
+            next $player.secret_ID % 18
+        }
+    })
+
+    MultipleForms.copy(:SCATTERBUG, :SPEWPA, :VIVILLON)
+end
+
+MultipleForms.register(:TOXEL, {
+    "getFormOnCreation" => proc { |pkmn|
+        next 1 if [:LONELY, :BOLD, :RELAXED, :TIMID, :SERIOUS, :MODEST, :MILD,
+                    :QUIET, :BASHFUL, :CALM, :GENTLE, :CAREFUL].include?(pkmn.nature_id)
+        next 0
+    },
+    "getForm" => proc { |pkmn|
+        next 1 if [:LONELY, :BOLD, :RELAXED, :TIMID, :SERIOUS, :MODEST, :MILD,
+                    :QUIET, :BASHFUL, :CALM, :GENTLE, :CAREFUL].include?(pkmn.nature_id)
+        next 0
+    }
+})
+
+MultipleForms.copy(:TOXEL, :TOXTRICITY)
 
 module GameData
     class Species
@@ -14,73 +63,6 @@ module GameData
                 ret["GrowthRate"]     = [:growth_rate,        "e", :GrowthRate]
             end
             return ret
-        end
-
-        #Imagenes
-        def self.check_graphic_file(path, species, form = 0, gender = 0, shiny = false, shadow = false, subfolder = "")
-            try_subfolder = sprintf("%s/", subfolder)
-            try_species = species
-            try_form    = (form > 0) ? sprintf("_%d", form) : ""
-            try_gender  = (gender == 1) ? "Female/" : ""
-            try_shadow  = (shadow) ? "_shadow" : ""
-            factors = []
-            if shiny == 2
-                factors.push([4, sprintf("%s super shiny/", subfolder), try_subfolder])
-            elsif shiny
-                factors.push([4, sprintf("%s shiny/", subfolder), try_subfolder])
-            end
-            factors.push([3, try_shadow, ""]) if shadow
-            factors.push([2, try_gender, ""]) if gender == 1
-            factors.push([1, try_form, ""]) if form > 0
-            factors.push([0, try_species, "0000"])
-            # Go through each combination of parameters in turn to find an existing sprite
-            (2**factors.length).times do |i|
-                # Set try_ parameters for this combination
-                factors.each_with_index do |factor, index|
-                    value = ((i / (2**index)).even?) ? factor[1] : factor[2]
-                    case factor[0]
-                        when 0 then try_species   = value
-                        when 1 then try_form      = value
-                        when 2 then try_gender    = value
-                        when 3 then try_shadow    = value
-                        when 4 then try_subfolder = value   # Shininess
-                    end
-                end
-                # Look for a graphic matching this combination's parameters
-                try_species_text = try_species
-                ret = pbResolveBitmap(sprintf("%s%s%s%s%s%s", path, try_subfolder,
-                                            try_gender, try_species_text, try_form, try_shadow))
-                return ret if ret
-            end
-            return nil
-        end
-
-        #Tutores
-        def get_tutor_moves
-            case @id
-                when :PIKACHU     then moves = [:VOLTTACKLE]
-                when :PIKACHU_2   then moves = [:THUNDERSHOCK]
-                when :PIKACHU_3   then moves = [:ICICLECRASH]
-                when :PIKACHU_4   then moves = [:FLYINGPRESS]
-                when :PIKACHU_5   then moves = [:ELECTRICTERRAIN]
-                when :PIKACHU_6   then moves = [:DRAININGKISS]
-                when :PIKACHU_7   then moves = [:METEORMASH]
-                when :ROTOM_1     then moves = [:OVERHEAT]
-                when :ROTOM_2     then moves = [:HYDROPUMP]
-                when :ROTOM_3     then moves = [:BLIZZARD]
-                when :ROTOM_4     then moves = [:AIRSLASH]
-                when :ROTOM_5     then moves = [:LEAFSTORM]
-                when :KYUREM_1    then moves = [:ICEBURN, :FUSIONFLARE]
-                when :KYUREM_2    then moves = [:FREEZESHOCK, :FUSIONBOLT]
-                when :NECROZMA_1  then moves = [:SUNSTEELSTRIKE]
-                when :NECROZMA_2  then moves = [:MOONGEISTBEAM]
-                when :ZACIAN_1    then moves = [:BEHEMOTHBLADE]
-                when :ZAMAZENTA_1 then moves = [:BEHEMOTHBASH]
-                when :CALYREX_1   then moves = [:GLACIALLANCE]
-                when :CALYREX_2   then moves = [:ASTRALBARRAGE]
-            end
-            return self.tutor_moves.sort unless moves
-            return (self.tutor_moves + moves).sort
         end
     end
 end
@@ -550,212 +532,7 @@ def pbNicknameAndStore(pkmn)
     pbMessage(_INTL("Se envió {1} a la caja \"{2}\"!", pkmn.name, box_name))
 end
 
-#Movimiento Combate
-class Battle
-    def pbRegisterMove(idxBattler, idxMove, showMessages = true)
-        battler = @battlers[idxBattler]
-        move = battler.moves[idxMove]
-        return false if !pbCanChooseMove?(idxBattler, idxMove, showMessages)
-
-        if move.id == :STRUGGLE
-            @choices[idxBattler][0] = :UseMove    # "Use move"
-            @choices[idxBattler][1] = -1          # Index of move to be used
-            @choices[idxBattler][2] = @struggle   # Struggle Battle::Move object
-            @choices[idxBattler][3] = -1          # No target chosen yet
-        else
-            @choices[idxBattler][0] = :UseMove   # "Use move"
-            @choices[idxBattler][1] = idxMove    # Index of move to be used
-            @choices[idxBattler][2] = move       # Battle::Move object
-            @choices[idxBattler][3] = -1         # No target chosen yet
-        end
-
-        return true
-    end
-end
-
-#Correccion del BackSprite
-class PokemonSummary_Scene
-    def pbScene
-        @pokemon.play_cry
-        loop do
-            Graphics.update
-            Input.update
-            pbUpdate
-            dorefresh = false
-            if Input.trigger?(Input::ACTION)
-                pbSEStop
-                @pokemon.play_cry
-                @show_back = !@show_back
-                if PluginManager.installed?("[DBK] Animated Pokémon System")
-                    @sprites["pokemon"].display_values = [UI_POKEMON_SPRITE_X, UI_POKEMON_SPRITE_Y, UI_SPRITE_CONSTRICT_W, UI_SPRITE_CONSTRICT_H]
-                    @sprites["pokemon"].setSummaryBitmap(@pokemon, @show_back)
-                else
-                    @sprites["pokemon"].setPokemonBitmap(@pokemon, @show_back)
-                end
-                if @show_back
-                    @sprites["pokemon"].zoom_x = 2 / 3.0
-                    @sprites["pokemon"].zoom_y = 2 / 3.0
-                end
-            elsif Input.trigger?(Input::BACK)
-                pbPlayCloseMenuSE
-                break
-            elsif Input.trigger?(Input::SPECIAL) && @page_id == :page_skills
-                pbPlayDecisionSE
-                showAbilityDescription(@pokemon)
-            elsif Input.trigger?(Input::SPECIAL) && @page_id == :page_info && @pokemon.shadowPokemon?
-                pbPlayDecisionSE
-                showShadowDescription(@pokemon)
-            elsif Input.trigger?(Input::USE)
-                dorefresh = pbPageCustomUse(@page_id)
-                if !dorefresh
-                    case @page_id
-                    when :page_moves
-                        pbPlayDecisionSE
-                        pbMoveSelection
-                        dorefresh = true
-                    when :page_ribbons
-                        pbPlayDecisionSE
-                        pbRibbonSelection
-                        dorefresh = true
-                    else
-                        if !@inbattle
-                            pbPlayDecisionSE
-                            dorefresh = pbOptions
-                        end
-                    end
-                end
-            elsif Input.repeat?(Input::UP)
-                oldindex = @partyindex
-                pbGoToPrevious
-                if @partyindex != oldindex
-                    pbChangePokemon
-                    @ribbonOffset = 0
-                    dorefresh = true
-                end
-            elsif Input.repeat?(Input::DOWN)
-                oldindex = @partyindex
-                pbGoToNext
-                if @partyindex != oldindex
-                    pbChangePokemon
-                    @ribbonOffset = 0
-                    dorefresh = true
-                end
-            elsif Input.trigger?(Input::JUMPUP) && !@party.is_a?(PokemonBox)
-                oldindex = @partyindex
-                @partyindex = 0
-                if @partyindex != oldindex
-                    pbChangePokemon
-                    @ribbonOffset = 0
-                    dorefresh = true
-                end
-            elsif Input.trigger?(Input::JUMPDOWN) && !@party.is_a?(PokemonBox)
-                oldindex = @partyindex
-                @partyindex = @party.length - 1
-                if @partyindex != oldindex
-                    pbChangePokemon
-                    @ribbonOffset = 0
-                    dorefresh = true
-                end
-            elsif Input.repeat?(Input::LEFT)
-                oldpage = @page
-                numpages = @page_list.length
-                @page -= 1
-                @page = numpages if @page < 1
-                @page = 1 if @page > numpages
-                if @page != oldpage
-                    pbSEPlay("GUI summary change page")
-                    @ribbonOffset = 0
-                    dorefresh = true
-                end
-            elsif Input.repeat?(Input::RIGHT)
-                oldpage = @page
-                numpages = @page_list.length
-                @page += 1
-                @page = numpages if @page < 1
-                @page = 1 if @page > numpages
-                if @page != oldpage
-                    pbSEPlay("GUI summary change page")
-                    @ribbonOffset = 0
-                    dorefresh = true
-                end
-            end
-            @show_back = false if dorefresh
-            if !@show_back
-                @sprites["pokemon"].zoom_x = 1.0
-                @sprites["pokemon"].zoom_y = 1.0
-            end
-            drawPage(@page) if dorefresh
-        end
-        return @partyindex
-    end
-end
-
 class Battle::Battler
-    #Modificaciones para las formas de Reshiram, Zekrom y Kyurem
-    alias new_forms_pbCheckForm pbCheckForm
-    def pbCheckForm(endOfRound = false)
-        new_forms_pbCheckForm(endOfRound)
-        f = MultipleForms.call("getFormOnBattle", @pokemon)
-        pbChangeForm(f, _INTL("")) if f
-    end
-
-    #Cambia Formas en Ataques
-    def pbProcessTurn(choice, tryFlee = true)
-        return false if fainted?
-        # Wild roaming Pokémon always flee if possible
-        if tryFlee && wild? && @battle.rules[:roamer_flees] && @battle.pbCanRun?(@index)
-            pbBeginTurn(choice)
-            wild_flee(_INTL("¡{1} ha huido del combate!", pbThis))
-            return true
-        end
-        # Shift with the battler next to this one
-        if choice[0] == :Shift
-            idxOther = -1
-            case @battle.pbSideSize(@index)
-            when 2
-                idxOther = (@index + 2) % 4
-            when 3
-                if @index != 2 && @index != 3   # If not in middle spot already
-                    idxOther = (@index.even?) ? 2 : 3
-                end
-            end
-            if idxOther >= 0
-                @battle.pbSwapBattlers(@index, idxOther)
-                case @battle.pbSideSize(@index)
-                when 2
-                    @battle.pbDisplay(_INTL("¡{1} se ha desplazado!", pbThis))
-                when 3
-                    @battle.pbDisplay(_INTL("¡{1} se movió al centro!", pbThis))
-                end
-            end
-            pbBeginTurn(choice)
-            pbCancelMoves(false)
-            @lastRoundMoved = @battle.turnCount   # Done something this round
-            return true
-        end
-        # If this battler's action for this round wasn't "use a move"
-        if choice[0] != :UseMove
-            # Clean up effects that end at battler's turn
-            pbBeginTurn(choice)
-            pbEndTurn(choice)
-            return false
-        end
-        
-        f = MultipleForms.call("getFormOnAttack", @pokemon, choice[2].id)
-        pbChangeForm(f, _INTL("")) if f
-        # Use the move
-        PBDebug.log("[Use move] #{pbThis} (#{@index}) usó #{choice[2].name}")
-        @battle.clearStagesChangeRecords
-        PBDebug.logonerr { pbUseMove(choice, choice[2] == @battle.struggle) }
-        pbChangeForm(f - 1, _INTL("")) if f
-
-        @battle.checkStatChangeResponses
-        @battle.pbJudge
-        # Update priority order
-        @battle.pbCalculatePriority if Settings::RECALCULATE_TURN_ORDER_AFTER_SPEED_CHANGES
-        return true
-    end
-
     #Actualizacion Sprite Movimientos 2 Turnos
     def pbRestoreBattlerSprite(user)
         scene = @battle.scene
@@ -966,7 +743,6 @@ class Battle::Battler
         end
         return true
     end
-
 end
 
 class Pokemon
@@ -1050,6 +826,405 @@ MenuHandlers.add(:pokemon_debug_menu, :species_and_form, {
     next false
   }
 })
+
+#Modificacion para leer "Rules" en Batallas
+module BattleCreationHelperMethods
+    module_function
+    BattleCreationHelperMethods.singleton_class.alias_method :old_prepare_battle, :prepare_battle
+    def prepare_battle(battle)
+        BattleCreationHelperMethods.old_prepare_battle(battle)
+        battle.rules = $game_temp.battle_rules.clone
+        #battle.rules = battleRules.clone
+    end
+end
+
+
+
+
+
+
+
+
+
+#Adiciones Personalizadas Walter
+module GameData
+    class Species
+        #Imagenes
+        def self.check_graphic_file(path, species, form = 0, gender = 0, shiny = false, shadow = false, subfolder = "")
+            try_subfolder = sprintf("%s/", subfolder)
+            try_species = species
+            try_form    = (form > 0) ? sprintf("_%d", form) : ""
+            try_gender  = (gender == 1) ? "Female/" : ""
+            try_shadow  = (shadow) ? "_shadow" : ""
+            factors = []
+            if shiny == 2
+                factors.push([4, sprintf("%s super shiny/", subfolder), try_subfolder])
+            elsif shiny
+                factors.push([4, sprintf("%s shiny/", subfolder), try_subfolder])
+            end
+            factors.push([3, try_shadow, ""]) if shadow
+            factors.push([2, try_gender, ""]) if gender == 1
+            factors.push([1, try_form, ""]) if form > 0
+            factors.push([0, try_species, "0000"])
+            # Go through each combination of parameters in turn to find an existing sprite
+            (2**factors.length).times do |i|
+                # Set try_ parameters for this combination
+                factors.each_with_index do |factor, index|
+                    value = ((i / (2**index)).even?) ? factor[1] : factor[2]
+                    case factor[0]
+                        when 0 then try_species   = value
+                        when 1 then try_form      = value
+                        when 2 then try_gender    = value
+                        when 3 then try_shadow    = value
+                        when 4 then try_subfolder = value   # Shininess
+                    end
+                end
+                # Look for a graphic matching this combination's parameters
+                try_species_text = try_species
+                ret = pbResolveBitmap(sprintf("%s%s%s%s%s%s", path, try_subfolder,
+                                            try_gender, try_species_text, try_form, try_shadow))
+                return ret if ret
+            end
+            return nil
+        end
+
+        #Tutores
+        def get_tutor_moves
+            case @id
+                when :PIKACHU     then moves = [:VOLTTACKLE]
+                when :PIKACHU_2   then moves = [:THUNDERSHOCK]
+                when :PIKACHU_3   then moves = [:ICICLECRASH]
+                when :PIKACHU_4   then moves = [:FLYINGPRESS]
+                when :PIKACHU_5   then moves = [:ELECTRICTERRAIN]
+                when :PIKACHU_6   then moves = [:DRAININGKISS]
+                when :PIKACHU_7   then moves = [:METEORMASH]
+                when :ROTOM_1     then moves = [:OVERHEAT]
+                when :ROTOM_2     then moves = [:HYDROPUMP]
+                when :ROTOM_3     then moves = [:BLIZZARD]
+                when :ROTOM_4     then moves = [:AIRSLASH]
+                when :ROTOM_5     then moves = [:LEAFSTORM]
+                when :KYUREM_1    then moves = [:ICEBURN, :FUSIONFLARE]
+                when :KYUREM_2    then moves = [:FREEZESHOCK, :FUSIONBOLT]
+                when :NECROZMA_1  then moves = [:SUNSTEELSTRIKE]
+                when :NECROZMA_2  then moves = [:MOONGEISTBEAM]
+                when :ZACIAN_1    then moves = [:BEHEMOTHBLADE]
+                when :ZAMAZENTA_1 then moves = [:BEHEMOTHBASH]
+                when :CALYREX_1   then moves = [:GLACIALLANCE]
+                when :CALYREX_2   then moves = [:ASTRALBARRAGE]
+            end
+            return self.tutor_moves.sort unless moves
+            return (self.tutor_moves + moves).sort
+        end
+    end
+end
+
+#Movimiento Combate
+class Battle
+    def pbRegisterMove(idxBattler, idxMove, showMessages = true)
+        battler = @battlers[idxBattler]
+        move = battler.moves[idxMove]
+        return false if !pbCanChooseMove?(idxBattler, idxMove, showMessages)
+
+        if move.id == :STRUGGLE
+            @choices[idxBattler][0] = :UseMove    # "Use move"
+            @choices[idxBattler][1] = -1          # Index of move to be used
+            @choices[idxBattler][2] = @struggle   # Struggle Battle::Move object
+            @choices[idxBattler][3] = -1          # No target chosen yet
+        else
+            @choices[idxBattler][0] = :UseMove   # "Use move"
+            @choices[idxBattler][1] = idxMove    # Index of move to be used
+            @choices[idxBattler][2] = move       # Battle::Move object
+            @choices[idxBattler][3] = -1         # No target chosen yet
+        end
+
+        return true
+    end
+end
+
+#Actualizacion de las formas de los pokes legendarios
+MultipleForms.register(:RESHIRAM, {
+    "getFormOnBattle" => proc { |pkmn|
+        if pkmn.ability == :TURBOBLAZE && pkmn.form == 0
+            next 1
+        end
+    },
+    "getFormOnLeavingBattle" => proc { |pkmn, battle, usedInBattle, endBattle|
+        next 0 if pkmn.form >= 1
+    }
+})
+
+MultipleForms.register(:ZEKROM, {
+    "getFormOnBattle" => proc { |pkmn|
+        if pkmn.ability == :TERAVOLT && pkmn.form == 0
+            next 1
+        end
+    },
+    "getFormOnLeavingBattle" => proc { |pkmn, battle, usedInBattle, endBattle|
+        next 0 if pkmn.form >= 1
+    }
+})
+
+MultipleForms.register(:KYUREM, {
+    "getFormOnBattle" => proc { |pkmn|
+        next pkmn.form + 2 if pkmn.form == 1 || pkmn.form == 2
+    },
+    "getFormOnLeavingBattle" => proc { |pkmn, battle, usedInBattle, endBattle|
+        next pkmn.form - 2 if pkmn.form >= 3   # Fused forms stop glowing
+    },
+    "onSetForm" => proc { |pkmn, form, oldForm|
+        case form
+        when 0   # Normal
+            pkmn.moves.each_with_index do |move, i|
+            case move.id
+            when :ICEBURN, :FREEZESHOCK
+                next if !GameData::Move.exists?(:GLACIATE)
+                if pkmn.hasMove?(:GLACIATE)
+                    pkmn.moves[i] = nil
+                else
+                    move.id = :GLACIATE
+                end
+            when :FUSIONFLARE, :FUSIONBOLT
+                next if !GameData::Move.exists?(:SCARYFACE)
+                if pkmn.hasMove?(:SCARYFACE)
+                    pkmn.moves[i] = nil
+                else
+                    move.id = :SCARYFACE
+                end
+            end
+            pkmn.moves.compact!
+        end
+        when 1   # White
+            pkmn.moves.each do |move|
+            case move.id
+            when :GLACIATE
+                next if !GameData::Move.exists?(:ICEBURN) || pkmn.hasMove?(:ICEBURN)
+                move.id = :ICEBURN
+            when :SCARYFACE
+                next if !GameData::Move.exists?(:FUSIONFLARE) || pkmn.hasMove?(:FUSIONFLARE)
+                move.id = :FUSIONFLARE
+            end
+        end
+        when 2   # Black
+            pkmn.moves.each do |move|
+            case move.id
+            when :GLACIATE
+                next if !GameData::Move.exists?(:FREEZESHOCK) || pkmn.hasMove?(:FREEZESHOCK)
+                move.id = :FREEZESHOCK
+            when :SCARYFACE
+                next if !GameData::Move.exists?(:FUSIONBOLT) || pkmn.hasMove?(:FUSIONBOLT)
+                move.id = :FUSIONBOLT
+            end
+        end
+    end
+  }
+})
+
+MultipleForms.register(:XERNEAS, {
+    "getFormOnBattle" => proc { |pkmn|
+        if pkmn.ability == :FAIRYAURA && pkmn.form == 0
+            next 1
+        end
+    },
+    "getFormOnLeavingBattle" => proc { |pkmn, battle, usedInBattle, endBattle|
+        next 0 if endBattle
+    }
+})
+
+MultipleForms.register(:ZACIAN, {
+    "getFormOnBattle" => proc { |pkmn|
+        if pkmn.form == 0 && pkmn.hasItem?(:RUSTEDSWORD)
+            next 1
+        end
+    },
+    "changePokemonOnStartingBattle" => proc { |pkmn, battle|
+        if GameData::Move.exists?(:BEHEMOTHBLADE) && pkmn.hasItem?(:RUSTEDSWORD)
+            pkmn.moves.each { |move| move.id = :BEHEMOTHBLADE if move.id == :IRONHEAD }
+        end
+    },
+    "getFormOnLeavingBattle" => proc { |pkmn, battle, usedInBattle, endBattle|
+        next 0 if endBattle
+    },
+    "changePokemonOnLeavingBattle" => proc { |pkmn, battle, usedInBattle, endBattle|
+        if endBattle
+            pkmn.moves.each { |move| move.id = :IRONHEAD if move.id == :BEHEMOTHBLADE }
+        end
+    },
+    "getFormOnAttack" => proc { |pkmn, move|
+        if pkmn.form == 1 && move == :BEHEMOTHBLADE
+            next 2
+        end
+    }
+})
+
+MultipleForms.register(:ZAMAZENTA, {
+    "getFormOnBattle" => proc { |pkmn|
+        if pkmn.form == 0 && pkmn.hasItem?(:RUSTEDSHIELD)
+            next 1
+        end
+    },
+    "changePokemonOnStartingBattle" => proc { |pkmn, battle|
+        if GameData::Move.exists?(:BEHEMOTHBASH) && pkmn.hasItem?(:RUSTEDSHIELD)
+            pkmn.moves.each { |move| move.id = :BEHEMOTHBASH if move.id == :IRONHEAD }
+        end
+    },
+    "getFormOnLeavingBattle" => proc { |pkmn, battle, usedInBattle, endBattle|
+        next 0 if endBattle
+    },
+    "changePokemonOnLeavingBattle" => proc { |pkmn, battle, usedInBattle, endBattle|
+        if endBattle
+            pkmn.moves.each { |move| move.id = :IRONHEAD if move.id == :BEHEMOTHBASH }
+        end
+    },
+    "getFormOnAttack" => proc { |pkmn, move|
+        if pkmn.form == 1 && move == :BEHEMOTHBASH
+            next 2
+        end
+    }
+})
+
+MultipleForms.register(:SOLGALEO, {
+    "getFormOnAttack" => proc { |pkmn, move|
+        if pkmn.form == 0 && (move == :SUNSTEELSTRIKE || move == :SEARINGSUNRAZESMASH)
+            next 1
+        end
+    }
+})
+
+MultipleForms.register(:LUNALA, {
+    "getFormOnAttack" => proc { |pkmn, move|
+        if pkmn.form == 0 && (move == :MOONGEISTBEAM || move == :MENACINGMOONRAZEMAELSTROM)
+            next 1
+        end
+    }
+})
+
+MultipleForms.register(:MARSHADOW, {
+    "getFormOnAttack" => proc { |pkmn, move|
+        if pkmn.form == 0 && move == :SOULSTEALING7STARSTRIKE
+            next 1
+        end
+    }
+})
+
+class Battle::Battler
+    #Modificaciones para las formas de Reshiram, Zekrom y Kyurem
+    alias new_forms_pbCheckForm pbCheckForm
+    def pbCheckForm(endOfRound = false)
+        new_forms_pbCheckForm(endOfRound)
+        f = MultipleForms.call("getFormOnBattle", @pokemon)
+        pbChangeForm(f, _INTL("")) if f
+    end
+
+    #Cambia Formas en Ataques
+    def pbProcessTurn(choice, tryFlee = true)
+        return false if fainted?
+        # Wild roaming Pokémon always flee if possible
+        if tryFlee && wild? && @battle.rules[:roamer_flees] && @battle.pbCanRun?(@index)
+            pbBeginTurn(choice)
+            wild_flee(_INTL("¡{1} ha huido del combate!", pbThis))
+            return true
+        end
+        # Shift with the battler next to this one
+        if choice[0] == :Shift
+            idxOther = -1
+            case @battle.pbSideSize(@index)
+            when 2
+                idxOther = (@index + 2) % 4
+            when 3
+                if @index != 2 && @index != 3   # If not in middle spot already
+                    idxOther = (@index.even?) ? 2 : 3
+                end
+            end
+            if idxOther >= 0
+                @battle.pbSwapBattlers(@index, idxOther)
+                case @battle.pbSideSize(@index)
+                when 2
+                    @battle.pbDisplay(_INTL("¡{1} se ha desplazado!", pbThis))
+                when 3
+                    @battle.pbDisplay(_INTL("¡{1} se movió al centro!", pbThis))
+                end
+            end
+            pbBeginTurn(choice)
+            pbCancelMoves(false)
+            @lastRoundMoved = @battle.turnCount   # Done something this round
+            return true
+        end
+        # If this battler's action for this round wasn't "use a move"
+        if choice[0] != :UseMove
+            # Clean up effects that end at battler's turn
+            pbBeginTurn(choice)
+            pbEndTurn(choice)
+            return false
+        end
+        
+        f = MultipleForms.call("getFormOnAttack", @pokemon, choice[2].id)
+        pbChangeForm(f, _INTL("")) if f
+        # Use the move
+        PBDebug.log("[Use move] #{pbThis} (#{@index}) usó #{choice[2].name}")
+        @battle.clearStagesChangeRecords
+        PBDebug.logonerr { pbUseMove(choice, choice[2] == @battle.struggle) }
+        pbChangeForm(f - 1, _INTL("")) if f
+
+        @battle.checkStatChangeResponses
+        @battle.pbJudge
+        # Update priority order
+        @battle.pbCalculatePriority if Settings::RECALCULATE_TURN_ORDER_AFTER_SPEED_CHANGES
+        return true
+    end
+end
+
+#Pikachu Cosplay
+form_data = {
+    "onSetForm" => proc { |pkmn, form, oldForm|
+        form_moves = [
+        :ICICLECRASH,     # Pikachu Belle
+        :FLYINGPRESS,     # Pikachu Libre
+        :ELECTRICTERRAIN, # Pikachu, Ph.D.
+        :DRAININGKISS,    # Pikachu Pop Star
+        :METEORMASH       # Pikachu Rock Star
+        ]
+
+        # Buscar movimiento anterior de forma
+        old_move_index = pkmn.moves.index { |m| form_moves.include?(m.id) } || -1
+
+        # Determinar nuevo movimiento
+        new_move_id = (form > 2 && form < 8) ? form_moves[form - 3] : nil
+        new_move_id = nil unless GameData::Move.exists?(new_move_id)
+        if new_move_id.nil? && old_move_index >= 0 && pkmn.numMoves == 1
+            new_move_id = :THUNDERSHOCK
+            raise _INTL("Pikachu está intentando olvidar su último movimiento, pero no tiene más movimientos con el que reemplazarlo.") unless GameData::Move.exists?(new_move_id)
+        end
+        new_move_id = nil if pkmn.hasMove?(new_move_id)
+        if old_move_index >= 0
+            old_move_name = pkmn.moves[old_move_index].name
+            if new_move_id.nil?
+                pkmn.forget_move_at_index(old_move_index)
+                pbMessage(_INTL("{1} olvidó {2}...", pkmn.name, old_move_name))
+            else
+                pkmn.moves[old_move_index].id = new_move_id
+                new_move_name = pkmn.moves[old_move_index].name
+                pbMessage(_INTL("{1} olvidó {2}...", pkmn.name, old_move_name) + "\1")
+                pbMessage("\\se[]" + _INTL("¡{1} aprendió {2}!", pkmn.name, new_move_name) + "\\se[Pkmn move learnt]")
+            end
+        elsif new_move_id
+            pbLearnMove(pkmn, new_move_id, true)
+        end
+    }
+}
+
+# Agregar getForm solo si está activado
+if Settings::REGIONAL_FORMS_DEPEND_ON_MAP_REGION
+    form_data["getForm"] = proc { |pkmn|
+        next if pkmn.form_simple >= 2
+        if $game_map
+            map_pos = $game_map.metadata&.town_map_position
+            next 1 if map_pos && map_pos[0] == 1
+        end
+        next 0
+    }
+end
+
+MultipleForms.register(:PIKACHU, form_data)
 
 #Adicion de Objetos para cambiar Formas
 ItemHandlers::UseOnPokemon.add(:PIKACHUCATALOG, proc { |item, qty, pkmn, scene|
@@ -1214,6 +1389,7 @@ def pbStartTradeMySelf(pokemonIndex)
     $player.party[pokemonIndex] = yourPokemon
 end
 
+#Evolucion Shellmet y Karrablast
 GameData::Evolution.register({
     :id            => :SPECIESLINKING,
     :parameter     => :Species,
@@ -1388,6 +1564,7 @@ ItemHandlers::BattleUseOnPokemon.add(:RARECANDY, proc { |item, pokemon, battler,
 
 #MultipleForms.copy(:ESPURR, :BASCULIN)
 
+#Metodo para extraer los eventos de un mapa
 def execScript
     $game_map.events.each do |id, ev|
         data = ev.instance_variable_get(:@event)
@@ -1396,17 +1573,9 @@ def execScript
     end
 end
 
-#Modificacion para leer "Rules" en Batallas
-module BattleCreationHelperMethods
-    module_function
-    BattleCreationHelperMethods.singleton_class.alias_method :old_prepare_battle, :prepare_battle
-    def prepare_battle(battle)
-        BattleCreationHelperMethods.old_prepare_battle(battle)
-        battle.rules = $game_temp.battle_rules.clone
-        #battle.rules = battleRules.clone
-    end
-end
 
+
+#Cambios Following Pokemon
 class Battle
     alias following_pbEndOfBattle pbEndOfBattle
     def pbEndOfBattle
