@@ -68,7 +68,7 @@ class Battle
   def pbCanSwitch?(idxBattler, idxParty = -1, partyScene = nil)
     ret = paldea_pbCanSwitch?(idxBattler, idxParty, partyScene)
     if ret && @battlers[idxBattler].effects[PBEffects::Commander]
-      partyScene&.pbDisplay(_INTL("{1} can't be switched out!", @battlers[idxBattler].pbThis))
+      partyScene&.pbDisplay(_INTL("¡{1} no puede ser cambiado!", @battlers[idxBattler].pbThis))
       return false
     end
     return ret
@@ -101,7 +101,7 @@ class Battle
   def pbEOREndBattlerEffects(priority)
     paldea_pbEOREndBattlerEffects(priority)
     pbEORCountDownBattlerEffect(priority, PBEffects::Splinters) { |battler|
-      pbDisplay(_INTL("{1} was freed from the jagged splinters!", battler.pbThis))
+      pbDisplay(_INTL("¡{1} se liberó de las astillas dentadas!", battler.pbThis))
       battler.effects[PBEffects::SplintersType] = nil
     }
   end
@@ -117,7 +117,7 @@ class Battle
       pbCommonAnimation("Syrupy", battler)
       battler.effects[PBEffects::Syrupy] -= 1
       battler.pbLowerStatStage(:SPEED, 1, battler) if battler.pbCanLowerStatStage?(:SPEED)
-      pbDisplay(_INTL("{1} was freed from the sticky candy syrup!", battler.pbThis)) if battler.effects[PBEffects::Syrupy] == 0
+      pbDisplay(_INTL("¡{1} se liberó del caramelo pegajoso!", battler.pbThis)) if battler.effects[PBEffects::Syrupy] == 0
     end
   end
   
@@ -136,7 +136,7 @@ class Battle
       damage = ((((2.0 * battler.level / 5) + 2).floor * 25 * battler.attack / battler.defense).floor / 50).floor + 2
       damage *= effectiveness.to_f / Effectiveness::NORMAL_EFFECTIVE
       battler.pbTakeEffectDamage(damage) { |hp_lost|
-        pbDisplay(_INTL("{1} is hurt by the jagged splinters!", battler.pbThis))
+        pbDisplay(_INTL("¡{1} es dañado por las astillas dentadas!", battler.pbThis))
       }
     end
     priority.each do |battler|
@@ -144,7 +144,7 @@ class Battle
       pbCommonAnimation("SaltCure", battler)
       fraction = (battler.pbHasType?(:STEEL) || battler.pbHasType?(:WATER)) ? 4 : 8
       battler.pbTakeEffectDamage(battler.totalhp / fraction) { |hp_lost|
-        pbDisplay(_INTL("{1} is hurt by Salt Cure!", battler.pbThis))
+        pbDisplay(_INTL("¡{1} es dañado por la salazón!", battler.pbThis))
       }
     end
   end
@@ -155,13 +155,13 @@ class Battle
   alias paldea_pbEndOfRoundPhase pbEndOfRoundPhase
   def pbEndOfRoundPhase
     paldea_pbEndOfRoundPhase
-    allBattlers.each_with_index do |battler, i|
+    allBattlers(true).each_with_index do |battler, i|
       battler.effects[PBEffects::AllySwitch]     = false
-      battler.effects[PBEffects::BurningBulwark] = false
-      battler.effects[PBEffects::SilkTrap]       = false
-      if Settings::MECHANICS_GENERATION >= 9
-        battler.effects[PBEffects::Charge]   += 1 if battler.effects[PBEffects::Charge]     > 0
-      end
+      # battler.effects[PBEffects::BurningBulwark] = false
+      # battler.effects[PBEffects::SilkTrap]       = false
+      # if Settings::MECHANICS_GENERATION >= 9
+      #   battler.effects[PBEffects::Charge]   += 1 if battler.effects[PBEffects::Charge]     > 0
+      # end
       battler.effects[PBEffects::GlaiveRush] -= 1 if battler.effects[PBEffects::GlaiveRush] > 0
     end
   end
@@ -169,15 +169,15 @@ class Battle
   #-----------------------------------------------------------------------------
   # Adds counter for Bisharp -> Kingambit evolution method.
   #-----------------------------------------------------------------------------
-  alias paldea_pbSetDefeated pbSetDefeated
-  def pbSetDefeated(battler)
-    paldea_pbSetDefeated(battler)
-    return if !battler || !@internalBattle || battler.lastFoeAttacker.empty?
-    attacker = @battlers[battler.lastFoeAttacker.last]
-    return if !attacker.pbOwnedByPlayer?
-    return if attacker.species != battler.species
-    attacker.pokemon.leaders_crest_evolution(battler.item_id)
-  end
+  # alias paldea_pbSetDefeated pbSetDefeated
+  # def pbSetDefeated(battler)
+  #   paldea_pbSetDefeated(battler)
+  #   return if !battler || !@internalBattle || battler.lastFoeAttacker.empty?
+  #   attacker = @battlers[battler.lastFoeAttacker.last]
+  #   return if !attacker.pbOwnedByPlayer?
+  #   return if attacker.species != battler.species
+  #   attacker.pokemon.leaders_crest_evolution(battler.item_id)
+  # end
   
   #-----------------------------------------------------------------------------
   # Used to revive a party Pokemon with Revival Blessing.
@@ -214,23 +214,23 @@ class Battle::Move
   #-----------------------------------------------------------------------------
   # New move flags.
   #-----------------------------------------------------------------------------
-  def windMove?;        return @flags.any? { |f| f[/^Wind$/i] };            end
-  def slicingMove?;     return @flags.any? { |f| f[/^Slicing$/i] };         end
+  # def windMove?;        return @flags.any? { |f| f[/^Wind$/i] };            end
+  # def slicingMove?;     return @flags.any? { |f| f[/^Slicing$/i] };         end
   def electrocuteUser?; return @flags.any? { |f| f[/^ElectrocuteUser$/i] }; end
 
   #-----------------------------------------------------------------------------
   # Aliased to add Mind's Eye effect.
   #-----------------------------------------------------------------------------  
-  alias paldea_pbCalcTypeModSingle pbCalcTypeModSingle
-  def pbCalcTypeModSingle(moveType, defType, user, target)
-    ret = paldea_pbCalcTypeModSingle(moveType, defType, user, target)
-    if Effectiveness.ineffective_type?(moveType, defType)
-      if user.hasActiveAbility?(:MINDSEYE) && defType == :GHOST
-        ret = Effectiveness::NORMAL_EFFECTIVE_MULTIPLIER
-      end
-    end
-    return ret
-  end
+  # alias paldea_pbCalcTypeModSingle pbCalcTypeModSingle
+  # def pbCalcTypeModSingle(moveType, defType, user, target)
+  #   ret = paldea_pbCalcTypeModSingle(moveType, defType, user, target)
+  #   if Effectiveness.ineffective_type?(moveType, defType)
+  #     if user.hasActiveAbility?(:MINDSEYE) && defType == :GHOST
+  #       ret = Effectiveness::NORMAL_EFFECTIVE_MULTIPLIER
+  #     end
+  #   end
+  #   return ret
+  # end
 
   #-----------------------------------------------------------------------------
   # Aliased to add Tera Shell effect.
@@ -239,6 +239,7 @@ class Battle::Move
   def pbCalcTypeMod(moveType, user, target)
     ret = Effectiveness::NORMAL_EFFECTIVE_MULTIPLIER
     return ret if !moveType
+    return ret if moveType == :GROUND && target.pbHasType?(:FLYING) && target.hasActiveItem?(:IRONBALL)
     ret = paldea_pbCalcTypeMod(moveType, user, target)
     if target.abilityActive?
       ret = Battle::AbilityEffects.triggerModifyTypeEffectiveness(
@@ -250,17 +251,17 @@ class Battle::Move
   #-----------------------------------------------------------------------------
   # Aliased to add type displays for certain moves that change type.
   #-----------------------------------------------------------------------------  
-  alias paldea_display_type display_type
-  def display_type(battler)
-    case @function_code
-    when "TypeDependsOnUserPlate",            # Judgement
-         "TypeIsUserSecondType",              # Ivy Cudgel
-         "TypeIsUserSecondTypeRemoveScreens"  # Raging Bull
-      return pbBaseType(battler)
-    else
-      return paldea_display_type(battler)
-    end
-  end
+  # alias paldea_display_type display_type
+  # def display_type(battler)
+  #   case @function_code
+  #   when "TypeDependsOnUserPlate",            # Judgement
+  #        "TypeIsUserSecondType",              # Ivy Cudgel
+  #        "TypeIsUserSecondTypeRemoveScreens"  # Raging Bull
+  #     return pbBaseType(battler)
+  #   else
+  #     return paldea_display_type(battler)
+  #   end
+  # end
   
   #-----------------------------------------------------------------------------
   # -Aliased to reset various checks upon using a move.
@@ -272,17 +273,17 @@ class Battle::Move
     user.proteanTrigger = true
     user.effects[PBEffects::GlaiveRush] = 0
     user.effects[PBEffects::SuccessiveMove] = nil if user.effects[PBEffects::SuccessiveMove] != @id
-    user.pokemon.move_count_evolution(@id) if user.pbOwnedByPlayer?
+    # user.pokemon.move_count_evolution(@id) if user.pbOwnedByPlayer?
   end
   
   #-----------------------------------------------------------------------------
   # Adds Punching Glove effect to prevent contact for punching moves.
   #-----------------------------------------------------------------------------
-  alias paldea_pbContactMove? pbContactMove?
-  def pbContactMove?(user)
-    return false if user.hasActiveItem?(:PUNCHINGGLOVE) && punchingMove?
-    return paldea_pbContactMove?(user)
-  end
+  # alias paldea_pbContactMove? pbContactMove?
+  # def pbContactMove?(user)
+  #   return false if user.hasActiveItem?(:PUNCHINGGLOVE) && punchingMove?
+  #   return paldea_pbContactMove?(user)
+  # end
  
   #-----------------------------------------------------------------------------
   # -Aliased to add Covert Cloak effect to block additional effects.
@@ -291,21 +292,21 @@ class Battle::Move
   alias paldea_pbAdditionalEffectChance pbAdditionalEffectChance
   def pbAdditionalEffectChance(user, target, effectChance = 0)
     return 0 if target.hasActiveItem?(:COVERTCLOAK)
-    ret = paldea_pbAdditionalEffectChance(user, target, effectChance)
-    return ret if [0, 100].include?(ret)
-    if @battle.pbWeather == :Hail &&
-       (@function_code.include?("FrostbiteTarget") ||
-       (Settings::FREEZE_EFFECTS_CAUSE_FROSTBITE && @function_code.include?("FreezeTarget")))
-      ret *= 2
-    end
-    return [ret, 100].min
+    return paldea_pbAdditionalEffectChance(user, target, effectChance)
+    # return ret if [0, 100].include?(ret)
+    # if @battle.pbWeather == :Hail &&
+    #    (@function_code.include?("FrostbiteTarget") ||
+    #    (Settings::FREEZE_EFFECTS_CAUSE_FROSTBITE && @function_code.include?("FreezeTarget")))
+    #   ret *= 2
+    # end
+    # return [ret, 100].min
   end
 
-  alias paldea_pbFlinchChance pbFlinchChance
-  def pbFlinchChance(user, target)
-    return 0 if target.hasActiveItem?(:COVERTCLOAK)
-    return paldea_pbFlinchChance(user, target)
-  end
+  # alias paldea_pbFlinchChance pbFlinchChance
+  # def pbFlinchChance(user, target)
+  #   return 0 if target.hasActiveItem?(:COVERTCLOAK)
+  #   return paldea_pbFlinchChance(user, target)
+  # end
   
   #-----------------------------------------------------------------------------
   # Aliased for accuracy checks on targets with certain effects.
@@ -332,25 +333,25 @@ class Battle::Move
   alias paldea_pbCalcDamageMultipliers pbCalcDamageMultipliers
   def pbCalcDamageMultipliers(user, target, numTargets, type, baseDmg, multipliers)
     # "of Ruin" abilities
-    [:TABLETSOFRUIN, :SWORDOFRUIN, :VESSELOFRUIN, :BEADSOFRUIN].each_with_index do |ability, i|
-      next if !@battle.pbCheckGlobalAbility(ability)
-      category = (i < 2) ? physicalMove? : specialMove?
-      category = !category if i.odd? && @battle.field.effects[PBEffects::WonderRoom] > 0
-      if i.even? && !user.hasActiveAbility?(ability)
-        multipliers[:attack_multiplier] *= 0.75 if category
-      elsif i.odd? && !target.hasActiveAbility?(ability)
-        multipliers[:defense_multiplier] *= 0.75 if category
-      end
-    end
-    if @battle.field.terrain == :Electric && user.affectedByTerrain? &&
-       @function_code == "IncreasePowerInElectricTerrain"
-      multipliers[:power_multiplier] *= 1.5 if type != :ELECTRIC
-    end
+    # [:TABLETSOFRUIN, :SWORDOFRUIN, :VESSELOFRUIN, :BEADSOFRUIN].each_with_index do |ability, i|
+    #   next if !@battle.pbCheckGlobalAbility(ability)
+    #   category = (i < 2) ? physicalMove? : specialMove?
+    #   category = !category if i.odd? && @battle.field.effects[PBEffects::WonderRoom] > 0
+    #   if i.even? && !user.hasActiveAbility?(ability)
+    #     multipliers[:attack_multiplier] *= 0.75 if category
+    #   elsif i.odd? && !target.hasActiveAbility?(ability)
+    #     multipliers[:defense_multiplier] *= 0.75 if category
+    #   end
+    # end
+    # if @battle.field.terrain == :Electric && user.affectedByTerrain? &&
+    #    @function_code == "IncreasePowerInElectricTerrain"
+    #   multipliers[:power_multiplier] *= 1.5 if type != :ELECTRIC
+    # end
     case user.effectiveWeather
-    when :Sun, :HarshSun
-      if @function_code == "IncreasePowerInSunWeather"
-        multipliers[:final_damage_multiplier] *= (type == :FIRE) ? 1 : (type == :WATER) ? 3 : 1.5
-      end
+    # when :Sun, :HarshSun
+    #   if @function_code == "IncreasePowerInSunWeather"
+    #     multipliers[:final_damage_multiplier] *= (type == :FIRE) ? 1 : (type == :WATER) ? 3 : 1.5
+    #   end
     when :Hail
       if Settings::HAIL_WEATHER_TYPE > 0 && target.pbHasType?(:ICE) && 
          (physicalMove? || @function_code == "UseTargetDefenseInsteadOfTargetSpDef")
@@ -383,52 +384,52 @@ class Battle::Scene
   #-----------------------------------------------------------------------------
   # Overwritten to allow for selection of a target for Revival Blessing.
   #-----------------------------------------------------------------------------
-  def pbPartyScreen(idxBattler, canCancel = false, mode = 0)
-    visibleSprites = pbFadeOutAndHide(@sprites)
-    partyPos = @battle.pbPartyOrder(idxBattler)
-    partyStart, _partyEnd = @battle.pbTeamIndexRangeFromBattlerIndex(idxBattler)
-    modParty = @battle.pbPlayerDisplayParty(idxBattler)
-    scene = PokemonParty_Scene.new
-    switchScreen = PokemonPartyScreen.new(scene, modParty)
-    msg = _INTL("Choose a Pokémon.")
-    msg = _INTL("Send which Pokémon to Boxes?") if mode == 1
-    switchScreen.pbStartScene(msg, @battle.pbNumPositions(0, 0))
-    loop do
-      scene.pbSetHelpText(msg)
-      idxParty = switchScreen.pbChoosePokemon
-      if idxParty < 0
-        next if !canCancel
-        break
-      end
-      cmdSwitch  = -1
-      cmdBoxes   = -1
-      cmdSelect  = -1
-      cmdSummary = -1
-      commands = []
-      commands[cmdSwitch  = commands.length] = _INTL("Switch In") if mode == 0 && modParty[idxParty].able? &&
-                                                                     (@battle.canSwitch || !canCancel)
-      commands[cmdBoxes   = commands.length] = _INTL("Send to Boxes") if mode == 1
-      commands[cmdSelect  = commands.length] = _INTL("Select") if mode == 2 && modParty[idxParty].fainted?
-      commands[cmdSummary = commands.length] = _INTL("Summary")
-      commands[commands.length]              = _INTL("Cancel")
-      command = scene.pbShowCommands(_INTL("Do what with {1}?", modParty[idxParty].name), commands)
-      if (cmdSwitch >= 0 && command == cmdSwitch) ||   # Switch In
-         (cmdBoxes >= 0 && command == cmdBoxes)   ||   # Send to Boxes
-         (cmdSelect >= 0 && command == cmdSelect)      # Select for Revival Blessing
-        idxPartyRet = -1
-        partyPos.each_with_index do |pos, i|
-          next if pos != idxParty + partyStart
-          idxPartyRet = i
-          break
-        end
-        break if yield idxPartyRet, switchScreen
-      elsif cmdSummary >= 0 && command == cmdSummary
-        scene.pbSummary(idxParty, true)
-      end
-    end
-    switchScreen.pbEndScene
-    pbFadeInAndShow(@sprites, visibleSprites)
-  end
+  # def pbPartyScreen(idxBattler, canCancel = false, mode = 0)
+  #   visibleSprites = pbFadeOutAndHide(@sprites)
+  #   partyPos = @battle.pbPartyOrder(idxBattler)
+  #   partyStart, _partyEnd = @battle.pbTeamIndexRangeFromBattlerIndex(idxBattler)
+  #   modParty = @battle.pbPlayerDisplayParty(idxBattler)
+  #   scene = PokemonParty_Scene.new
+  #   switchScreen = PokemonPartyScreen.new(scene, modParty)
+  #   msg = _INTL("Choose a Pokémon.")
+  #   msg = _INTL("Send which Pokémon to Boxes?") if mode == 1
+  #   switchScreen.pbStartScene(msg, @battle.pbNumPositions(0, 0))
+  #   loop do
+  #     scene.pbSetHelpText(msg)
+  #     idxParty = switchScreen.pbChoosePokemon
+  #     if idxParty < 0
+  #       next if !canCancel
+  #       break
+  #     end
+  #     cmdSwitch  = -1
+  #     cmdBoxes   = -1
+  #     cmdSelect  = -1
+  #     cmdSummary = -1
+  #     commands = []
+  #     commands[cmdSwitch  = commands.length] = _INTL("Switch In") if mode == 0 && modParty[idxParty].able? &&
+  #                                                                    (@battle.canSwitch || !canCancel)
+  #     commands[cmdBoxes   = commands.length] = _INTL("Send to Boxes") if mode == 1
+  #     commands[cmdSelect  = commands.length] = _INTL("Select") if mode == 2 && modParty[idxParty].fainted?
+  #     commands[cmdSummary = commands.length] = _INTL("Summary")
+  #     commands[commands.length]              = _INTL("Cancel")
+  #     command = scene.pbShowCommands(_INTL("Do what with {1}?", modParty[idxParty].name), commands)
+  #     if (cmdSwitch >= 0 && command == cmdSwitch) ||   # Switch In
+  #        (cmdBoxes >= 0 && command == cmdBoxes)   ||   # Send to Boxes
+  #        (cmdSelect >= 0 && command == cmdSelect)      # Select for Revival Blessing
+  #       idxPartyRet = -1
+  #       partyPos.each_with_index do |pos, i|
+  #         next if pos != idxParty + partyStart
+  #         idxPartyRet = i
+  #         break
+  #       end
+  #       break if yield idxPartyRet, switchScreen
+  #     elsif cmdSummary >= 0 && command == cmdSummary
+  #       scene.pbSummary(idxParty, true)
+  #     end
+  #   end
+  #   switchScreen.pbEndScene
+  #   pbFadeInAndShow(@sprites, visibleSprites)
+  # end
   
   #-----------------------------------------------------------------------------
   # Aliased to keep Tatsugiri's sprite hidden during Commander.

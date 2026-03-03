@@ -838,6 +838,33 @@ module BattleCreationHelperMethods
     end
 end
 
+class Battle::Move::RevivePokemonToHalfHP < Battle::Move
+    def pbEffectGeneral(user)
+        pkmn = nil
+        if !@battle.controlPlayer && @battle.pbOwnedByPlayer?(user.index)
+            # Player chooses the Pokémon to revive
+            @battle.scene.pbPartyScreen(user.index, false, 2) do |idxParty, party_screen|
+                pkmn = @battle.pbParty(user.idxOwnSide)[idxParty]
+                if pkmn.egg?
+                    party_screen.show_message(_INTL("¡No se puede revivir un huevo!"))
+                    next false
+                elsif !pkmn.fainted?
+                    party_screen.show_message(_INTL("¡Este Pokémon no puede ser revivido!"))
+                    next false
+                end
+                next true
+            end
+        else
+            # The AI chooses the Pokémon to revive
+            pkmn = Battle::AI.choose_pokemon_to_revive(user)
+        end
+        pkmn.hp = (pkmn.totalhp / 2).floor
+        pkmn.hp = 1 if pkmn.hp <= 0
+        pkmn.heal_status
+        @battle.pbDisplay(_INTL("¡{1} fue revivido y está listo para luchar de nuevo!", pkmn.name))
+    end
+end
+
 
 
 
@@ -1111,6 +1138,7 @@ class Battle::Battler
     alias new_forms_pbCheckForm pbCheckForm
     def pbCheckForm(endOfRound = false)
         new_forms_pbCheckForm(endOfRound)
+        return if fainted? || @effects[PBEffects::Transform]
         f = MultipleForms.call("getFormOnBattle", @pokemon)
         pbChangeForm(f, _INTL("")) if f
     end

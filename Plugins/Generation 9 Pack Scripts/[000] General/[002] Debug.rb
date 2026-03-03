@@ -174,73 +174,73 @@ end
 #  -PBEffects::ParadoxStat   : Allows for setting this effect to a Stat ID.
 #  -PBEffects::SplintersType : Allows for setting this effect to a Type ID.
 #-------------------------------------------------------------------------------
-class Battle::DebugSetEffects
-  def update_input_for_stat(effect, variable_data)
-    if Input.trigger?(Input::USE)
-      pbPlayDecisionSE
-      new_value = pbChooseStatList(:main_battle, @variables[effect])
-      if new_value && new_value != @variables[effect]
-        @variables[effect] = new_value
-        return true
-      end
-    elsif Input.trigger?(Input::ACTION) && @variables[effect]
-      pbPlayDecisionSE
-      @variables[effect] = nil
-      return true
-    end
-    return false
-  end
+# class Battle::DebugSetEffects
+  # def update_input_for_stat(effect, variable_data)
+  #   if Input.trigger?(Input::USE)
+  #     pbPlayDecisionSE
+  #     new_value = pbChooseStatList(:main_battle, @variables[effect])
+  #     if new_value && new_value != @variables[effect]
+  #       @variables[effect] = new_value
+  #       return true
+  #     end
+  #   elsif Input.trigger?(Input::ACTION) && @variables[effect]
+  #     pbPlayDecisionSE
+  #     @variables[effect] = nil
+  #     return true
+  #   end
+  #   return false
+  # end
   
-  def update_input_for_type(effect, variable_data)
-    if Input.trigger?(Input::USE)
-      pbPlayDecisionSE
-      new_value = pbChooseTypeList(@variables[effect])
-      if new_value && new_value != @variables[effect]
-        @variables[effect] = new_value
-        return true
-      end
-    elsif Input.trigger?(Input::ACTION) && @variables[effect]
-      pbPlayDecisionSE
-      @variables[effect] = nil
-      return true
-    end
-    return false
-  end
+  # def update_input_for_type(effect, variable_data)
+  #   if Input.trigger?(Input::USE)
+  #     pbPlayDecisionSE
+  #     new_value = pbChooseTypeList(@variables[effect])
+  #     if new_value && new_value != @variables[effect]
+  #       @variables[effect] = new_value
+  #       return true
+  #     end
+  #   elsif Input.trigger?(Input::ACTION) && @variables[effect]
+  #     pbPlayDecisionSE
+  #     @variables[effect] = nil
+  #     return true
+  #   end
+  #   return false
+  # end
 
-  def update
-    loop do
-      Graphics.update
-      Input.update
-      @window.update
-      if Input.trigger?(Input::BACK)
-        pbPlayCancelSE
-        break
-      end
-      index = @window.index
-      effect = @variables_data.keys[index]
-      variable_data = @variables_data[effect]
-      if variable_data[:default] == false
-        @window.refresh if update_input_for_boolean(effect, variable_data)
-      elsif [0, 1, -2].include?(variable_data[:default])
-        @window.refresh if update_input_for_integer(effect, variable_data[:default], variable_data)
-      elsif variable_data[:default] == -1
-        @window.refresh if update_input_for_battler_index(effect, variable_data)
-      elsif variable_data[:default].nil?
-        case variable_data[:type]
-        when :move
-          @window.refresh if update_input_for_move(effect, variable_data)
-        when :item
-          @window.refresh if update_input_for_item(effect, variable_data)
-        when :stat
-          @window.refresh if update_input_for_stat(effect, variable_data)
-        when :type
-          @window.refresh if update_input_for_type(effect, variable_data)
-        else
-          raise "Unknown kind of variable!"
-        end
-      else
-        raise "Unknown kind of variable!"
-      end
-    end
-  end
-end
+  # def update
+  #   loop do
+  #     Graphics.update
+  #     Input.update
+  #     @window.update
+  #     if Input.trigger?(Input::BACK)
+  #       pbPlayCancelSE
+  #       break
+  #     end
+  #     index = @window.index
+  #     effect = @variables_data.keys[index]
+  #     variable_data = @variables_data[effect]
+  #     if variable_data[:default] == false
+  #       @window.refresh if update_input_for_boolean(effect, variable_data)
+  #     elsif [0, 1, -2].include?(variable_data[:default])
+  #       @window.refresh if update_input_for_integer(effect, variable_data[:default], variable_data)
+  #     elsif variable_data[:default] == -1
+  #       @window.refresh if update_input_for_battler_index(effect, variable_data)
+  #     elsif variable_data[:default].nil?
+  #       case variable_data[:type]
+  #       when :move
+  #         @window.refresh if update_input_for_move(effect, variable_data)
+  #       when :item
+  #         @window.refresh if update_input_for_item(effect, variable_data)
+  #       when :stat
+  #         @window.refresh if update_input_for_stat(effect, variable_data)
+  #       when :type
+  #         @window.refresh if update_input_for_type(effect, variable_data)
+  #       else
+  #         raise "Unknown kind of variable!"
+  #       end
+  #     else
+  #       raise "Unknown kind of variable!"
+  #     end
+  #   end
+  # end
+# end

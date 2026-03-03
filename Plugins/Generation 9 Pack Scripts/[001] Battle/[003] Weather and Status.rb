@@ -102,7 +102,7 @@ class Battle
   # Aliased to display the correct weather start messages for Snow.
   #-----------------------------------------------------------------------------
   alias paldea_pbStartWeather pbStartWeather
-  def pbStartWeather(user, newWeather, fixedDuration = false, showAnim = true)
+  def pbStartWeather(user, newWeather, fixedDuration = false, showAnim = true, message = nil)
     return if @field.weather == newWeather
     if newWeather == :Hail && Settings::HAIL_WEATHER_TYPE > 0
       @field.weather = newWeather
@@ -122,7 +122,7 @@ class Battle
       allBattlers.each { |b| b.pbCheckFormOnWeatherChange }
       pbEndPrimordialWeather
     else
-      paldea_pbStartWeather(user, newWeather, fixedDuration, showAnim)
+      paldea_pbStartWeather(user, newWeather, fixedDuration, showAnim, message)
     end
   end
   
