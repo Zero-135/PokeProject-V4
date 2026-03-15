@@ -14,18 +14,18 @@ class Battle::Battler
   def pbInitEffects(batonPass)
     paldea_pbInitEffects(batonPass)
     @effects[PBEffects::AllySwitch]      = false
-    @effects[PBEffects::BoosterEnergy]   = false
-    @effects[PBEffects::BurningBulwark]  = false
+    # @effects[PBEffects::BoosterEnergy]   = false
+    # @effects[PBEffects::BurningBulwark]  = false
     @effects[PBEffects::Commander]       = nil
     @effects[PBEffects::CudChew]         = 0
-    @effects[PBEffects::DoubleShock]     = false
+    # @effects[PBEffects::DoubleShock]     = false
     @effects[PBEffects::GlaiveRush]      = 0
     @effects[PBEffects::ParadoxStat]     = nil
     @effects[PBEffects::OneUseAbility]   = nil
-    @effects[PBEffects::SaltCure]        = false
+    # @effects[PBEffects::SaltCure]        = false
     @effects[PBEffects::Splinters]       = 0
     @effects[PBEffects::SplintersType]   = nil
-    @effects[PBEffects::SilkTrap]        = false
+    # @effects[PBEffects::SilkTrap]        = false
     @effects[PBEffects::SuccessiveMove]  = nil
     @effects[PBEffects::SupremeOverlord] = 0
     @effects[PBEffects::Syrupy]          = 0
@@ -61,27 +61,27 @@ class Battle::Battler
   #-----------------------------------------------------------------------------
   # Aliased for Double Shock effect.
   #-----------------------------------------------------------------------------
-  alias paldea_pbTypes pbTypes
-  def pbTypes(withType3 = false)
-    ret = paldea_pbTypes(withType3)
-    ret.delete(:ELECTRIC) if @effects[PBEffects::DoubleShock]
-    return ret
-  end
+  # alias paldea_pbTypes pbTypes
+  # def pbTypes(withType3 = false)
+  #   ret = paldea_pbTypes(withType3)
+  #   ret.delete(:ELECTRIC) if @effects[PBEffects::DoubleShock]
+  #   return ret
+  # end
   
   alias paldea_pbChangeTypes pbChangeTypes
   def pbChangeTypes(newType)
     paldea_pbChangeTypes(newType)
-    @effects[PBEffects::DoubleShock] = false
+    # @effects[PBEffects::DoubleShock] = false
     if abilityActive? && @proteanTrigger # Protean/Libero
       Battle::AbilityEffects.triggerOnTypeChange(self.ability, self, newType)
     end 
   end
 
-  alias paldea_pbResetTypes pbResetTypes
-  def pbResetTypes
-    paldea_pbResetTypes
-    @effects[PBEffects::DoubleShock] = false
-  end
+  # alias paldea_pbResetTypes pbResetTypes
+  # def pbResetTypes
+  #   paldea_pbResetTypes
+  #   @effects[PBEffects::DoubleShock] = false
+  # end
   
   
   ##############################################################################
@@ -201,17 +201,17 @@ class Battle::Battler
   #-----------------------------------------------------------------------------
   # Aliased to add Gen 9 unstoppable abilities to blacklist.
   #-----------------------------------------------------------------------------
-  alias paldea_unstoppableAbility? unstoppableAbility?
-  def unstoppableAbility?(abil = nil)
-    abil = @ability_id if !abil
-    abil = GameData::Ability.try_get(abil)
-    return false if !abil
-    return true if paldea_unstoppableAbility?(abil)
-    return [  
-      :ZEROTOHERO,
-      :TERASHIFT
-    ].include?(abil.id)
-  end
+  # alias paldea_unstoppableAbility? unstoppableAbility?
+  # def unstoppableAbility?(abil = nil)
+  #   abil = @ability_id if !abil
+  #   abil = GameData::Ability.try_get(abil)
+  #   return false if !abil
+  #   return true if paldea_unstoppableAbility?(abil)
+  #   return [  
+  #     :ZEROTOHERO,
+  #     :TERASHIFT
+  #   ].include?(abil.id)
+  # end
   
   #-----------------------------------------------------------------------------
   # Aliased to add Gen 9 ungainable abilities to blacklist.
@@ -223,19 +223,19 @@ class Battle::Battler
     return false if !abil
     return true if paldea_ungainableAbility?(abil)
     return [
-      :WONDERGUARD,
-      :HUNGERSWITCH,
-      :COMMANDER,
-      :PROTOSYNTHESIS,
-      :QUARKDRIVE,	  
-      :ZEROTOHERO,
+      # :WONDERGUARD,
+      # :HUNGERSWITCH,
+      # :COMMANDER,
+      # :PROTOSYNTHESIS,
+      # :QUARKDRIVE,	  
+      # :ZEROTOHERO,
       :EMBODYASPECT,
       :EMBODYASPECT_1,
       :EMBODYASPECT_2,
       :EMBODYASPECT_3,
-      :TERASHIFT,
-      :TERAFORMZERO,
-      :POISONPUPPETEER
+      # :TERASHIFT,
+      # :TERAFORMZERO,
+      # :POISONPUPPETEER
     ].include?(abil.id)
   end
   
@@ -292,6 +292,7 @@ class Battle::Battler
   # - Edited to reset Judgement type
   # - Edited to trigger skip Trace ability an Pokémon that has Ability Shield
   #-----------------------------------------------------------------------------
+  #Empieza por aca
   def pbContinualAbilityChecks(onSwitchIn = false)
     @battle.pbEndPrimordialWeather
     if hasActiveAbility?(:COMMANDER)
